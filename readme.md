@@ -1,4 +1,4 @@
-## **Kotcharat Sukkasem Individual Project**
+# **Kotcharat Sukkasem Individual Project**
 
 Java-based web application for build the funds from my photography skill
 
@@ -9,22 +9,18 @@ Java-based web application for build the funds from my photography skill
 # **Project Technologies/Techniques**
 
 * **Security/Authentication**
-
 1. Tomcat's JDBC Realm Authentication
-
 2. Admin role: create/read/update/delete (crud) of all data
-3. User role: create trail, create trail report, edit data they have entered previously
-4. All: anyone can view trail information (no login)
+3. User role: edit data they have entered previously
+4. All: anyone can view information (no login)
 * **Database**
 1. MySQL
 2. Store users and roles
-3. Store all data for the trails and reports
+3. Store all data for the picture
 * **ORM Framework**
 1. Hibernate 5
 * **Dependency Management**
 1. Maven
-* **Web Services consumed using Java**
-1. NOAA for weather conditions at a trail location, including snow depth
 * **CSS**
 1. Bootstrap or Materialize
 * **Data Validation**
@@ -37,9 +33,8 @@ Java-based web application for build the funds from my photography skill
 * **Independent Research Topic/s**
 1. CI tools in AWS
 2. Materialize
-3. Google Maps API
-4. Hibernate Validation
-5. Hibernat Search
+3. Hibernate Validation
+4. Hibernat Search
 * **Project Lombok to eliminate boilerplate code like getters/setters/equals**
 * **Unit Testing**
 1. JUnit tests to achieve 80%+ code coverage
