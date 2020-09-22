@@ -1,38 +1,38 @@
 # User Stories
 
+### About
+
+As a user I want to find out more information about this site so that I can make donations.
+
+### Contact
+
+As a user I want to be able to contact the admin or asking question.
 
 ### Sign up
 
-As a new user I want to create an account so that I can add or edit the blog and save the history picture.
+As a new user I want to create an account so that I can make a donation or signing the event.
 
 ### Sign In
 
-As a registered user I want to log in so that I can add or edit the blog and picture.
+As a registered user I want to log in so that I can make a donation or signing the event.
 
 ### Find the picture 
 
-As any user I want to be able to find the picture by category
+As any user I want to be able to find the example of pictures by a category in the gallery.
 
-### Find the service
+### Find the Event
 
-As any user I want to be able to find the services, and the place for taking picture
+As any user I want to be able to find the event, and the place for taking picture.
 
-### Make a payment
+### How it works
 
-As any user I want to be able to make a payment
+As any user I want to understand how this volunteer and donation work for this site.
 
-### View the payment summery
+### Make a donation
 
-As any user, I want to be able to view the payment summery
+As any user I want to be able to make a donation.
 
-### About
+### View the fund 
 
-As a user I want to find out more information about this site so that I can make donations or contact the admin.
+As any user, I want to be able to write the name, message, and view the payment and total fund from others.
 
-### Add a blog or review
-
-As a registered user, I want to be able to add a blog or review, so other people can join the group of donation.
-
-### Add Picture
-
-As a registered user, I want to be able to add a new picture so that others can read and review and might consider for the volunteer.
