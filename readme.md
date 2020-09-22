@@ -3,8 +3,24 @@
 Java-based web application for build the funds from my photography skill
 
 # **Problem Statement**
+Hiring a photographer is very costly, especially for people who need professional photographs. This can cost more than $50. I am not kidding! 
 
- I am always asking myself what is fulfill my life when I have almost 5 years of the science path of my career. Then, I looked at my camera thinking about it. It is one of my favorite hobbies.  This idea is pop up via Enterprise java class asking me to build an independent project. I want to do something that fun and build the funds for others that in need. This is the beginning of the name of the project "DoForFund";
+When I was thinking about ideas for Enterprise java class, I looked at my camera for ideas as it is one of my favorite hobbies. The idea I had is a pop up. This pop up is something fun and builds the funds others that are in need. The name of the project is "DoForFund". 
+
+The admin(me) will create an event that every user can sign up for and join on the date. I will send them a picture via email after the event is done.
+
+Then, a user can donate cash in the DoForFund box at the event or donate via the website. The users can donate either anonymously or can sign their name. 
+
+After paying for web services at the end of each year, I will give all the fund to an organization. 
+
+Users will be informed of the history of total funds, and the location where the funds are donated. 
+
+**For future extension**
+
+1. I want others be able to create the volunteer idea in many ways to help build the fund.   
+2. I want others be able to create the campaign that need help.
+3. Everybody can choose the way to donate the money either by volunteer event or donate to the campaign.
+
 
 # **Project Technologies/Techniques**
 

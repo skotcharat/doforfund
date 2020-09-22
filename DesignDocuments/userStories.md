@@ -10,11 +10,11 @@ As a user I want to be able to contact the admin or asking question.
 
 ### Sign up
 
-As a new user I want to create an account so that I can make a donation or signing the event.
+As a new user I want to create an account so that I can make a donation or sign up the event.
 
 ### Sign In
 
-As a registered user I want to log in so that I can make a donation or signing the event.
+As a registered user I want to log in so that I can make a donation or sign up the event.
 
 ### Find the picture 
 
@@ -34,5 +34,5 @@ As any user I want to be able to make a donation.
 
 ### View the fund 
 
-As any user, I want to be able to write the name, message, and view the payment and total fund from others.
+As any user, I want to be able to write the name, message, view the payment and total fund from others.
 
