@@ -60,8 +60,10 @@ Users will be informed of the history of total funds, and the location where the
 
 * [User Stories](https://github.com/skotcharat/doforfund/blob/master/DesignDocuments/userStories.md)
 
-* [Screen Design](https://github.com/skotcharat/doforfund/blob/master/DesignDocuments/Screens.md)
+* [Screen Design(MVP)](https://github.com/skotcharat/doforfund/blob/master/DesignDocuments/screens(MVP).jpg)
 
-* [Application Flow](https://github.com/skotcharat/doforfund/blob/master/DesignDocuments/applicationFlow.md)
+* [Screen Design(Future extension)](https://github.com/skotcharat/doforfund/blob/master/DesignDocuments/screens(Future%20Extension).jpg)
+
+* [Application Flow](https://github.com/skotcharat/doforfund/blob/master/DesignDocuments/applicationFlow.png)
 
 * [Database Design](https://github.com/skotcharat/doforfund/blob/master/DesignDocuments/databaseDiagram.png)
