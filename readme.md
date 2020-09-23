@@ -50,7 +50,7 @@ Users will be informed of the history of total funds, and the location where the
 1. CI tools in AWS
 2. Materialize
 3. Hibernate Validation
-4. Hibernat Search
+4. Hibernate Search
 * **Project Lombok to eliminate boilerplate code like getters/setters/equals**
 * **Unit Testing**
 1. JUnit tests to achieve 80%+ code coverage
