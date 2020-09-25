@@ -14,7 +14,7 @@ As a new user I want to create an account so that I can make a donation or sign 
 
 ### Sign In
 
-As a registered user I want to log in so that I can make a donation or sign up the event.
+As a registered user I want to log in so that I can make a donation or sign up the event. Also, view profile and edit the profile
 
 ### Find the picture 
 
@@ -36,3 +36,5 @@ As any user I want to be able to make a donation.
 
 As any user, I want to be able to write the name, message, view the payment and total fund from others.
 
+# User Stories for admin
+As an admin, I want to be able to create an event and add the picture by category
