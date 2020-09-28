@@ -9,7 +9,7 @@
 
 <session-factory>
 
-    <property name="connection.url">jdbc:mysql://localhost:3306/sample</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/funfund</property>
 
     <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 
