@@ -36,8 +36,14 @@ public class User {
 
     /**
      * Instantiates a new User.
+     * @param i
+     * @param ying
+     * @param kot
+     * @param kying
+     * @param supersecret3
+     * @param s
      */
-    public User() {
+    public User(int i, String ying, String kot, String kying, String supersecret3, String s) {
     }
 
     /**
