@@ -33,18 +33,12 @@ public class User {
     @GenericGenerator(name = "native",strategy = "native")
     private int id;
 
-
     /**
      * Instantiates a new User.
-     * @param i
-     * @param ying
-     * @param kot
-     * @param kying
-     * @param supersecret3
-     * @param s
      */
-    public User(int i, String ying, String kot, String kying, String supersecret3, String s) {
+    public User() {
     }
+
 
     /**
      * Instantiates a new User.
@@ -52,18 +46,19 @@ public class User {
      * @param firstName   the first name
      * @param lastName    the last name
      * @param userName    the user name
-     * @param id          the id
      * @param email the email
 
      */
-    public User(String firstName, String lastName, String userName, int id, String email) {
+    public User(String firstName, String lastName, String userName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
-        this.id = id;
         this.email = email;
 
     }
+
+
+
 
     /**
      * Gets email.
