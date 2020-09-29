@@ -41,12 +41,12 @@ class UserDaoTest {
      */
     @Test
     void saveOrUpdate() {
-        String user = "John Smith";
-        User bookToUpdate = dao.getById(2);
-        bookToUpdate.setFirstName("John Smith");
-        dao.saveOrUpdate(bookToUpdate);
-        User bookAfterUpdate = dao.getById(2);
-        assertEquals(user, bookAfterUpdate.getFirstName());
+        String updateNewUser = "John";
+        User userBeforeUpdate = dao.getById(2);
+        userBeforeUpdate.setFirstName(updateNewUser);
+        dao.saveOrUpdate(userBeforeUpdate);
+        User userAfterUpdate = dao.getById(2);
+        assertEquals(updateNewUser, userAfterUpdate.getFirstName());
     }
 
     /**
