@@ -1,13 +1,16 @@
 package edu.matc.persistence;
 
 import edu.matc.entity.User;
+import edu.matc.persistence.UserDao;
 import edu.matc.test.util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
+
 
 class UserDaoTest {
     UserDao dao;
@@ -35,6 +38,7 @@ class UserDaoTest {
         assertEquals("Joe", retrievedUser.getFirstName());
 
     }
+
 
     /**
      * Verify successful update of a User
