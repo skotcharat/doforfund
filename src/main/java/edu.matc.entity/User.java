@@ -36,6 +36,7 @@ public class User {
     @Column(name = "email")
     private String email;
 
+
     /**
      * Bidirectional @OneToMany
 
@@ -50,19 +51,16 @@ public class User {
 
      Source: http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#associations-one-to-many
      */
-    // @OneToMany mappedBy = "user" came from instance variable at UserRole class
-    // @ManyToOne private User user;
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-//    private Set<UserRole> userRoles = new HashSet<>();
+     //mappedBy = "user" came from instance variable at UserRole class
+     //private User user;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<UserRole> userRoles = new HashSet<>();
 
     /**
      * Instantiates a new User.
      */
     public User() {
     }
-
-
-
 
 
     /**
@@ -171,55 +169,48 @@ public class User {
     public void setId(int id) {
         this.id = id;
     }
-/*
 
-    */
-/**
+
+    /**
      * Gets user roles.
      *
      * @return the user roles
-     *//*
-
+     */
     public Set<UserRole> getUserRoles() {
         return userRoles;
     }
 
-    */
-/**
+    /**
      * Sets user roles.
      *
      * @param userRoles the user roles
-     *//*
-
+     */
     public void setUserRoles(Set<UserRole> userRoles) {
         this.userRoles = userRoles;
     }
 
 
-    */
-/**
+    /**
      * Add a UserRoles.
      *
      * @param userRole the UserRole to add
-     *//*
-
+     */
     public void addUserRoles(UserRole userRole) {
         userRoles.add( userRole );
         userRole.setUser( this );
     }
 
-    */
-/**
-     * Remove a UserRoles.
-     *
-     * @param  the userRole to remove
-     *//*
 
+    /**
+     * Remove user roles.
+     *
+     * @param userRole the user role
+     */
     public void removeUserRoles(UserRole userRole) {
         userRoles.remove( userRole );
         userRole.setUser( null );
     }
-*/
+
 
     @Override
     public String toString() {

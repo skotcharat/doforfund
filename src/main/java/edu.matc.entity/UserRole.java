@@ -17,7 +17,7 @@ public class UserRole { // @OneToMany
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
-
+    @Column(name = "role_name")
     private String roleName;
 
     /**
