@@ -2,7 +2,7 @@ git config credential.helper 'cache --timeout=3600'
 SET GLOBAL time_zone = '-6:00';
 mysql -uroot -p
 
-
+Skotcharat@madisoncollege.edu
 
 
 Week 1 ready for review
