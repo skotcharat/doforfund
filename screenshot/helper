@@ -1,0 +1,11 @@
+git config credential.helper 'cache --timeout=3600'
+SET GLOBAL time_zone = '-6:00';
+mysql -uroot -p
+
+
+
+
+Week 1 ready for review
+@pawaitemadisoncollege week 1 is complete
+
+

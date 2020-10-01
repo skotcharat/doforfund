@@ -4,6 +4,8 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 
 /**
@@ -14,6 +16,14 @@ import javax.persistence.*;
 @Entity(name = "User")
 @Table(name = "user") // case sensitive!
 public class User {
+
+    // Every Entity must have a unique identifier which is annotated @Id
+    // Notice there is no @Column here as the column and instance variable name are the same
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+    @GenericGenerator(name = "native",strategy = "native")
+    private int id;
+
     @Column(name = "first_name")
     private String firstName;
 
@@ -26,12 +36,24 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    // Every Entity must have a unique identifier which is annotated @Id
-    // Notice there is no @Column here as the column and instance variable name are the same
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
-    @GenericGenerator(name = "native",strategy = "native")
-    private int id;
+    /**
+     * Bidirectional @OneToMany
+
+     The bidirectional @OneToMany association also requires a @ManyToOne association on the child side.
+     Although the Domain Model exposes two sides to navigate this association, behind the scenes,
+     the relational database has only one foreign key for this relationship.
+
+     Every bidirectional association must have one owning side only (the child side),
+     the other one being referred to as the inverse (or the mappedBy) side.
+
+     Foreign key is on the child table (Order in this example)
+
+     Source: http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#associations-one-to-many
+     */
+    // @OneToMany mappedBy = "user" came from instance variable at UserRole class
+    // @ManyToOne private User user;
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+//    private Set<UserRole> userRoles = new HashSet<>();
 
     /**
      * Instantiates a new User.
@@ -40,14 +62,16 @@ public class User {
     }
 
 
+
+
+
     /**
      * Instantiates a new User.
      *
-     * @param firstName   the first name
-     * @param lastName    the last name
-     * @param userName    the user name
-     * @param email the email
-
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param userName  the user name
+     * @param email     the email
      */
     public User(String firstName, String lastName, String userName, String email) {
         this.firstName = firstName;
@@ -56,8 +80,6 @@ public class User {
         this.email = email;
 
     }
-
-
 
 
     /**
@@ -149,8 +171,55 @@ public class User {
     public void setId(int id) {
         this.id = id;
     }
+/*
+
+    */
+/**
+     * Gets user roles.
+     *
+     * @return the user roles
+     *//*
+
+    public Set<UserRole> getUserRoles() {
+        return userRoles;
+    }
+
+    */
+/**
+     * Sets user roles.
+     *
+     * @param userRoles the user roles
+     *//*
+
+    public void setUserRoles(Set<UserRole> userRoles) {
+        this.userRoles = userRoles;
+    }
 
 
+    */
+/**
+     * Add a UserRoles.
+     *
+     * @param userRole the UserRole to add
+     *//*
+
+    public void addUserRoles(UserRole userRole) {
+        userRoles.add( userRole );
+        userRole.setUser( this );
+    }
+
+    */
+/**
+     * Remove a UserRoles.
+     *
+     * @param  the userRole to remove
+     *//*
+
+    public void removeUserRoles(UserRole userRole) {
+        userRoles.remove( userRole );
+        userRole.setUser( null );
+    }
+*/
 
     @Override
     public String toString() {
@@ -161,6 +230,7 @@ public class User {
                 ", id=" + id +
                 '}';
     }
+
 
 
 }
