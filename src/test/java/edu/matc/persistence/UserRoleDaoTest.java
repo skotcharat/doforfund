@@ -20,6 +20,7 @@ class UserRoleDaoTest {
      */
     //UserRoleDao dao;
     GenericDao genericDao;
+    GenericDao genericDaoUser;
 
     /**
      * Creating the dao successfully.
@@ -28,6 +29,7 @@ class UserRoleDaoTest {
     void setUp() {
         //dao = new UserRoleDao();
         genericDao = new GenericDao(UserRole.class);
+        genericDaoUser = new GenericDao(User.class);
 
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
@@ -53,6 +55,24 @@ class UserRoleDaoTest {
     }
 
     /**
+     * Verifies Insert successfully.
+     */
+    @Test
+    void insert() {
+        User user = (User)genericDaoUser.getById(1);
+        String roleName = "sign_in";
+        UserRole newUserRoles = new UserRole(roleName, user);
+        user.addUserRoles(newUserRoles);
+        int id = genericDao.insert(newUserRoles);
+        assertNotEquals(0, id);
+        UserRole insertedUser = (UserRole)genericDao.getById(id);
+        assertNotNull(insertedUser);
+        assertEquals(roleName, insertedUser.getRoleName());
+        assertNotNull(insertedUser.getUser());
+        assertEquals("Joe", insertedUser.getUser().getFirstName());
+    }
+
+    /**
      * Verifies Delete successfully.
      */
     @Test
@@ -74,24 +94,7 @@ class UserRoleDaoTest {
         assertEquals(newUserRole, retrievednewUserRole.getRoleName());
     }
 
-    /**
-     * Verifies Insert successfully.
-     */
-    @Test
-    void insert() {
-        //UserDao userDao = new UserDao();
-        User user = (User)genericDao.getById(2);
-        String roleName = "sign_in";
-        UserRole newUserRoles = new UserRole(roleName, user);
-        user.addUserRoles(newUserRoles);
-        int id = genericDao.insert(newUserRoles);
-        assertNotEquals(0, id);
-        UserRole insertedUser = (UserRole)genericDao.getById(id);
-        assertNotNull(insertedUser);
-        assertEquals(roleName, insertedUser.getRoleName());
-        assertNotNull(insertedUser.getUser());
-        assertEquals("Fred", insertedUser.getUser().getFirstName());
-    }
+
 
 
     /**

@@ -1,6 +1,10 @@
 package edu.matc.entity;
 
 
+import edu.matc.persistence.SessionFactoryProvider;
+import org.hibernate.Session;
+import org.hibernate.SessionBuilder;
+import org.hibernate.SessionFactory;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -16,6 +20,7 @@ import java.util.Set;
 @Entity(name = "User")
 @Table(name = "user") // case sensitive!
 public class User {
+
 
     // Every Entity must have a unique identifier which is annotated @Id
     // Notice there is no @Column here as the column and instance variable name are the same
