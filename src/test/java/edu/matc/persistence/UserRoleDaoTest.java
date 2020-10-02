@@ -79,8 +79,8 @@ class UserRoleDaoTest {
      */
     @Test
     void insert() {
-        UserDao userDao = new UserDao();
-        User user = userDao.getById(2);
+        //UserDao userDao = new UserDao();
+        User user = (User)genericDao.getById(2);
         String roleName = "sign_in";
         UserRole newUserRoles = new UserRole(roleName, user);
         user.addUserRoles(newUserRoles);
