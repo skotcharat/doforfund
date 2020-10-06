@@ -43,16 +43,8 @@ public class FindUser extends HttpServlet {
         logger.debug("Sending back the user/s..." + allUsers);
 
 
-
-        //req.setAttribute("allUsers", dao.getByPropertyEqual("lastName", "Coyne"));
-        //req.setAttribute("allUsers", dao.getById(2));
-
-
         RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");
         dispatcher.forward(req, resp);
     }
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req, resp);
-    }
+
 }

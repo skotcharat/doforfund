@@ -6,6 +6,8 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import java.lang.module.Configuration;
+
 
 /**
  * This file provides a SessionFactory for use with DAOs using Hibernate
