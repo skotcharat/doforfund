@@ -46,7 +46,7 @@
     </table>
 
 
-    <a href="index.html">Back to homepage</a>
+    <a href="index.jsp">Back to homepage</a>
 
 </div>
 
