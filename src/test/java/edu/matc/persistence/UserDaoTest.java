@@ -3,6 +3,7 @@ package edu.matc.persistence;
 import edu.matc.entity.User;
 import edu.matc.entity.UserRole;
 import edu.matc.test.util.Database;
+import edu.matc.test.util.DatabaseUtility;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +15,7 @@ import static org.junit.Assert.*;
 class UserDaoTest {
     //UserDao dao;
     GenericDao genericDao;
+    DatabaseUtility databaseUtility;
 
     /**
      * Run set up tasks before each test:
@@ -25,8 +27,9 @@ class UserDaoTest {
         //dao = new UserDao();
         genericDao = new GenericDao(User.class);
 
-        Database database = Database.getInstance();
-        database.runSQL("cleandb.sql");
+        databaseUtility = new DatabaseUtility();
+        databaseUtility.runSQL("cleandb.sql");
+        databaseUtility.runSQL("createTestData.sql");
 
     }
 

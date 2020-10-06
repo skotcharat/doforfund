@@ -3,6 +3,7 @@ package edu.matc.persistence;
 import edu.matc.entity.User;
 import edu.matc.entity.UserRole;
 import edu.matc.test.util.Database;
+import edu.matc.test.util.DatabaseUtility;
 import net.bytebuddy.agent.builder.AgentBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,6 +22,7 @@ class UserRoleDaoTest {
     //UserRoleDao dao;
     GenericDao genericDao;
     GenericDao genericDaoUser;
+    DatabaseUtility databaseUtility;
 
     /**
      * Creating the dao successfully.
@@ -31,8 +33,9 @@ class UserRoleDaoTest {
         genericDao = new GenericDao(UserRole.class);
         genericDaoUser = new GenericDao(User.class);
 
-        Database database = Database.getInstance();
-        database.runSQL("cleandb.sql");
+        databaseUtility = new DatabaseUtility();
+        databaseUtility.runSQL("cleandb.sql");
+        databaseUtility.runSQL("createTestData.sql");
     }
 
     /**
@@ -103,9 +106,6 @@ class UserRoleDaoTest {
      */
     @Test
     void getByPropertyEqual() {
-        List<UserRole> userRoles = genericDao.getByPropertyEqual("roleName", "donation");
-        assertEquals(1, userRoles.size());
-        assertEquals(2, userRoles.get(0).getId());
     }
 
     /**
