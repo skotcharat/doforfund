@@ -3,4 +3,4 @@ insert into user values (2, 'Fred', 'Hensen', 'fhensen', 'supersecret2', 'fred@m
 insert into user_roles values (1, 'create_event', 'jcoyne', 1);
 insert into user_roles values (2, 'donation', 'fhensen', 2);
 insert into user_roles values (3, 'sign_in', 'fhensen', 2);
-insert into user_roles values (4, 'answer_question', 'jcoyne', 1);
+insert into user_roles values (4, 'admin', 'jcoyne', 1);

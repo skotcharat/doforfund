@@ -54,7 +54,7 @@ class UserRoleDaoTest {
     void getById() {
         UserRole retrievedOrderUserRole = (UserRole)genericDao.getById(4);
         assertNotNull(retrievedOrderUserRole);
-        assertEquals("answer_question", retrievedOrderUserRole.getRoleName());
+        assertEquals("admin", retrievedOrderUserRole.getRoleName());
     }
 
     /**
