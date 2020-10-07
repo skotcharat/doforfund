@@ -90,7 +90,7 @@ class UserDaoTest {
      * Verify successful insert of a user and an userRole
      */
     @Test
-    void insertWithOrderSuccess() {
+    void insertWithRoleSuccess() {
 
         String userRoleName = "sign_out";
         User newUser = new User("Fred", "Flintstone", "fflintstone", "Flin@mail.com");
