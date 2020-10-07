@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -73,6 +74,10 @@ class UserRoleDaoTest {
         assertEquals(roleName, insertedUser.getRoleName());
         assertNotNull(insertedUser.getUser());
         assertEquals("Joe", insertedUser.getUser().getFirstName());
+        String expectedUser = "Joe";
+        String actualUser = insertedUser.getUser().getFirstName();
+        assertTrue(expectedUser.equals(actualUser));
+
     }
 
     /**
@@ -95,6 +100,9 @@ class UserRoleDaoTest {
         genericDao.saveOrUpdate(userRoleToUpdate);
         UserRole retrievednewUserRole = (UserRole)genericDao.getById(3);
         assertEquals(newUserRole, retrievednewUserRole.getRoleName());
+        String expectedUserRole = "edit_profile";
+        String actualUserRole = retrievednewUserRole.getRoleName();
+        assertTrue(expectedUserRole.equals(actualUserRole));
     }
 
 

@@ -22,9 +22,10 @@ import java.util.List;
  * @author pwaite
  */
 
-@WebServlet(
-        urlPatterns = {"/searchUser"}
-)
+@WebServlet
+        (name = "SignUpUser", urlPatterns = { "/searchUser" } )
+
+
 
 public class FindUser extends HttpServlet {
 
