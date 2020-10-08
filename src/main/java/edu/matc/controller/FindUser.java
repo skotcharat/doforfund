@@ -23,7 +23,7 @@ import java.util.List;
  */
 
 @WebServlet
-        (name = "SignUpUser", urlPatterns = { "/searchUser" } )
+        (urlPatterns = { "/searchUser" } )
 
 
 
