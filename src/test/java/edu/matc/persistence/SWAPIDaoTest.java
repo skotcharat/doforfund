@@ -8,9 +8,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class SWAPIDaoTest {
 
     @Test
-    void getPlanet() throws JsonProcessingException {
+    void getWeatherObservation() throws JsonProcessingException {
         SWAPIDao daoSWAP = new SWAPIDao();
-        String expectPlanet = "Tatooine";
+        String expectElevation = "Tatooine";
         assertEquals(expectPlanet, daoSWAP.getPlanet().getName());
 
     }
