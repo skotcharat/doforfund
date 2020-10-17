@@ -52,7 +52,7 @@
                     </li>
                   </ul>
                 </li>
-                <li><a href="services.jsp">Services</a></li>
+                <li><a href="HowItWorks.jsp">Services</a></li>
                 <li><a href="about.jsp">About</a></li>
                 <li><a href="contact.jsp">Contact</a></li>
               </ul>

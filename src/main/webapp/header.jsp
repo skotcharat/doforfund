@@ -33,6 +33,9 @@
 
                         <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                             <li><a href="index.jsp">Home</a></li>
+                            <li class="active"><a href="about.jsp">About Us</a></li>
+                            <li class="active"><a href="howItWorks.jsp">How It Works</a></li>
+                            <li  class="active">><a href="event.jsp">Event</a></li>
                             <li class="has-children">
                                 <a href="single.jsp">Gallery</a>
                                 <ul class="dropdown">
@@ -53,9 +56,8 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="services.jsp">Services</a></li>
-                            <li class="active"><a href="about.jsp">About</a></li>
                             <li><a href="contact.jsp">Contact</a></li>
+                            <li><a href="danate.jsp"><button class="btn btn-primary py-2 px-4 text-white">DONATION</button></a></li>
                         </ul>
                     </nav>
                 </div>
@@ -73,9 +75,15 @@
                                 <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
                             </li>
                             <li>
-                                <a href="#" class="pl-3 pr-3"><span class="icon-youtube-play"></span></a>
+                                <a href= 'loginAction'><button class="btn btn-primary py-2 px-4 text-white">Log in</button></a>
+                                <c:if test="${pageContext.request.isUserInRole('admin')}">
+
+                                    <a href="search.jsp">login</a>
+
+                                </c:if>
                             </li>
                         </ul>
+
                     </div>
 
                     <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
