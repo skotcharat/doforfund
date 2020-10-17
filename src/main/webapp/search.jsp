@@ -33,7 +33,7 @@
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li class="active"><a href="index.jsp">Home</a></li>
                 <li class="has-children">
-                  <a href="single.html">Gallery</a>
+                  <a href="single.jsp">Gallery</a>
                   <ul class="dropdown">
                     <li><a href="#">Nature</a></li>
                     <li><a href="searchUser">Portrait</a></li>
@@ -52,9 +52,9 @@
                     </li>
                   </ul>
                 </li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="services.jsp">Services</a></li>
+                <li><a href="about.jsp">About</a></li>
+                <li><a href="contact.jsp">Contact</a></li>
               </ul>
             </nav>
           </div>
@@ -95,7 +95,7 @@
               <div class="image-wrap">
                 <div class="image-info">
                   <h2 class="mb-3">Nature</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                  <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
                 <img src="images/img1.jpg" alt="Image">
               </div>
@@ -104,7 +104,7 @@
               <div class="image-wrap">
                 <div class="image-info">
                   <h2 class="mb-3">Portrait</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                  <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
                 <img src="images/img_2.jpg" alt="Image">
               </div>
@@ -113,7 +113,7 @@
               <div class="image-wrap">
                 <div class="image-info">
                   <h2 class="mb-3">People</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                  <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
                 <img src="images/img_3.jpg" alt="Image">
               </div>
@@ -122,7 +122,7 @@
               <div class="image-wrap">
                 <div class="image-info">
                   <h2 class="mb-3">Architecture</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                  <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
                 <img src="images/img_4.jpg" alt="Image">
               </div>
@@ -131,7 +131,7 @@
               <div class="image-wrap">
                 <div class="image-info">
                   <h2 class="mb-3">Animals</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                  <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
                 <img src="images/img_5.jpg" alt="Image">
               </div>
@@ -140,7 +140,7 @@
               <div class="image-wrap">
                 <div class="image-info">
                   <h2 class="mb-3">Sports</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                  <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
                 <img src="images/img_6.jpg" alt="Image">
               </div>
@@ -149,7 +149,7 @@
               <div class="image-wrap">
                 <div class="image-info">
                   <h2 class="mb-3">Travel</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                  <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
                 <img src="images/img_7.jpg" alt="Image">
               </div>
