@@ -38,6 +38,11 @@ public class User {
     @Column(name = "user_name")
     private String userName;
 
+    @Column(name = "password")
+    private String password;
+
+
+
     @Column(name = "email")
     private String email;
 
@@ -84,6 +89,41 @@ public class User {
 
     }
 
+    /**
+     * Instantiates a new User.
+     *
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param userName  the user name
+     * @param password  the password
+     * @param email     the email
+     */
+    public User(String firstName, String lastName, String userName, String password, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.password = password;
+        this.email = email;
+
+    }
+
+    /**
+     * Gets password.
+     *
+     * @return the password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * Sets password.
+     *
+     * @param password the password
+     */
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     /**
      * Gets email.
@@ -220,13 +260,13 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "firstName='" + firstName + '\'' +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", userName='" + userName + '\'' +
-                ", id=" + id +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", userRoles=" + userRoles +
                 '}';
     }
-
-
-
 }

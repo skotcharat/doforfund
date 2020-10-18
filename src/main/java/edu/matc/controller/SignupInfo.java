@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * A simple servlet to welcome the user.
@@ -23,11 +22,11 @@ import java.util.List;
  */
 
 @WebServlet
-        (urlPatterns = { "/contactInfo" } )
+        (urlPatterns = { "/signupInfo" } )
 
 
 
-public class ContactInfo extends HttpServlet {
+public class SignupInfo extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
@@ -37,20 +36,20 @@ public class ContactInfo extends HttpServlet {
 
 
 
-        GenericDao<Contact> genericDao = DaoFactory.createDao(Contact.class);
+        GenericDao<User> genericDao = DaoFactory.createDao(User.class);
 
-        Contact newContact = new Contact(req.getParameter("fname"), req.getParameter("lname"),
-                req.getParameter("email"), req.getParameter("subject"), req.getParameter("message"));
-
-
-        int newId = genericDao.insert(newContact);
-
-        Contact contacts = genericDao.getById(newId);
-        req.setAttribute("allContacts", contacts);
-        logger.debug("Sending back the contact/s..." + contacts);
+        User newUser = new User(req.getParameter("fname"), req.getParameter("lname"),
+                req.getParameter("username"), req.getParameter("password"), req.getParameter("email"));
 
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/sumContact.jsp");
+        int newId = genericDao.insert(newUser);
+
+        User user = genericDao.getById(newId);
+        req.setAttribute("newUser", user);
+        logger.debug("Sending back the User..." + user);
+
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/newUser.jsp");
         dispatcher.forward(req, resp);
     }
 

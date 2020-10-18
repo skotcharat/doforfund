@@ -5,6 +5,8 @@
   Time: 10:33 PM
   To change this template use File | Settings | File Templates.
 --%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="site-wrap">
 
@@ -35,7 +37,7 @@
                             <li><a href="index.jsp">Home</a></li>
                             <li class="active"><a href="about.jsp">About Us</a></li>
                             <li class="active"><a href="howItWorks.jsp">How It Works</a></li>
-                            <li  class="active">><a href="event.jsp">Event</a></li>
+                            <li  class="active"><a href="event.jsp">Event</a></li>
                             <li class="has-children">
                                 <a href="single.jsp">Gallery</a>
                                 <ul class="dropdown">
@@ -69,18 +71,19 @@
                                 <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
                             </li>
                             <li>
-                                <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                            </li>
-                            <li>
-                                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                            </li>
-                            <li>
-                                <a href= 'loginAction'><button class="btn btn-primary py-2 px-4 text-white">Log in</button></a>
                                 <c:if test="${pageContext.request.isUserInRole('admin')}">
 
-                                    <a href="search.jsp">login</a>
+                                    <a href="search.jsp">Sign in</a>
 
                                 </c:if>
+                            </li>
+                            <li>
+                                <a href= 'loginAction'  class="pl-0 pr-3">><button class="btn btn-primary py-2 px-4 text-white">Sign in</button></a>
+
+
+                            </li>
+                            <li>
+                                <a href="signupAction"><button class="btn btn-primary py-2 px-4 text-white">Sign up</button></a>
                             </li>
                         </ul>
 
@@ -94,3 +97,4 @@
         </div>
 
     </header>
+</div>

@@ -21,7 +21,7 @@
 
           <div class="row">
             <div class="col-lg-8 mb-5">
-              <form action="recieveContact" method="GET">
+              <form action="contactInfo" method="GET">
                
 
                 <div class="row form-group">
@@ -69,14 +69,12 @@
             </div>
             <div class="col-lg-3 ml-auto">
               <div class="mb-3 bg-white">
-                <p class="mb-0 font-weight-bold">Address</p>
-                <p class="mb-4">203 Fake St. Mountain View, San Francisco, California, USA</p>
 
                 <p class="mb-0 font-weight-bold">Phone</p>
                 <p class="mb-4"><a href="#">+1 232 3235 324</a></p>
 
                 <p class="mb-0 font-weight-bold">Email Address</p>
-                <p class="mb-0"><a href="#">youremail@domain.com</a></p>
+                <p class="mb-0"><a href="#">Doforfund@domain.com</a></p>
 
               </div>
               
