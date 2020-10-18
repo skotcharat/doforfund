@@ -38,7 +38,7 @@
                             <div class="row form-group">
 
                                 <div class="col-md-12">
-                                    <label class="text-black" for="email">Username</label>
+                                    <label class="text-black" for="username">Username</label>
                                     <input type="text" id="username" name="username" class="form-control">
                                 </div>
                             </div>

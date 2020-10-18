@@ -22,14 +22,14 @@
           <div class="row">
             <div class="col-md-6 col-lg-6 col-xl-4 text-center mb-5 mb-lg-5">
               <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
-                <h2 class=" display-3 text-primary mb-4 d-block">Step 1</h2>
+                <span class="icon flaticon-camera display-3 text-primary mb-4 d-block"></span>
                 <h3 class="text-black h4">Sign up</h3>
                 <p>We will create an event that every user can sign up for and join on the date</p>
               </div>
             </div>
             <div class="col-md-6 col-lg-6 col-xl-4 text-center mb-5 mb-lg-5">
               <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
-                <h2 class=" display-3 text-primary mb-4 d-block">Step 2</h2>
+                <h2 class=" display-3 text-primary mb-4 d-block">Step 1</h2>
                 <h3 class="text-black h4">Attend</h3>
                 <p>Attend an event following the address that has shown</p>
 
@@ -37,7 +37,7 @@
             </div>
             <div class="col-md-6 col-lg-6 col-xl-4 text-center mb-5 mb-lg-5">
               <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
-                <h2 class=" display-3 text-primary mb-4 d-block">Step 3</h2>
+                <span class="icon flaticon-sheep display-3 text-primary mb-4 d-block"></span>
                 <h3 class="text-black h4">Donation</h3>
                 <p>User can donate cash in the DoForFund box at the event or donate via the website</p>
 
@@ -46,9 +46,9 @@
 
             <div class="col-md-6 col-lg-6 col-xl-4 text-center mb-5 mb-lg-5">
               <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
-                <h2 class=" display-3 text-primary mb-4 d-block">Step 4</h2>
+                <span class="icon flaticon-frame display-3 text-primary mb-4 d-block"></span>
                 <h3 class="text-black h4">Get Picture</h3>
-                <p>We will send you a picture via an email after the event is done.</p>
+                <p>We will send you a picture via email after the event is done./p>
 
               </div>
             </div>
@@ -56,18 +56,9 @@
 
             <div class="col-md-6 col-lg-6 col-xl-4 text-center mb-5 mb-lg-5">
               <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
-                <h2 class=" display-3 text-primary mb-4 d-block">Step 5</h2>
+                <span class="icon flaticon-frame display-3 text-primary mb-4 d-block"></span>
                 <h3 class="text-black h4">informed</h3>
                 <p>Users will be informed of the history of total funds, and the location where the funds are donated</p>
-
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-6 col-xl-4 text-center mb-5 mb-lg-5">
-              <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
-                <span class="icon flaticon-frame display-3 text-primary mb-4 d-block"></span><br>
-                <h3 class="text-black h4">Finish</h3>
-                <p>Join the next event</p>
 
               </div>
             </div>

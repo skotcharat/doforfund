@@ -9,9 +9,33 @@
 
 <div>
     <p class="text-black h2 mb-0 text-center">Your account has been successfully create</p><br><br>
-    <p class="text-center">Edit profile</p><br>
-    <a href="editProfile"  class="text-center"><button class="btn btn-primary py-2 px-4 text-white">Edit Profile</button></a>
+    <p class="text-center">Please Login</p><br>
+    <form action="loginUser" method="GET">
 
+        <div class="row form-group">
+
+            <div class="col-md-12">
+                <label class="text-black" for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control">
+            </div>
+        </div>
+
+        <div class="row form-group">
+
+            <div class="col-md-12">
+                <label class="text-black" for="password">Password</label>
+                <input type="text" id="password" name="password" class="form-control">
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-12">
+                <input type="submit" name="submit" value="Send Message" class="btn btn-primary py-2 px-4 text-white">
+            </div>
+        </div>
+
+
+    </form>
 
 </div>
 <div class="footer py-4">

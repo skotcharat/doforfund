@@ -71,16 +71,12 @@
                                 <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
                             </li>
                             <li>
+                                <a href= 'loginAction'  class="pl-0 pr-3">><button class="btn btn-primary py-2 px-4 text-white">Sign in</button></a>
                                 <c:if test="${pageContext.request.isUserInRole('admin')}">
 
                                     <a href="search.jsp">Sign in</a>
 
                                 </c:if>
-                            </li>
-                            <li>
-                                <a href= 'loginAction'  class="pl-0 pr-3">><button class="btn btn-primary py-2 px-4 text-white">Sign in</button></a>
-
-
                             </li>
                             <li>
                                 <a href="signupAction"><button class="btn btn-primary py-2 px-4 text-white">Sign up</button></a>
