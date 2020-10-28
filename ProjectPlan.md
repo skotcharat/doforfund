@@ -13,72 +13,71 @@
 - [X] Triple-check for Checkpoint 1: Problem statement, project plan, screen design and time log pushed to GitHub. 
 
 ### Week 4
-- [ ] Complete database design
-- [ ] Create the database and user table
-- [ ] Create the user entity class and annotate for hibernate
-- [ ] Create user dao
-- [ ] Create the test database
-- [ ] Create user dao unit tests
-- [ ] Weekly journal entry
-- [ ] Set up logging
-- [ ] Create class uml diagram
-- [ ] Prepare for Week 5 peers design/code review
+- [X] Complete database design
+- [X] Create the database and user table
+- [X] Create the user entity class and annotate for hibernate
+- [X] Create user dao
+- [X] Create the test database
+- [X] Create user dao unit tests
+- [X] Weekly journal entry
+- [X] Set up logging
+- [X] Create class uml diagram
+- [X] Prepare for Week 5 peers design/code review
 
 
 ### Week 5
 
-- [ ] Create the template for all jsps using bootstrap or materialize
-- [ ] Weekly journal entry
-- [ ] Add the role table
-- [ ] Add the role entity
-- [ ] Create the role dao
-- [ ] Create the role dao unit tests
-- [ ] Add a jsp to display user and role
-- [ ] Add jsp to add a user
+- [X] Create the template for all jsps using bootstrap or materialize
+- [X] Weekly journal entry
+- [X] Add the role table
+- [X] Add the role entity
+- [X] Create the role dao
+- [X] Create the role dao unit tests
+- [X] Add a jsp to display user and role
+- [X] Add jsp to add a user
 
 ### Week 6
 
-- [ ] Create db on AWS
-- [ ] Deploy to AWS for first time
-- [ ] Weekly journal entry
-- [ ] Create volunteer table
-- [ ] Add the volunteer entity (test, dev and prod dbs)
-- [ ] Realize that these daos are repetitive. Refactor into a generic dao!
-- [ ] Add update and delete functionality in jsp for user and role
-- [ ] Build the volunteer search jsp
-- [ ] Build the volunteer add/update/delete jsp
-- [ ] Prepare for Checkpoint 2: Database designed and created, at least one DAO implemented with Hibernate, DAO is unit tested, Log4J is implemented (no System.out.printlns), class design and any other diagrams you plan to use have been created. 
+- [X] Create db on AWS
+- [X] Deploy to AWS for first time
+- [X] Weekly journal entry
+- [X] Create volunteer table
+- [X] Add the volunteer entity (test, dev and prod dbs)
+- [X] Realize that these daos are repetitive. Refactor into a generic dao!
+- [X] Add update and delete functionality in jsp for user and role
+- [X] Build the volunteer search jsp
+- [X] Build the volunteer add/update/delete jsp
+- [X] Prepare for Checkpoint 2: Database designed and created, at least one DAO implemented with Hibernate, DAO is unit tested, Log4J is implemented (no System.out.printlns), class design and any other diagrams you plan to use have been created. 
 
 
 ### Week 7
 
-- [ ] Weekly journal entry
-- [ ] Set up authentication locally
-- [ ] Set up authentication on AWS
-- [ ] Add the volunteer Type and Grooming Tables, populate with data, (test, dev and prod dbs)
-- [ ] Create the volunteer Type and Grooming entities
-- [ ] Update volunteer and volunteer report 
-- [ ] Update volunteer and volunteer report tests to be sure they work with the new relationships
-- [ ] Review and incorporate any feedback from Checkpoint 2.
+- [X] Weekly journal entry
+- [X] Set up authentication locally
+- [X] Set up authentication on AWS
+- [X] Add the volunteer Type and Grooming Tables, populate with data, (test, dev and prod dbs)
+- [X] Create the volunteer Type and Grooming entities
+- [X] Update volunteer and volunteer report 
+- [X] Update volunteer and volunteer report tests to be sure they work with the new relationships
+- [X] Review and incorporate any feedback from Checkpoint 2.
 
 
 ### Week 8
 
-- [ ] Weekly journal entry
-- [ ] Integration with google maps api
-- [ ] Create volunteer report table (test, dev and prod dbs)
-- [ ] Add the volunteer report entity
-- [ ] Create the volunteer report dao
-- [ ] Create the volunteer report dao unit tests
-- [ ] Build the volunteer report search jsp
-- [ ] Build the volunteer report crud jsps
-- [ ] Prepare for Checkpoint 3: Deployed to AWS, at least one JSP that displays data from the database is implemented. 
+- [X] Weekly journal entry
+- [X] Integration with google maps api
+- [X] Create volunteer report table (test, dev and prod dbs)
+- [X] Add the volunteer report entity
+- [X] Create the volunteer report dao
+- [X] Create the volunteer report dao unit tests
+- [X] Build the volunteer report search jsp
+- [X] Build the volunteer report crud jsps
+- [X] Prepare for Checkpoint 3: Deployed to AWS, at least one JSP that displays data from the database is implemented. 
 
 ### Week 9
-- [ ] Weekly journal entry
-- [ ] Integration with weather service and/or snow depth data
-- [ ] Review and incorporate feedback from Checkpoint 3.
-- [ ] Carefully review code for standards and best practices - use a code quality tool? 
+- [X] Weekly journal entry
+- [X] Review and incorporate feedback from Checkpoint 3.
+- [X] Carefully review code for standards and best practices - use a code quality tool? 
 
 ### Week 8
 - [ ] Weekly journal entry

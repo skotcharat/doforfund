@@ -10,6 +10,7 @@
 | 10/5/20 | Week 4,5 Exercise, create one to many and many to one and doa test in DB|7  | Week6  |
 | 10/7/20 | Week 6 Exercise, create generic Dao and EC2 AWS account|5  | Week7  |
 | 10/8/20 | Week 8 Exercise, create RESTful Web Service in Java|2  | Week8  |
+| 10/8/20 | Peer feedback|0.5 | Week9  |
 
              
 
