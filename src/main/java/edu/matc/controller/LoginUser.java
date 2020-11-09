@@ -51,7 +51,7 @@ public class LoginUser extends HttpServlet {
         logger.debug("Sending back the User..." + user);
 
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/newUser.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/login.jsp");
         dispatcher.forward(req, resp);
     }
 

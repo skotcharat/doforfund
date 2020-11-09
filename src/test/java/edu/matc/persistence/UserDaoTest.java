@@ -115,6 +115,7 @@ class UserDaoTest {
 
     /**
      * Verify successful get by property (equal match)
+     * propertyName is name match in the User table
      */
     @Test
     void getByPropertyEqualSuccess() {

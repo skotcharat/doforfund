@@ -15,7 +15,7 @@
 
     <property name="connection.username">root</property>
 
-    <property name="connection.password">uBUs4XoxU9UsEw</property>
+    <property name="connection.password">student</property>
 
 
     <property name="hibernate.c3p0.min_size">5</property>
@@ -31,6 +31,7 @@
     <mapping class="edu.matc.entity.User"/>
     <mapping class="edu.matc.entity.UserRole"/>
     <mapping class="edu.matc.entity.Contact"/>
+    <mapping class="edu.matc.entity.Donation"/>
 
 </session-factory>
 

@@ -26,9 +26,6 @@ public class Donation { // @OneToMany
     @Column(name = "sumAmount")
     private int sumAmount;
 
-    @Column(name = "user_id")
-    private int user_id;
-
     @Column(name = "date")
     private String date;
 
@@ -71,37 +68,27 @@ public class Donation { // @OneToMany
      * @param amount      the amount
      * @param howToDonate the how to donate
      * @param sumAmount   the sum amount
-     * @param user_id     the user id
      * @param date        the date
      * @param user        the user
      */
-    public Donation(int id, int amount, String howToDonate, int sumAmount, int user_id, String date, User user) {
+    public Donation(int id, int amount, String howToDonate, int sumAmount, String date, User user) {
         this.id = id;
         this.amount = amount;
         this.howToDonate = howToDonate;
         this.sumAmount = sumAmount;
-        this.user_id = user_id;
         this.date = date;
         this.user = user;
     }
 
     /**
-     * Gets user id.
-     *
-     * @return the user id
+     * Instantiates a new Donation.
+     * @param amount the amount
      */
-    public int getUser_id() {
-        return user_id;
+    public Donation(int amount) {
+        this.amount = amount;
     }
 
-    /**
-     * Sets user id.
-     *
-     * @param user_id the user id
-     */
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
+
 
     /**
      * Gets id.

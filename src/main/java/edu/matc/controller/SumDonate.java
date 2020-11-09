@@ -1,7 +1,8 @@
 package edu.matc.controller;
 
 
-import edu.matc.entity.Contact;
+
+import edu.matc.entity.Donation;
 import edu.matc.entity.User;
 import edu.matc.persistence.GenericDao;
 import edu.matc.util.DaoFactory;
@@ -22,34 +23,30 @@ import java.io.IOException;
  */
 
 @WebServlet
-        (urlPatterns = { "/signupInfo" } )
+        (urlPatterns = { "/sumDonate" } )
 
 
 
-public class SignupInfo extends HttpServlet {
+public class SumDonate extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        GenericDao<Donation> genericDao = DaoFactory.createDao(Donation.class);
+        int amount = Integer.parseInt(req.getParameter("amount"));
+
+        Donation donation = new Donation(amount);
+
+        int newId = genericDao.insert(donation);
+
+        Donation donation2 = genericDao.getById(newId);
+        req.setAttribute("donateAmount", donation2);
+        logger.debug("Sending back the donateAmount/s..." + donation2);
 
 
-
-        GenericDao<User> genericDao = DaoFactory.createDao(User.class);
-
-        User newUser = new User(req.getParameter("fname"), req.getParameter("lname"),
-                req.getParameter("username"), req.getParameter("password"), req.getParameter("email"));
-
-
-        int newId = genericDao.insert(newUser);
-
-        User user = genericDao.getById(newId);
-        req.setAttribute("newUser", user);
-        logger.debug("Sending back the User..." + user);
-
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/login.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/sumDonation.jsp");
         dispatcher.forward(req, resp);
     }
 

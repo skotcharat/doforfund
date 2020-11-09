@@ -59,7 +59,7 @@
                                 </ul>
                             </li>
                             <li><a href="contact.jsp">Contact</a></li>
-                            <li><a href="danate.jsp"><button class="btn btn-primary py-2 px-4 text-white">DONATION</button></a></li>
+                            <li><a href="donate.jsp"><button class="btn btn-primary py-2 px-4 text-white">DONATION</button></a></li>
                         </ul>
                     </nav>
                 </div>
@@ -68,10 +68,7 @@
                     <div class="d-none d-xl-inline-block">
                         <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
                             <li>
-                                <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                            </li>
-                            <li>
-                                <a href= 'loginAction'  class="pl-0 pr-3">><button class="btn btn-primary py-2 px-4 text-white">Sign in</button></a>
+                                <a href= 'loginAction'  class="pl-0 pr-3"><button class="btn btn-primary py-2 px-4 text-white">Sign in</button></a>
                                 <c:if test="${pageContext.request.isUserInRole('admin')}">
 
                                     <a href="search.jsp">Sign in</a>

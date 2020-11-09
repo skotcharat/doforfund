@@ -2,7 +2,13 @@ package com.api;
 
 import java.util.List;
 
-public class Response{
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+@JsonIgnoreProperties(ignoreUnknown=true)
+public class Response1{
+
+
+	@JsonProperty("postalCodes")
 	private List<PostalCodesItem> postalCodes;
 
 	public void setPostalCodes(List<PostalCodesItem> postalCodes){
@@ -16,7 +22,7 @@ public class Response{
 	@Override
  	public String toString(){
 		return 
-			"Response{" + 
+			"Response1{" + 
 			"postalCodes = '" + postalCodes + '\'' + 
 			"}";
 		}

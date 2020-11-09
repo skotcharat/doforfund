@@ -8,34 +8,14 @@
 <jsp:include page="header.jsp" />
 
 <div>
-    <p class="text-black h2 mb-0 text-center">Your account has been successfully create</p><br><br>
-    <p class="text-center">Please Login</p><br>
-    <form action="loginUser" method="GET">
-
-        <div class="row form-group">
-
-            <div class="col-md-12">
-                <label class="text-black" for="username">Username</label>
-                <input type="text" id="username" name="username" class="form-control">
-            </div>
-        </div>
-
-        <div class="row form-group">
-
-            <div class="col-md-12">
-                <label class="text-black" for="password">Password</label>
-                <input type="text" id="password" name="password" class="form-control">
-            </div>
-        </div>
-
-        <div class="row form-group">
-            <div class="col-md-12">
-                <input type="submit" name="submit" value="Send Message" class="btn btn-primary py-2 px-4 text-white">
-            </div>
-        </div>
+    <p class="text-black h2 mb-0 text-center">Thank you. We were received your Fund</p><br><br>
+    <p class="text-center">Your Fund is</p><br>
+    <p class="text-center">${donateAmount.amount}</p><br><br>
+    <p class="text-center">Total Fund</p><br>
+    <p class="text-center">${donateAmount.sumAmount}</p><br><br>
 
 
-    </form>
+    <p class="text-black h4 mb-0 text-center"></p><br><br><br><br><br><br><br>
 
 </div>
 <div class="footer py-4">
