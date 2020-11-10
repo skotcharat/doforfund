@@ -10,9 +10,9 @@
 <div>
     <p class="text-black h2 mb-0 text-center">Thank you. We were received your Fund</p><br><br>
     <p class="text-center">Your Fund is</p><br>
-    <p class="text-center">${donateAmount.amount}</p><br><br>
+    <p class="text-center">$${donateAmount.amount}.00</p><br><br>
     <p class="text-center">Total Fund</p><br>
-    <p class="text-center">${donateAmount.sumAmount}</p><br><br>
+    <p class="text-center">$${totalAmount.sumAmount}.00</p><br><br>
 
 
     <p class="text-black h4 mb-0 text-center"></p><br><br><br><br><br><br><br>

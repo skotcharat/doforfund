@@ -27,9 +27,6 @@ public class Event { // @OneToMany
     @Column(name = "eventTime")
     private String eventTime;
 
-    @Column(name = "user_id")
-    private String user_id;
-
     @Column(name = "picture")
     private Encoder.Binary picture;
 
@@ -77,12 +74,11 @@ public class Event { // @OneToMany
      * @param picture    the picture
      * @param user       the user
      */
-    public Event(int id, String eventName, String eventPlace, String eventTime, String user_id, Encoder.Binary picture, User user) {
+    public Event(int id, String eventName, String eventPlace, String eventTime, Encoder.Binary picture, User user) {
         this.id = id;
         this.eventName = eventName;
         this.eventPlace = eventPlace;
         this.eventTime = eventTime;
-        this.user_id = user_id;
         this.picture = picture;
         this.user = user;
     }
@@ -159,23 +155,6 @@ public class Event { // @OneToMany
         this.eventTime = eventTime;
     }
 
-    /**
-     * Gets user id.
-     *
-     * @return the user id
-     */
-    public String getUser_id() {
-        return user_id;
-    }
-
-    /**
-     * Sets user id.
-     *
-     * @param user_id the user id
-     */
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
-    }
 
     /**
      * Gets picture.

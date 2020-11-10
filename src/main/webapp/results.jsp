@@ -35,17 +35,10 @@
                 <td>${allUser.id}</td>
                 <td>${allUser.firstName} ${allUser.lastName}</td>
                 <td>${allUser.userName}</td>
-
-
             </tr>
         </c:forEach>
 
-
-
-
-
     </table>
-
 
     <a href="index.jsp">Back to homepage</a>
 

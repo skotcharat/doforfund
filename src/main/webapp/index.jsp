@@ -27,7 +27,7 @@
                   <h2 class="mb-3">Portrait</h2>
                   <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
-                <img src="images/img_2.jpg" alt="Image">
+                <img src="images/img2.jpg" alt="Image">
               </div>
             </div>
             <div class="swiper-slide">
@@ -36,7 +36,7 @@
                   <h2 class="mb-3">People</h2>
                   <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
-                <img src="images/img_3.jpg" alt="Image">
+                <img src="images/img3.jpg" alt="Image">
               </div>
             </div>
             <div class="swiper-slide">
@@ -45,7 +45,7 @@
                   <h2 class="mb-3">Architecture</h2>
                   <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
-                <img src="images/img_4.jpg" alt="Image">
+                <img src="images/img4.jpg" alt="Image">
               </div>
             </div>
             <div class="swiper-slide">
@@ -54,16 +54,16 @@
                   <h2 class="mb-3">Animals</h2>
                   <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
-                <img src="images/img_5.jpg" alt="Image">
+                <img src="images/img5.jpg" alt="Image">
               </div>
             </div>
             <div class="swiper-slide">
               <div class="image-wrap">
                 <div class="image-info">
-                  <h2 class="mb-3">Sports</h2>
+                  <h2 class="mb-3">Baby</h2>
                   <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
-                <img src="images/img_6.jpg" alt="Image">
+                <img src="images/img6.jpg" alt="Image">
               </div>
             </div>
             <div class="swiper-slide">
@@ -72,7 +72,7 @@
                   <h2 class="mb-3">Travel</h2>
                   <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
-                <img src="images/img_7.jpg" alt="Image">
+                <img src="images/img7.jpg" alt="Image">
               </div>
             </div>
         </div>

@@ -75,7 +75,7 @@ public class Donation { // @OneToMany
         this.id = id;
         this.amount = amount;
         this.howToDonate = howToDonate;
-        this.sumAmount = sumAmount;
+        this.sumAmount += amount;
         this.date = date;
         this.user = user;
     }
@@ -159,7 +159,7 @@ public class Donation { // @OneToMany
      * @param sumAmount the sum amount
      */
     public void setSumAmount(int sumAmount) {
-        this.sumAmount = sumAmount + amount;
+        this.sumAmount += amount;
     }
 
     /**

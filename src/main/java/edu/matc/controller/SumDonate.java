@@ -40,11 +40,17 @@ public class SumDonate extends HttpServlet {
         Donation donation = new Donation(amount);
 
         int newId = genericDao.insert(donation);
-
+        // get the donation current amount
         Donation donation2 = genericDao.getById(newId);
         req.setAttribute("donateAmount", donation2);
         logger.debug("Sending back the donateAmount/s..." + donation2);
 
+        // get the donation total amount
+        int total = 0;
+        for(int i = 0; i < genericDao.getAll().size(); i++) {
+            //total += (Integer)genericDao.getById(i);
+        }
+        req.setAttribute("totalAmount", genericDao.getAll().size());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/sumDonation.jsp");
         dispatcher.forward(req, resp);
