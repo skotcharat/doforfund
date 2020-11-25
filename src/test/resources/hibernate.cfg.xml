@@ -34,6 +34,7 @@
     <mapping class="edu.matc.entity.UserRole"/>
     <mapping class="edu.matc.entity.Contact"/>
     <mapping class="edu.matc.entity.Donation"/>
+    <mapping class="edu.matc.entity.Event"/>
 
 </session-factory>
 

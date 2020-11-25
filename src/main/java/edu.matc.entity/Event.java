@@ -5,6 +5,8 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.websocket.Encoder;
+import java.sql.Time;
+import java.util.Date;
 
 /**
  * The type Order.
@@ -24,11 +26,15 @@ public class Event { // @OneToMany
     @Column(name = "eventPlace")
     private String eventPlace;
 
-    @Column(name = "eventTime")
-    private String eventTime;
+    @Column(name = "eventDate")
+    private Date eventDate;
 
-    @Column(name = "picture")
-    private Encoder.Binary picture;
+    @Column(name = "eventTime")
+    private Time eventTime;
+
+    @Column(name = "eventDescription")
+    private String eventDescription;
+
 
 
 
@@ -66,39 +72,37 @@ public class Event { // @OneToMany
     /**
      * Instantiates a new Event.
      *
-     * @param id         the id
      * @param eventName  the event name
      * @param eventPlace the event place
+     * @param eventDate  the event Date
      * @param eventTime  the event time
-     * @param user_id    the user id
-     * @param picture    the picture
-     * @param user       the user
+     * @param eventDescription  the event Description
      */
-    public Event(int id, String eventName, String eventPlace, String eventTime, Encoder.Binary picture, User user) {
-        this.id = id;
+    public Event(String eventName, String eventPlace, Date eventDate, Time eventTime, String eventDescription) {
         this.eventName = eventName;
         this.eventPlace = eventPlace;
+        this.eventDate = eventDate;
         this.eventTime = eventTime;
-        this.picture = picture;
-        this.user = user;
+        this.eventDescription = eventDescription;
+
     }
 
     /**
-     * Gets id.
+     * Gets event description.
      *
-     * @return the id
+     * @return the event description
      */
-    public int getId() {
-        return id;
+    public String getEventDescription() {
+        return eventDescription;
     }
 
     /**
-     * Sets id.
+     * Sets event description.
      *
-     * @param id the id
+     * @param eventDescription the event description
      */
-    public void setId(int id) {
-        this.id = id;
+    public void setEventDescription(String eventDescription) {
+        this.eventDescription = eventDescription;
     }
 
     /**
@@ -138,11 +142,29 @@ public class Event { // @OneToMany
     }
 
     /**
+     * Gets event date.
+     *
+     * @return the event date
+     */
+    public Date getEventDate() {
+        return eventDate;
+    }
+
+    /**
+     * Sets event date.
+     *
+     * @param eventDate the event date
+     */
+    public void setEventDate(Date eventDate) {
+        this.eventDate = eventDate;
+    }
+
+    /**
      * Gets event time.
      *
      * @return the event time
      */
-    public String getEventTime() {
+    public Time getEventTime() {
         return eventTime;
     }
 
@@ -151,44 +173,7 @@ public class Event { // @OneToMany
      *
      * @param eventTime the event time
      */
-    public void setEventTime(String eventTime) {
+    public void setEventTime(Time eventTime) {
         this.eventTime = eventTime;
-    }
-
-
-    /**
-     * Gets picture.
-     *
-     * @return the picture
-     */
-    public Encoder.Binary getPicture() {
-        return picture;
-    }
-
-    /**
-     * Sets picture.
-     *
-     * @param picture the picture
-     */
-    public void setPicture(Encoder.Binary picture) {
-        this.picture = picture;
-    }
-
-    /**
-     * Gets user.
-     *
-     * @return the user
-     */
-    public User getUser() {
-        return user;
-    }
-
-    /**
-     * Sets user.
-     *
-     * @param user the user
-     */
-    public void setUser(User user) {
-        this.user = user;
     }
 }

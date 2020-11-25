@@ -21,7 +21,7 @@
 
                 <div class="row">
                     <div class="col-lg-8 mb-5">
-                        <form action="editProfileAction" method="post">
+                        <form action="editProfileAction" method="get">
 
 
                             <div class="row form-group">

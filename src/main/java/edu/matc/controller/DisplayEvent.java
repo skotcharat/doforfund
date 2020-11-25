@@ -1,7 +1,7 @@
 package edu.matc.controller;
 
 
-import edu.matc.entity.Donation;
+import edu.matc.entity.Event;
 import edu.matc.entity.User;
 import edu.matc.persistence.GenericDao;
 import edu.matc.util.DaoFactory;
@@ -23,24 +23,25 @@ import java.util.List;
  */
 
 @WebServlet
-        (urlPatterns = { "/DisplayProfiles" } )
+        (urlPatterns = { "/displayEvent" } )
 
 
 
-public class Displayprofile extends HttpServlet {
+public class DisplayEvent extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        
-        GenericDao<User> dao = DaoFactory.createDao(User.class);
-        User user = dao.getById(1);
 
-        req.setAttribute("users", user);
-        logger.debug("Sending back the user..." + user);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/displayProfile.jsp");
+        GenericDao<Event> dao = DaoFactory.createDao(Event.class);
+        List<Event> allEvent = dao.getAll();
+
+        req.setAttribute("allEvents", allEvent);
+        logger.debug("Sending back the allEvents..." + allEvent);
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/event.jsp");
         dispatcher.forward(req, resp);
     }
 

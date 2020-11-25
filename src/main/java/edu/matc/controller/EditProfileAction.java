@@ -25,7 +25,7 @@ public class EditProfileAction extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 //        User updateUser = new User(req.getParameter("fname"), req.getParameter("lname"),
 //                req.getParameter("username"), req.getParameter("password"), req.getParameter("email"));
@@ -40,7 +40,7 @@ public class EditProfileAction extends HttpServlet {
         genericDao.saveOrUpdate(userBeforeUpdate);
 
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/displayProfile.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/DisplayProfiles");
         dispatcher.forward(req, resp);
     }
 

@@ -10,18 +10,23 @@
 
 <div class="site-section" data-aos="fade">
     <div class="container-fluid">
-        <p class="text-center">Id: ${id}</p><br>
-     <p class="text-center">First Name: ${first_Name}</p><br>
-     <p class="text-center">Last Name: ${last_Name}</p><br>
-     <p class="text-center">User Name: ${user_Name}</p><br>
-     <p class="text-center">Password: ${pass_word}</p><br>
-     <p class="text-center">Email: ${e_mail}</p><br><br>
-     <a href="editProfileWithId?EditWithId=${id}"><button class="text-center"  class="btn btn-primary py-2 px-4 text-white">Edit Profile</button></a><a class="text-center" href="editProfile.jsp"><button class="btn btn-primary py-2 px-4 text-white">Edit Profile</button></a>
+        <h1 class="text-center">Your Profile</h1><br>
+     <p class="text-center"><span style="font-size:1vw;">Id: </span>${users.id}</p><br>
+     <p class="text-center"><span style="font-size:1vw;">First Name: </span>${users.firstName}</p><br>
+     <p class="text-center"><span style="font-size:1vw;">Last Name: </span>${users.lastName}</p><br>
+     <p class="text-center"><span style="font-size:1vw;">User Name: </span>${users.userName}</p><br>
+     <p class="text-center"><span style="font-size:1vw;">Password: </span>${users.password}</p><br>
+     <p class="text-center"><span style="font-size:1vw;">Email: </span>${users.email}</p><br><br>
 
 
     </div>
+    <div class="container-fluid">
+    <div class="col-md-12">
+      <a href="editProfileWithId?EditWithId=${id}"><button class="text-center"  class="btn btn-primary py-2 px-4 text-white">Edit Profile</button></a>
+    </div>
+    </div>
 
-<div class="footer py-4">
+    <div class="footer py-4">
     <div class="container-fluid text-center">
         <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

@@ -16,16 +16,18 @@
         <div class="col-md-7">
           <div class="row mb-5">
             <div class="col-12 ">
-              <h2 class="site-section-heading text-center">Our Services</h2>
+              <h2 class="site-section-heading text-center">$Our Events</h2>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6 col-lg-6 col-xl-4 text-center mb-5 mb-lg-5">
               <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
                 <span class="icon flaticon-camera display-3 text-primary mb-4 d-block"></span>
-                <h3 class="text-black h4">Camera</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem quae id dolorum debitis.</p>
-                <p><strong class="font-weight-bold text-primary">$29</strong></p>
+                <h3 class="text-black h4">${allEvents.eventName}</h3>
+                <p>{allEvents.eventDescription}</p>
+                <p>At <strong class="font-weight-bold text-primary">${allEvents.eventPlace}</strong></p>
+                <p><strong class="font-weight-bold text-primary">${allEvents.eventDate}</strong></p>
+                <p><strong class="font-weight-bold text-primary">${allEvents.eventTime}</strong></p>
               </div>
             </div>
             <div class="col-md-6 col-lg-6 col-xl-4 text-center mb-5 mb-lg-5">
