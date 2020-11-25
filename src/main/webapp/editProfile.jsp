@@ -21,17 +21,17 @@
 
                 <div class="row">
                     <div class="col-lg-8 mb-5">
-                        <form action="editProfileAction" method="GET">
+                        <form action="editProfileAction" method="post">
 
 
                             <div class="row form-group">
                                 <div class="col-md-6 mb-3 mb-md-0">
                                     <label class="text-black" for="fname">First Name</label>
-                                    <input type="text" id="fname" name="fname" class="form-control">
+                                    <input type="text" id="fname" name="fname" class="form-control" value="${userEdit.firstName}">
                                 </div>
                                 <div class="col-md-6">
                                     <label class="text-black" for="lname">Last Name</label>
-                                    <input type="text" id="lname" name="lname" class="form-control">
+                                    <input type="text" id="lname" name="lname" class="form-control" value="${userEdit.lastName}">
                                 </div>
                             </div>
 
@@ -39,7 +39,7 @@
 
                                 <div class="col-md-12">
                                     <label class="text-black" for="username">Username</label>
-                                    <input type="text" id="username" name="username" class="form-control">
+                                    <input type="text" id="username" name="username" class="form-control" value="${userEdit.userName}">
                                 </div>
                             </div>
 
@@ -47,7 +47,7 @@
 
                                 <div class="col-md-12">
                                     <label class="text-black" for="password">Password</label>
-                                    <input type="text" id="password" name="password" class="form-control">
+                                    <input type="text" id="password" name="password" class="form-control" value="${userEdit.password}">
                                 </div>
                             </div>
 
@@ -55,7 +55,7 @@
 
                                 <div class="col-md-12">
                                     <label class="text-black" for="email">Email</label>
-                                    <input type="text" id="email" name="email" class="form-control">
+                                    <input type="text" id="email" name="email" class="form-control" value="${userEdit.email}">
                                 </div>
                             </div>
 

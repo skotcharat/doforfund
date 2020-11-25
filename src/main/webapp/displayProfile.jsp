@@ -10,12 +10,13 @@
 
 <div class="site-section" data-aos="fade">
     <div class="container-fluid">
+        <p class="text-center">Id: ${id}</p><br>
      <p class="text-center">First Name: ${first_Name}</p><br>
      <p class="text-center">Last Name: ${last_Name}</p><br>
      <p class="text-center">User Name: ${user_Name}</p><br>
      <p class="text-center">Password: ${pass_word}</p><br>
      <p class="text-center">Email: ${e_mail}</p><br><br>
-     <a class="text-center" href="editProfileWithId?id=1"><button class="btn btn-primary py-2 px-4 text-white">Edit Profile</button></a><a class="text-center" href="editProfile.jsp"><button class="btn btn-primary py-2 px-4 text-white">Edit Profile</button></a>
+     <a href="editProfileWithId?EditWithId=${id}"><button class="text-center"  class="btn btn-primary py-2 px-4 text-white">Edit Profile</button></a><a class="text-center" href="editProfile.jsp"><button class="btn btn-primary py-2 px-4 text-white">Edit Profile</button></a>
 
 
     </div>

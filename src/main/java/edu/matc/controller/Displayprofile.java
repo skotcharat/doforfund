@@ -36,12 +36,14 @@ public class Displayprofile extends HttpServlet {
         
         GenericDao<User> dao = DaoFactory.createDao(User.class);
         User user = dao.getById(1);
+        int idUser = user.getId();
         String firstName = user.getFirstName();
         String lastName = user.getLastName();
         String userName = user.getUserName();
         String password = user.getPassword();
         String email = user.getEmail();
 
+        req.setAttribute("id", idUser);
         req.setAttribute("first_Name", firstName);
         req.setAttribute("last_Name", lastName);
         req.setAttribute("user_Name", userName);
