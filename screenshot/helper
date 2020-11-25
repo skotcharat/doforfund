@@ -16,5 +16,6 @@ uBUs4XoxU9UsEw
 ssh -i "ent java fall 2020.pem" ubuntu@ec2-13-58-132-122.us-east-2.compute.amazonaws.com
 
 
-passwrod for tomcat
+
+password for tomcat
 context.xml---.connectionURL="jdbc:mysql://localhost:3306/funfund?user=tomcat&amp;password=tomcat113"

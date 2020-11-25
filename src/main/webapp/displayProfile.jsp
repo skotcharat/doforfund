@@ -15,10 +15,10 @@
      <p class="text-center">User Name: ${user_Name}</p><br>
      <p class="text-center">Password: ${pass_word}</p><br>
      <p class="text-center">Email: ${e_mail}</p><br><br>
-        <a href="editProfile.jsp"><button class="btn btn-primary py-2 px-4 text-white">Edit Profile</button></a>
+     <a class="text-center" href="editProfileWithId?id=1"><button class="btn btn-primary py-2 px-4 text-white">Edit Profile</button></a><a class="text-center" href="editProfile.jsp"><button class="btn btn-primary py-2 px-4 text-white">Edit Profile</button></a>
 
 
-</div>
+    </div>
 
 <div class="footer py-4">
     <div class="container-fluid text-center">

@@ -122,6 +122,6 @@ class UserRoleDaoTest {
     @Test
     void getByPropertyLike() {
         List<UserRole> userRoles = genericDao.getByPropertyLike("roleName", "n");
-        assertEquals(4, userRoles.size());
+        assertEquals(3, userRoles.size());
     }
 }

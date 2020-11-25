@@ -47,9 +47,9 @@ class UserDaoTest {
      */
     @Test
     void getById() {
-        User retrievedUser = (User)genericDao.getById(1);
+        User retrievedUser = (User)genericDao.getById(2);
         assertNotNull(retrievedUser);
-        assertEquals("Joe", retrievedUser.getFirstName());
+        assertEquals("Fred", retrievedUser.getFirstName());
     }
 
     /**
@@ -57,11 +57,11 @@ class UserDaoTest {
      */
     @Test
     void insert() {
-        User newUser = new User("ying", "kot", "yk", "yk@mail.com");
+        User newUser = new User("steven", "kot", "ypp", "yk@mail.com");
         int id = genericDao.insert(newUser);
         assertNotEquals(0,id);
         User insertedUser = (User)genericDao.getById(id);
-        String expectedUser = "ying";
+        String expectedUser = "steven";
         String actualUser = insertedUser.getFirstName();
         assertTrue(expectedUser.equals(actualUser));
 
