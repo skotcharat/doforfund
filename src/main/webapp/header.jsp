@@ -41,7 +41,7 @@
                             <li class="has-children">
                                 <a href="single.jsp">Gallery</a>
                                 <ul class="dropdown">
-                                    <li><a href="#">Nature</a></li>
+                                    <li><a href="https://drive.google.com/drive/folders/17dePQfVGUFUZMAHkWjDyenqerowAqEsx?usp=sharing">Nature</a></li>
                                     <li><a href="#">Portrait</a></li>
                                     <li><a href="#">People</a></li>
                                     <li><a href="#">Architecture</a></li>

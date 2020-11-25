@@ -16,7 +16,7 @@
               <div class="image-wrap">
                 <div class="image-info">
                   <h2 class="mb-3">Nature</h2>
-                  <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                  <a href="https://drive.google.com/drive/folders/1gaaZEdI5BohYPwKH3PDx43wqn1LS1wSE?usp=sharing" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
                 <img src="images/img1.jpg" alt="Image">
               </div>
@@ -25,7 +25,7 @@
               <div class="image-wrap">
                 <div class="image-info">
                   <h2 class="mb-3">Portrait</h2>
-                  <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                  <a href="https://drive.google.com/drive/folders/1gmuIASFVc7PcpT5112jV-d77QFTiU42v?usp=sharing" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
                 <img src="images/img2.jpg" alt="Image">
               </div>
@@ -34,7 +34,7 @@
               <div class="image-wrap">
                 <div class="image-info">
                   <h2 class="mb-3">People</h2>
-                  <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                  <a href="https://drive.google.com/drive/folders/1vz7JGWWEFpUrmTmPplH3EMAN6MnQexuq?usp=sharing" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
                 <img src="images/img3.jpg" alt="Image">
               </div>
@@ -43,7 +43,7 @@
               <div class="image-wrap">
                 <div class="image-info">
                   <h2 class="mb-3">Architecture</h2>
-                  <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                  <a href="https://drive.google.com/drive/folders/1a6Oba41KueTWE07oFyJMxLrLlQx3vcnl?usp=sharing" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
                 <img src="images/img4.jpg" alt="Image">
               </div>
@@ -52,7 +52,7 @@
               <div class="image-wrap">
                 <div class="image-info">
                   <h2 class="mb-3">Animals</h2>
-                  <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                  <a href="https://drive.google.com/drive/folders/1ZqJ01n0ubsj1evkQ_50ND2V_5uisTg4b?usp=sharing" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
                 <img src="images/img5.jpg" alt="Image">
               </div>
@@ -61,7 +61,7 @@
               <div class="image-wrap">
                 <div class="image-info">
                   <h2 class="mb-3">Baby</h2>
-                  <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                  <a href="https://drive.google.com/drive/folders/1O_0hlS5QOpngYvdL7fOTBrdmM92uKNkH?usp=sharing" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
                 <img src="images/img6.jpg" alt="Image">
               </div>
@@ -70,7 +70,7 @@
               <div class="image-wrap">
                 <div class="image-info">
                   <h2 class="mb-3">Travel</h2>
-                  <a href="single.jsp" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                  <a href="https://drive.google.com/drive/folders/1YYlZsTixYYOq2lUaS0XW2NZYNjdytou1?usp=sharing" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
                 <img src="images/img7.jpg" alt="Image">
               </div>
