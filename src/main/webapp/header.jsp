@@ -37,7 +37,7 @@
                             <li><a href="index.jsp">Home</a></li>
                             <li class="active"><a href="about.jsp">About Us</a></li>
                             <li class="active"><a href="howItWorks.jsp">How It Works</a></li>
-                            <li  class="active"><a href="event.jsp">Event</a></li>
+                            <li  class="active"><a href="displayEvent">Event</a></li>
                             <li class="has-children">
                                 <a href="single.jsp">Gallery</a>
                                 <ul class="dropdown">

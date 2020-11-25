@@ -4,6 +4,7 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import javax.websocket.Encoder;
 import java.sql.Time;
 import java.util.Date;
@@ -21,16 +22,19 @@ public class Event { // @OneToMany
     private int id;
 
     @Column(name = "eventName")
+    @NotEmpty(message = "Please provide a eventName")
     private String eventName;
 
     @Column(name = "eventPlace")
     private String eventPlace;
 
+
+
     @Column(name = "eventDate")
-    private Date eventDate;
+    private String eventDate;
 
     @Column(name = "eventTime")
-    private Time eventTime;
+    private String eventTime;
 
     @Column(name = "eventDescription")
     private String eventDescription;
@@ -63,7 +67,7 @@ public class Event { // @OneToMany
     private User user;
 
     /**
-     * Instantiates a new Order.
+     * Instantiates a new Event.
      */
     public Event() {
 
@@ -78,13 +82,31 @@ public class Event { // @OneToMany
      * @param eventTime  the event time
      * @param eventDescription  the event Description
      */
-    public Event(String eventName, String eventPlace, Date eventDate, Time eventTime, String eventDescription) {
+    public Event(String eventName, String eventPlace, String eventDate, String eventTime, String eventDescription) {
         this.eventName = eventName;
         this.eventPlace = eventPlace;
         this.eventDate = eventDate;
         this.eventTime = eventTime;
         this.eventDescription = eventDescription;
 
+    }
+
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
@@ -146,7 +168,7 @@ public class Event { // @OneToMany
      *
      * @return the event date
      */
-    public Date getEventDate() {
+    public String getEventDate() {
         return eventDate;
     }
 
@@ -155,7 +177,7 @@ public class Event { // @OneToMany
      *
      * @param eventDate the event date
      */
-    public void setEventDate(Date eventDate) {
+    public void setEventDate(String eventDate) {
         this.eventDate = eventDate;
     }
 
@@ -164,7 +186,7 @@ public class Event { // @OneToMany
      *
      * @return the event time
      */
-    public Time getEventTime() {
+    public String getEventTime() {
         return eventTime;
     }
 
@@ -173,7 +195,7 @@ public class Event { // @OneToMany
      *
      * @param eventTime the event time
      */
-    public void setEventTime(Time eventTime) {
+    public void setEventTime(String eventTime) {
         this.eventTime = eventTime;
     }
 }

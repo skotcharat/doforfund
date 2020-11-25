@@ -1,8 +1,9 @@
 package edu.matc.controller;
 
-
+import edu.matc.entity.Contact;
 import edu.matc.entity.Event;
 import edu.matc.entity.User;
+import edu.matc.entity.UserRole;
 import edu.matc.persistence.GenericDao;
 import edu.matc.util.DaoFactory;
 import org.apache.logging.log4j.LogManager;
@@ -15,32 +16,33 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
-
 /**
  * A simple servlet to welcome the user.
  * @author pwaite
  */
 
 @WebServlet
-        (urlPatterns = { "/displayEvent" } )
-
-public class DisplayEvent extends HttpServlet {
-
+        (urlPatterns = { "/addEventAction" } )
+public class AddEventAction extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        GenericDao<Event> genericDao = DaoFactory.createDao(Event.class);
 
-        GenericDao<Event> dao = DaoFactory.createDao(Event.class);
-        List<Event> allEvents = dao.getAll();
+        Event newEvent = new Event(req.getParameter("eventName"), req.getParameter("eventPlace"),
+                req.getParameter("eventDate"), req.getParameter("eventTime"), req.getParameter("eventDescription"));
 
-        req.setAttribute("allEvent", allEvents);
-        logger.debug("Sending back the allEvents..." + allEvents);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/event.jsp");
+        int newId = genericDao.insert(newEvent);
+
+        Event events  = genericDao.getById(newId);
+        req.setAttribute("eventInfo", events);
+        logger.debug("Sending back the events..." + events);
+
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/addEventSuccess.jsp");
         dispatcher.forward(req, resp);
     }
-
 }
