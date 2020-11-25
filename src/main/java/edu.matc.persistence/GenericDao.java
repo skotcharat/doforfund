@@ -1,12 +1,9 @@
 package edu.matc.persistence;
 
 
-import edu.matc.entity.User;
-import edu.matc.entity.UserRole;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -158,9 +155,6 @@ public class GenericDao<T> {
         session.close();
         return entities;
     }
-
-
-
 
 
 

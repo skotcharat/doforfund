@@ -3,7 +3,6 @@ package edu.matc.controller;
 
 
 import edu.matc.entity.Donation;
-import edu.matc.entity.User;
 import edu.matc.persistence.GenericDao;
 import edu.matc.util.DaoFactory;
 import org.apache.logging.log4j.LogManager;
@@ -16,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * A simple servlet to welcome the user.
@@ -24,7 +24,6 @@ import java.io.IOException;
 
 @WebServlet
         (urlPatterns = { "/sumDonate" } )
-
 
 
 public class SumDonate extends HttpServlet {
@@ -38,7 +37,6 @@ public class SumDonate extends HttpServlet {
         int amount = Integer.parseInt(req.getParameter("amount"));
 
         Donation donation = new Donation(amount);
-
         int newId = genericDao.insert(donation);
         // get the donation current amount
         Donation donation2 = genericDao.getById(newId);
@@ -46,11 +44,11 @@ public class SumDonate extends HttpServlet {
         logger.debug("Sending back the donateAmount/s..." + donation2);
 
         // get the donation total amount
-        int total = 0;
+        List<Donation> total = null;
         for(int i = 0; i < genericDao.getAll().size(); i++) {
-            //total += (Integer)genericDao.getById(i);
+
         }
-        req.setAttribute("totalAmount", genericDao.getAll().size());
+        req.setAttribute("totalAmount", total);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/sumDonation.jsp");
         dispatcher.forward(req, resp);

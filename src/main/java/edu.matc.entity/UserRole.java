@@ -62,6 +62,8 @@ public class UserRole { // @OneToMany
         this.user = user;
     }
 
+
+
     /**
      * Gets id.
      *

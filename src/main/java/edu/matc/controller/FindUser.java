@@ -43,7 +43,6 @@ public class FindUser extends HttpServlet {
         req.setAttribute("allUsers", allUsers);
         logger.debug("Sending back the user/s..." + allUsers);
 
-
         RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");
         dispatcher.forward(req, resp);
     }

@@ -3,6 +3,7 @@ package edu.matc.controller;
 
 import edu.matc.entity.Contact;
 import edu.matc.entity.User;
+import edu.matc.entity.UserRole;
 import edu.matc.persistence.GenericDao;
 import edu.matc.util.DaoFactory;
 import org.apache.logging.log4j.LogManager;
@@ -43,6 +44,10 @@ public class SignupInfo extends HttpServlet {
 
 
         int newId = genericDao.insert(newUser);
+        UserRole role = new UserRole();
+        role.setUser(newUser);
+        role.setRoleName("user");
+        newUser.addUserRoles(role);
 
         User user = genericDao.getById(newId);
         req.setAttribute("newUser", user);

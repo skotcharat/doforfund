@@ -7,17 +7,19 @@
 
 <jsp:include page="header.jsp" />
 
-<div>
-    <p class="text-black h2 mb-0 text-center">Thank you. We were received your Fund</p><br><br>
-    <p class="text-center">Your Fund is</p><br>
-    <p class="text-center">$${donateAmount.amount}.00</p><br><br>
-    <p class="text-center">Total Fund</p><br>
-    <p class="text-center">$${totalAmount}.00</p><br><br>
 
+<div class="site-section" data-aos="fade">
+    <div class="container-fluid">
+     <p class="text-center">First Name: ${first_Name}</p><br>
+     <p class="text-center">Last Name: ${last_Name}</p><br>
+     <p class="text-center">User Name: ${user_Name}</p><br>
+     <p class="text-center">Password: ${pass_word}</p><br>
+     <p class="text-center">Email: ${e_mail}</p><br><br>
+        <a href="editProfile.jsp"><button class="btn btn-primary py-2 px-4 text-white">Edit Profile</button></a>
 
-    <p class="text-black h4 mb-0 text-center"></p><br><br><br><br><br><br><br>
 
 </div>
+
 <div class="footer py-4">
     <div class="container-fluid text-center">
         <p>
@@ -27,6 +29,9 @@
         </p>
     </div>
 </div>
+
+
+
 
 
 </div>

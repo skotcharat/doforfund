@@ -32,6 +32,8 @@
 
     <mapping class="edu.matc.entity.User"/>
     <mapping class="edu.matc.entity.UserRole"/>
+    <mapping class="edu.matc.entity.Contact"/>
+    <mapping class="edu.matc.entity.Donation"/>
 
 </session-factory>
 
