@@ -25,12 +25,6 @@ public class EditProfileWithId extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        //User updateUser = new User(req.getParameter("fname"), req.getParameter("lname"),
-               // req.getParameter("username"), req.getParameter("password"), req.getParameter("email"));
-
-
-        //genericDao.saveOrUpdate(updateUser);
-
         GenericDao<User> genericDao = DaoFactory.createDao(User.class);
         User userBeforeUpdate = genericDao.getById(Integer.parseInt(req.getParameter("EditWithId")));
         req.setAttribute("userEdit", userBeforeUpdate);
@@ -38,6 +32,7 @@ public class EditProfileWithId extends HttpServlet {
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/editProfile.jsp");
         dispatcher.forward(req, resp);
     }
+
 
 }
 

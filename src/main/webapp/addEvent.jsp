@@ -39,7 +39,7 @@
 
                                 <div class="col-md-12">
                                     <label class="text-black" for="eventDate">Event Date</label>
-                                    <input type="text" id="eventDate" name="eventDate" class="form-control">
+                                    <input type="text" id="eventDate" name="eventDate" class="form-control" value="YY-MM-DD">
                                 </div>
                             </div>
 
@@ -47,7 +47,7 @@
 
                                 <div class="col-md-12">
                                     <label class="text-black" for="eventTime">Event Time</label>
-                                    <input type="text" id="eventTime" name="eventTime" class="form-control">
+                                    <input type="text" id="eventTime" name="eventTime" class="form-control" value="HH:MM (pm/am)">
                                 </div>
                             </div>
 

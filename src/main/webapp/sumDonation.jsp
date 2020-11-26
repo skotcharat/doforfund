@@ -9,11 +9,15 @@
 
 <div>
     <p class="text-black h2 mb-0 text-center">Thank you. We were received your Fund</p><br><br>
-    <p class="text-center">Your Fund is</p><br>
-    <p class="text-center">$${donateAmount.amount}.00</p><br><br>
-    <p class="text-center">Total Fund</p><br>
-    <p class="text-center">$${totalAmount}.00</p><br><br>
+    <H2 class="text-center">Your Fund is</H2><br>
+    <H3 class="text-center">$${donateAmount.amount}.00</H3><br><br>
+    <H2 class="text-center">Total Fund</H2><br>
 
+    <c:set var="total" value="${0}"/>
+    <c:forEach var="totalAmounts" items="${totalAmount}">
+        <c:set var="total" value="${total + totalAmounts.amount}" />
+    </c:forEach>
+    <H3 class="text-center">$${total}.00</H3><br>
 
     <p class="text-black h4 mb-0 text-center"></p><br><br><br><br><br><br><br>
 

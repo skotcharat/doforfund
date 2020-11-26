@@ -19,6 +19,7 @@
       <web-resource-name>search</web-resource-name>
       <url-pattern>/searchUser</url-pattern>
     </web-resource-collection>
+
     <auth-constraint>
       <role-name>admin</role-name>
     </auth-constraint>
@@ -30,13 +31,30 @@
       <web-resource-name>login</web-resource-name>
       <url-pattern>/loginAction</url-pattern>
     </web-resource-collection>
+
     <auth-constraint>
       <role-name>admin</role-name>
-
+      <role-name>user</role-name>
     </auth-constraint>
   </security-constraint>
 
   <security-role>
     <role-name>admin</role-name>
   </security-role>
+  <security-role>
+    <role-name>user</role-name>
+  </security-role>
+
+  <error-page>
+    <error-code>403</error-code>
+    <location>/403error.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404error.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/500error.jsp</location>
+  </error-page>
 </web-app>

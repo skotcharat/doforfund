@@ -3,6 +3,7 @@ package edu.matc.controller;
 
 
 import edu.matc.entity.Donation;
+import edu.matc.entity.Event;
 import edu.matc.persistence.GenericDao;
 import edu.matc.util.DaoFactory;
 import org.apache.logging.log4j.LogManager;
@@ -43,12 +44,10 @@ public class SumDonate extends HttpServlet {
         req.setAttribute("donateAmount", donation2);
         logger.debug("Sending back the donateAmount/s..." + donation2);
 
-        // get the donation total amount
-        List<Donation> total = null;
-        for(int i = 0; i < genericDao.getAll().size(); i++) {
-
-        }
-        req.setAttribute("totalAmount", total);
+        // get all the donations to calculate the amount
+        List<Donation> allDonation = genericDao.getAll();
+        req.setAttribute("totalAmount", allDonation);
+        logger.debug("Sending back the donateAmount/s..." + allDonation);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/sumDonation.jsp");
         dispatcher.forward(req, resp);

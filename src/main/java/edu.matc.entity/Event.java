@@ -3,9 +3,7 @@ package edu.matc.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotEmpty;
-
 import javax.persistence.*;
-
 import javax.websocket.Encoder;
 import java.sql.Time;
 import java.util.Date;
@@ -27,10 +25,7 @@ public class Event { // @OneToMany
     private String eventName;
 
     @Column(name = "eventPlace")
-
     private String eventPlace;
-
-
 
     @Column(name = "eventDate")
     private String eventDate;
