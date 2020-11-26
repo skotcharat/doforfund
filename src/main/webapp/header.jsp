@@ -39,23 +39,16 @@
                             <li class="active"><a href="howItWorks.jsp">How It Works</a></li>
                             <li  class="active"><a href="displayEvent">Event</a></li>
                             <li class="has-children">
-                                <a href="single.jsp">Gallery</a>
+                                <a href="gallery.jsp">Gallery</a>
                                 <ul class="dropdown">
                                     <li><a href="https://drive.google.com/drive/folders/17dePQfVGUFUZMAHkWjDyenqerowAqEsx?usp=sharing">Nature</a></li>
-                                    <li><a href="#">Portrait</a></li>
-                                    <li><a href="#">People</a></li>
-                                    <li><a href="#">Architecture</a></li>
-                                    <li><a href="#">Animals</a></li>
-                                    <li><a href="#">Sports</a></li>
-                                    <li><a href="#">Travel</a></li>
-                                    <li class="has-children">
-                                        <a href="#">Sub Menu</a>
-                                        <ul class="dropdown">
-                                            <li><a href="#">Menu One</a></li>
-                                            <li><a href="#">Menu Two</a></li>
-                                            <li><a href="#">Menu Three</a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="https://drive.google.com/drive/folders/1gmuIASFVc7PcpT5112jV-d77QFTiU42v?usp=sharing">Portrait</a></li>
+                                    <li><a href="https://drive.google.com/drive/folders/1vz7JGWWEFpUrmTmPplH3EMAN6MnQexuq?usp=sharing">People</a></li>
+                                    <li><a href="https://drive.google.com/drive/folders/1a6Oba41KueTWE07oFyJMxLrLlQx3vcnl?usp=sharing">Architecture</a></li>
+                                    <li><a href="https://drive.google.com/drive/folders/1ZqJ01n0ubsj1evkQ_50ND2V_5uisTg4b?usp=sharing">Animals</a></li>
+                                    <li><a href="https://drive.google.com/drive/folders/1O_0hlS5QOpngYvdL7fOTBrdmM92uKNkH?usp=sharing">Baby</a></li>
+                                    <li><a href="https://drive.google.com/drive/folders/1YYlZsTixYYOq2lUaS0XW2NZYNjdytou1?usp=sharing">Travel</a></li>
+                                    
                                 </ul>
                             </li>
                             <li><a href="contact.jsp">Contact</a></li>
