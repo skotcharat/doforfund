@@ -27,8 +27,6 @@ import java.util.List;
 @WebServlet
         (urlPatterns = { "/adminPage" } )
 
-
-
 public class AdminPage extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
@@ -61,7 +59,7 @@ public class AdminPage extends HttpServlet {
         logger.debug("Sending back the contact/s..." + allContacts);
 
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/adminPage.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/admin.jsp");
         dispatcher.forward(req, resp);
     }
 

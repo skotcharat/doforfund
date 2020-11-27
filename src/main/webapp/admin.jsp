@@ -13,9 +13,9 @@
     <div class="container-fluid">
 
         <div class="row justify-content-center">
-            <div class="col-md-7">
+            <div class="col-md-10">
                 <h3>Users</h3>
-                <table border=1 width=30% height=40% text-align="center">
+                <table border=1 width=60% height=40% text-align="center">
                     <tr>
                         <th>ID</th>
                         <th>First Name</th>
@@ -37,11 +37,11 @@
                 </table>
             </div>
         </div>
-
+        <br><br>
         <div class="row justify-content-center">
-            <div class="col-md-7">
+            <div class="col-md-10">
                 <h3>Events</h3>
-                <table border=1 width=30% height=40% text-align="center">
+                <table border=1 width=60% height=40% text-align="center">
                     <tr>
                         <th>ID</th>
                         <th>Event Name</th>
@@ -49,6 +49,8 @@
                         <th>Event Date</th>
                         <th>Event Time</th>
                         <th>event Description</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                     <c:forEach items="${events}" var="allEvent">
                         <tr>
@@ -58,48 +60,55 @@
                             <td>${allEvent.eventDate}</td>
                             <td>${allEvent.eventTime}</td>
                             <td>${allEvent.eventDescription}</td>
+                            <td><button type="button">Edit</button>${allEvent.id}</td>
+                            <td><a href="deleteEventWithId?DeleteWithId=${allEvent.id}"><button type="button">Delete</button></a>${allEvent.id}</td>
                         </tr>
                     </c:forEach>
                 </table>
             </div>
         </div>
-
+        <br><br>
         <div class="row justify-content-center">
-            <div class="col-md-7">
+            <div class="col-md-10">
                 <h3>Donations</h3>
-                <table border=1 width=30% height=40% text-align="center">
+                <table border=1 width=60% height=40% text-align="center">
                     <tr>
                         <th>ID</th>
                         <th>Amount</th>
                         <th>Date</th>
 
                     </tr>
-                    <c:forEach items="${events}" var="allEvent">
+                    <c:forEach items="${donations}" var="allDonation">
                         <tr>
-                            <td>${allEvent.id}</td>
-                            <td>${allEvent.amount}</td>
-                            <td>${allEvent.date}</td>
+                            <td>${allDonation.id}</td>
+                            <td>${allDonation.amount}</td>
+                            <td>${allDonation.date}</td>
                         </tr>
                     </c:forEach>
                 </table>
             </div>
         </div>
-
+        <br><br>
         <div class="row justify-content-center">
-            <div class="col-md-7">
-                <h3>Donations</h3>
-                <table border=1 width=30% height=40% text-align="center">
+            <div class="col-md-10">
+                <h3>Contact</h3>
+                <table border=1 width=60% height=40% text-align="center">
                     <tr>
                         <th>ID</th>
-                        <th>Amount</th>
-                        <th>Date</th>
-
+                        <th>First Name</th>
+                        <th>Last Place</th>
+                        <th>Email</th>
+                        <th>Subject</th>
+                        <th>message</th>
                     </tr>
-                    <c:forEach items="${events}" var="allEvent">
+                    <c:forEach items="${contacts}" var="allContact">
                         <tr>
-                            <td>${allEvent.id}</td>
-                            <td>${allEvent.amount}</td>
-                            <td>${allEvent.date}</td>
+                            <td>${allContact.id}</td>
+                            <td>${allContact.firstname}</td>
+                            <td>${allContact.lastname}</td>
+                            <td>${allContact.email}</td>
+                            <td>${allContact.subject}</td>
+                            <td>${allContact.message}</td>
                         </tr>
                     </c:forEach>
                 </table>

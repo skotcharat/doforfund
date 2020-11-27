@@ -22,7 +22,7 @@
     </div>
     <div class="container-fluid">
     <div class="col-md-12">
-      <a href="editProfileWithId?EditWithId=${id}"><button class="text-center"  class="btn btn-primary py-2 px-4 text-white">Edit Profile</button></a>
+      <a href="editProfileWithId?EditWithId=${users.id}"><button class="text-center"  class="btn btn-primary py-2 px-4 text-white">Edit Profile</button></a>
     </div>
     </div>
 
