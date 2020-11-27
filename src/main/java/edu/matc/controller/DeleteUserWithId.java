@@ -16,28 +16,22 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(
-        urlPatterns = {"/deleteEventWithId"}
+        urlPatterns = {"/deleteUserWithId"}
 )
 
-public class deleteEventWithId extends HttpServlet {
+public class DeleteUserWithId extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        GenericDao<Event> genericDao = DaoFactory.createDao(Event.class);
-//        Event eventId = genericDao.getById(Integer.parseInt(req.getParameter("DeleteWithId")));
-//        logger.debug("eventId" + eventId);
+        GenericDao<User> genericDao = DaoFactory.createDao(User.class);
         genericDao.delete(genericDao.getById(Integer.parseInt(req.getParameter("DeleteWithId"))));
 
-        //genericDao.delete(genericDao.getById(7));
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/adminPage");
         dispatcher.forward(req, resp);
-
     }
-
-
 }
 
 

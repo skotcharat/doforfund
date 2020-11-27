@@ -15,12 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(
-        urlPatterns = {"/editProfileAction"}
+        urlPatterns = {"/editUserWithId"}
 )
 
-
-
-public class EditProfileAction extends HttpServlet {
+public class EditUserWithId extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
@@ -28,17 +26,14 @@ public class EditProfileAction extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         GenericDao<User> genericDao = DaoFactory.createDao(User.class);
-        User userBeforeUpdate = genericDao.getById(1);
-        userBeforeUpdate.setFirstName(req.getParameter("fname"));
-        userBeforeUpdate.setLastName(req.getParameter("lname"));
-        userBeforeUpdate.setUserName(req.getParameter("username"));
-        userBeforeUpdate.setPassword(req.getParameter("password"));
-        userBeforeUpdate.setEmail(req.getParameter("email"));
-        genericDao.saveOrUpdate(userBeforeUpdate);
+        User userBeforeUpdate = genericDao.getById(Integer.parseInt(req.getParameter("EditWithId")));
+        req.setAttribute("userEdit", userBeforeUpdate);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/DisplayProfiles");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/editProfile.jsp");
         dispatcher.forward(req, resp);
     }
 
+
 }
+
 

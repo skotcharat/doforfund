@@ -7,8 +7,6 @@
 
 <jsp:include page="header.jsp" />
 
-
-
 <div class="site-section"  data-aos="fade">
     <div class="container-fluid">
 
@@ -23,6 +21,8 @@
                         <th>UserName</th>
                         <th>Password</th>
                         <th>Email</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                     <c:forEach items="${users}" var="allUser">
                         <tr>
@@ -32,6 +32,9 @@
                             <td>${allUser.userName}</td>
                             <td>${allUser.password}</td>
                             <td>${allUser.email}</td>
+                            <td><a href="editUserWithId?EditWithId=${allUser.id}"><button type="button">Edit</button></a></td>
+                            <td><a href="deleteUserWithId?DeleteWithId=${allUser.id}"><button type="button">Delete</button></a></td>
+
                         </tr>
                     </c:forEach>
                 </table>
@@ -60,8 +63,8 @@
                             <td>${allEvent.eventDate}</td>
                             <td>${allEvent.eventTime}</td>
                             <td>${allEvent.eventDescription}</td>
-                            <td><button type="button">Edit</button>${allEvent.id}</td>
-                            <td><a href="deleteEventWithId?DeleteWithId=${allEvent.id}"><button type="button">Delete</button></a>${allEvent.id}</td>
+                            <td><a href="editEventWithId?EditWithId=${allEvent.id}"><button type="button">Edit</button></a></td>
+                            <td><a href="deleteEventWithId?DeleteWithId=${allEvent.id}"><button type="button">Delete</button></a></td>
                         </tr>
                     </c:forEach>
                 </table>
@@ -76,13 +79,16 @@
                         <th>ID</th>
                         <th>Amount</th>
                         <th>Date</th>
-
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                     <c:forEach items="${donations}" var="allDonation">
                         <tr>
                             <td>${allDonation.id}</td>
                             <td>${allDonation.amount}</td>
                             <td>${allDonation.date}</td>
+                            <td><a href="editDonationWithId?EditWithId=${allDonation.id}"><button type="button">Edit</button></a></td>
+                            <td><a href="deleteDonationWithId?DeleteWithId=${allDonation.id}"><button type="button">Delete</button></a></td>
                         </tr>
                     </c:forEach>
                 </table>
@@ -100,6 +106,8 @@
                         <th>Email</th>
                         <th>Subject</th>
                         <th>message</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                     <c:forEach items="${contacts}" var="allContact">
                         <tr>
@@ -109,6 +117,9 @@
                             <td>${allContact.email}</td>
                             <td>${allContact.subject}</td>
                             <td>${allContact.message}</td>
+                            <td><a href="editContactWithId?EditWithId=${allContact.id}"><button type="button">Edit</button></a></td>
+                            <td><a href="deleteContactWithId?DeleteWithId=${allContact.id}"><button type="button">Delete</button></a></td>
+
                         </tr>
                     </c:forEach>
                 </table>
