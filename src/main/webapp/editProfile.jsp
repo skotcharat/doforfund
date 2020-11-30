@@ -23,7 +23,7 @@
                     <div class="col-lg-8 mb-5">
                         <form action="editProfileAction" method="get">
 
-
+                            <input type="hidden" name="ParameterId" class="form-control" value="${userEdit.id}" />
                             <div class="row form-group">
                                 <div class="col-md-6 mb-3 mb-md-0">
                                     <label class="text-black" for="fname">First Name</label>

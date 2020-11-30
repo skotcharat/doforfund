@@ -61,12 +61,19 @@
                     <div class="d-none d-xl-inline-block">
                         <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
                             <li>
-                                <a href= 'loginAction'  class="pl-0 pr-3"><button class="btn btn-primary py-2 px-4 text-white">Sign in</button></a>
-                                <c:if test="${pageContext.request.isUserInRole('admin')}">
+                                <c:choose>
+                                    <c:when test="${(pageContext.request.isUserInRole('admin')) ||
+                                    (pageContext.request.isUserInRole('user'))}">
+                                        <a href="logout.jsp" class="pl-0 pr-3" class="btn btn-primary py-2 px-4 text-white">Logout</a>
+                                        <p class="usernameHeader">Welcome : <%= request.getRemoteUser()%></p>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a href="loginRealm.jsp" class="pl-0 pr-3" class="btn btn-primary py-2 px-4 text-white">Sign in</a>
+                                    </c:otherwise>
+                                </c:choose>
+                            </li>
+                            <li>
 
-                                    <a href="search.jsp">Sign in</a>
-
-                                </c:if>
                             </li>
                             <li>
                                 <a href="signupAction"><button class="btn btn-primary py-2 px-4 text-white">Sign up</button></a>

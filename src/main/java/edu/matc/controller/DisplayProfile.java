@@ -23,11 +23,11 @@ import java.util.List;
  */
 
 @WebServlet
-        (urlPatterns = { "/DisplayProfiles" } )
+        (urlPatterns = { "/displayProfiles" } )
 
 
 
-public class Displayprofile extends HttpServlet {
+public class DisplayProfile extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 

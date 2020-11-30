@@ -119,7 +119,6 @@
                             <td>${allContact.message}</td>
                             <td><a href="editContactWithId?EditWithId=${allContact.id}"><button type="button">Edit</button></a></td>
                             <td><a href="deleteContactWithId?DeleteWithId=${allContact.id}"><button type="button">Delete</button></a></td>
-
                         </tr>
                     </c:forEach>
                 </table>
