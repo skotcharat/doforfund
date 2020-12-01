@@ -33,7 +33,7 @@ Users will be informed of the history of total funds, and the location where the
 * **Database**
 1. MySQL
 2. Store users and roles
-3. Store all data for the picture
+3. Store all data for the Event
 * **ORM Framework**
 1. Hibernate 5
 * **Dependency Management**
@@ -48,10 +48,10 @@ Users will be informed of the history of total funds, and the location where the
 * **Hosting**
 1. AWS
 * **Independent Research Topic/s**
-1. CI tools in AWS
-2. Materialize
+1. JAVA MAIL API
+2. Lombok
 3. Hibernate Validation
-4. Hibernate Search
+
 * **Project Lombok to eliminate boilerplate code like getters/setters/equals**
 * **Unit Testing**
 1. JUnit tests to achieve 80%+ code coverage

@@ -48,7 +48,7 @@ public class DonationDaoTest {
     void getById() {
         Donation retrievedDonation = (Donation)genericDao.getById(2);
         assertNotNull(retrievedDonation);
-        assertEquals("Couple shot", retrievedDonation.getDonation());
+        assertEquals(20, retrievedDonation.getAmount());
     }
 
 

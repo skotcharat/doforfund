@@ -1,13 +1,13 @@
 package edu.matc.entity;
 
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotEmpty;
 import javax.persistence.*;
-import javax.websocket.Encoder;
-import java.sql.Time;
-import java.util.Date;
 
 /**
  * The type Order.
@@ -15,7 +15,10 @@ import java.util.Date;
 @Entity(name = "Event")  // type from class name
 @Table(name = "events") // table name, case sensitive!
 
+@Getter
+@Setter
 @ToString
+@NoArgsConstructor
 public class Event { // @OneToMany
 
     @Id
@@ -68,13 +71,6 @@ public class Event { // @OneToMany
 
     /**
      * Instantiates a new Event.
-     */
-    public Event() {
-
-    }
-
-    /**
-     * Instantiates a new Event.
      *
      * @param eventName  the event name
      * @param eventPlace the event place
@@ -91,111 +87,5 @@ public class Event { // @OneToMany
 
     }
 
-    /**
-     * Gets id.
-     *
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
 
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * Gets event description.
-     *
-     * @return the event description
-     */
-    public String getEventDescription() {
-        return eventDescription;
-    }
-
-    /**
-     * Sets event description.
-     *
-     * @param eventDescription the event description
-     */
-    public void setEventDescription(String eventDescription) {
-        this.eventDescription = eventDescription;
-    }
-
-    /**
-     * Gets event name.
-     *
-     * @return the event name
-     */
-    public String getEventName() {
-        return eventName;
-    }
-
-    /**
-     * Sets event name.
-     *
-     * @param eventName the event name
-     */
-    public void setEventName(String eventName) {
-        this.eventName = eventName;
-    }
-
-    /**
-     * Gets event place.
-     *
-     * @return the event place
-     */
-    public String getEventPlace() {
-        return eventPlace;
-    }
-
-    /**
-     * Sets event place.
-     *
-     * @param eventPlace the event place
-     */
-    public void setEventPlace(String eventPlace) {
-        this.eventPlace = eventPlace;
-    }
-
-    /**
-     * Gets event date.
-     *
-     * @return the event date
-     */
-    public String getEventDate() {
-        return eventDate;
-    }
-
-    /**
-     * Sets event date.
-     *
-     * @param eventDate the event date
-     */
-    public void setEventDate(String eventDate) {
-        this.eventDate = eventDate;
-    }
-
-    /**
-     * Gets event time.
-     *
-     * @return the event time
-     */
-    public String getEventTime() {
-        return eventTime;
-    }
-
-    /**
-     * Sets event time.
-     *
-     * @param eventTime the event time
-     */
-    public void setEventTime(String eventTime) {
-        this.eventTime = eventTime;
-    }
 }

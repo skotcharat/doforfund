@@ -1,6 +1,9 @@
 package edu.matc.entity;
 
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -12,7 +15,10 @@ import javax.persistence.*;
 @Entity(name = "UserRole")  // type from class name
 @Table(name = "user_roles") // table name, case sensitive!
 
+@Getter
+@Setter
 @ToString
+@NoArgsConstructor
 public class UserRole { // @OneToMany
 
     @Id
@@ -48,13 +54,6 @@ public class UserRole { // @OneToMany
     private User user;
 
     /**
-     * Instantiates a new Order.
-     */
-    public UserRole() {
-
-    }
-
-    /**
      * Instantiates a new User role.
      *
      * @param roleName the role name
@@ -67,57 +66,5 @@ public class UserRole { // @OneToMany
 
 
 
-    /**
-     * Gets id.
-     *
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
 
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * Gets role name.
-     *
-     * @return the role name
-     */
-    public String getRoleName() {
-        return roleName;
-    }
-
-    /**
-     * Sets role name.
-     *
-     * @param roleName the role name
-     */
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
-    }
-
-    /**
-     * Gets user.
-     *
-     * @return the user
-     */
-    public User getUser() {
-        return user;
-    }
-
-    /**
-     * Sets user.
-     *
-     * @param user the user
-     */
-    public void setUser(User user) {
-        this.user = user;
-    }
 }

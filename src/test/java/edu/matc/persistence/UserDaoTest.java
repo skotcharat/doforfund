@@ -131,7 +131,8 @@ class UserDaoTest {
 
         // For loop works too!
         for(User userRole : users) {
-            System.out.print((userRole.getUserRoles()));
+
+            System.out.print((userRole.userRoles));
         }
 
     }

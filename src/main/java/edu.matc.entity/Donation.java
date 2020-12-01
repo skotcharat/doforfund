@@ -2,6 +2,7 @@ package edu.matc.entity;
 
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
@@ -17,6 +18,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
 
 public class Donation { // @OneToMany
 
@@ -61,13 +63,6 @@ public class Donation { // @OneToMany
     @ManyToOne
     private User user;
 
-
-    /**
-     * Instantiates a new Donation.
-     */
-    public Donation() {
-
-    }
 
     /**
      * Instantiates a new Donation.
