@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -35,7 +36,13 @@ public class DisplayProfile extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
         GenericDao<User> dao = DaoFactory.createDao(User.class);
-        User user = dao.getById(1);
+
+        String currentUser = req.getRemoteUser();
+
+        User users = dao.getByPropertyLike("username", currentUser).get(0);
+        int user_id = users.getId();
+
+        User user = dao.getById(user_id);
 
         req.setAttribute("users", user);
         logger.debug("Sending back the user..." + user);

@@ -64,17 +64,15 @@
                                 <c:choose>
                                     <c:when test="${(pageContext.request.isUserInRole('admin')) ||
                                     (pageContext.request.isUserInRole('user'))}">
-                                        <a href="logout.jsp" class="pl-0 pr-3" class="btn btn-primary py-2 px-4 text-white">Logout</a>
-                                        <p class="usernameHeader">Welcome : <%= request.getRemoteUser()%></p>
+                                        <a href="logout.jsp"><button class="pl-0 pr-3" class="btn btn-primary py-2 px-4 text-white">Logout</button></a>
+                                        <p>Hi!: <%= request.getRemoteUser()%></p>
                                     </c:when>
                                     <c:otherwise>
-                                        <a href="loginRealm.jsp" class="pl-0 pr-3" class="btn btn-primary py-2 px-4 text-white">Sign in</a>
+                                        <a href="loginAction"><button class="btn btn-primary py-2 px-4 text-white">Sign in</button></a>
                                     </c:otherwise>
                                 </c:choose>
                             </li>
-                            <li>
 
-                            </li>
                             <li>
                                 <a href="signupAction"><button class="btn btn-primary py-2 px-4 text-white">Sign up</button></a>
                             </li>

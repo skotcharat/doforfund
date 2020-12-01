@@ -40,6 +40,8 @@ public class AdminPage extends HttpServlet {
         req.setAttribute("users", allUsers);
         logger.debug("Sending back the user/s..." + allUsers);
 
+
+
         // get all events
         GenericDao<Event> daoEvent = DaoFactory.createDao(Event.class);
         List<Event> allEvents = daoEvent.getAll();

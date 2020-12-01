@@ -64,7 +64,7 @@ public class User {
      //mappedBy = "user" came from instance variable at UserRole class
      //private User user;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<UserRole> userRoles = new HashSet<>();
+    public Set<UserRole> userRoles = new HashSet<>();
 
     /**
      * Instantiates a new User.
@@ -72,6 +72,13 @@ public class User {
     public User() {
     }
 
+
+    /**
+     * Instantiates a new User.
+     *
+     * @param userName the user name
+     * @param password the password
+     */
     public User(String userName, String password) {
         this.userName = userName;
         this.password = password;

@@ -29,7 +29,7 @@ public class LoginAction extends HttpServlet {
 
         logger.info("The logged in user: " + req.getRemoteUser() + "has a role of admin: " + req.isUserInRole("admin"));
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/loginRealm.jsp");
         dispatcher.forward(req, resp);
     }
 

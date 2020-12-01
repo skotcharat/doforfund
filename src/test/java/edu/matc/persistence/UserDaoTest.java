@@ -7,6 +7,7 @@ import edu.matc.test.util.DatabaseUtility;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -97,7 +98,7 @@ class UserDaoTest {
     @Test
     void insertWithRoleSuccess() {
 
-        String userRoleName = "sign_out";
+        String userRoleName = "user";
         User newUser = new User("Fred", "Flintstone", "fflintstone", "Flin@mail.com");
         UserRole userRoles = new UserRole(userRoleName, newUser);
         newUser.addUserRoles(userRoles);
@@ -119,9 +120,20 @@ class UserDaoTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<User> users = genericDao.getByPropertyEqual("lastName", "Hensen");
+        List<User> users = genericDao.getByPropertyEqual("lastName", "Coyne");
         assertEquals(1, users.size());
-        assertEquals(2, users.get(0).getId());
+        assertEquals(1, users.get(0).getId());
+        System.out.print(users);
+//        User retrievedUser = (User) genericDao.getById(users.get(0).getId());
+//
+//        assertEquals("admin", retrievedUser.getUserRoles().toString());
+//        System.out.print(retrievedUser.getUserRoles());
+
+        // For loop works too!
+        for(User userRole : users) {
+            System.out.print((userRole.getUserRoles()));
+        }
+
     }
 
     /**

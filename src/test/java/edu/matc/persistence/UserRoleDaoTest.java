@@ -53,7 +53,7 @@ class UserRoleDaoTest {
      */
     @Test
     void getById() {
-        UserRole retrievedOrderUserRole = (UserRole)genericDao.getById(4);
+        UserRole retrievedOrderUserRole = (UserRole)genericDao.getById(1);
         assertNotNull(retrievedOrderUserRole);
         assertEquals("admin", retrievedOrderUserRole.getRoleName());
     }
@@ -94,13 +94,13 @@ class UserRoleDaoTest {
      */
     @Test
     void saveOrUpdate() {
-        String newUserRole = "edit_profile";
-        UserRole userRoleToUpdate = (UserRole)genericDao.getById(3);
+        String newUserRole = "user";
+        UserRole userRoleToUpdate = (UserRole)genericDao.getById(2);
         userRoleToUpdate.setRoleName(newUserRole);
         genericDao.saveOrUpdate(userRoleToUpdate);
-        UserRole retrievednewUserRole = (UserRole)genericDao.getById(3);
+        UserRole retrievednewUserRole = (UserRole)genericDao.getById(2);
         assertEquals(newUserRole, retrievednewUserRole.getRoleName());
-        String expectedUserRole = "edit_profile";
+        String expectedUserRole = "user";
         String actualUserRole = retrievednewUserRole.getRoleName();
         assertTrue(expectedUserRole.equals(actualUserRole));
     }
