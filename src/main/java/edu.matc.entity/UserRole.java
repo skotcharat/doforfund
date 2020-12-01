@@ -1,6 +1,7 @@
 package edu.matc.entity;
 
 
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -10,6 +11,8 @@ import javax.persistence.*;
  */
 @Entity(name = "UserRole")  // type from class name
 @Table(name = "user_roles") // table name, case sensitive!
+
+@ToString
 public class UserRole { // @OneToMany
 
     @Id

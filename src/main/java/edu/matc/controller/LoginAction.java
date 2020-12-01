@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 @WebServlet(
@@ -28,6 +29,10 @@ public class LoginAction extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         logger.info("The logged in user: " + req.getRemoteUser() + "has a role of admin: " + req.isUserInRole("admin"));
+
+        String currentUser = req.getRemoteUser();
+        HttpSession session  = req.getSession();
+        session.setAttribute("currentUserLogin", currentUser);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/loginRealm.jsp");
         dispatcher.forward(req, resp);

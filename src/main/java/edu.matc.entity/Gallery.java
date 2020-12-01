@@ -1,6 +1,7 @@
 package edu.matc.entity;
 
 
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -11,6 +12,8 @@ import javax.websocket.Encoder;
  */
 @Entity(name = "Gallery")  // type from class name
 @Table(name = "gallery") // table name, case sensitive!
+
+@ToString
 public class Gallery { // @OneToMany
 
     @Id

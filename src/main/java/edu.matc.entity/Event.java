@@ -1,6 +1,7 @@
 package edu.matc.entity;
 
 
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotEmpty;
 import javax.persistence.*;
@@ -13,6 +14,8 @@ import java.util.Date;
  */
 @Entity(name = "Event")  // type from class name
 @Table(name = "events") // table name, case sensitive!
+
+@ToString
 public class Event { // @OneToMany
 
     @Id

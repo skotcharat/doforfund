@@ -1,6 +1,9 @@
 package edu.matc.entity;
 
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -10,6 +13,11 @@ import javax.persistence.*;
  */
 @Entity(name = "Donation")  // type from class name
 @Table(name = "donation") // table name, case sensitive!
+
+@Getter
+@Setter
+@ToString
+
 public class Donation { // @OneToMany
 
     @Id
@@ -90,113 +98,6 @@ public class Donation { // @OneToMany
 
 
 
-    /**
-     * Gets id.
-     *
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * Gets amount.
-     *
-     * @return the amount
-     */
-    public int getAmount() {
-        return amount;
-    }
-
-    /**
-     * Sets amount.
-     *
-     * @param amount the amount
-     */
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
-    /**
-     * Gets how to donate.
-     *
-     * @return the how to donate
-     */
-    public String getHowToDonate() {
-        return howToDonate;
-    }
-
-    /**
-     * Sets how to donate.
-     *
-     * @param howToDonate the how to donate
-     */
-    public void setHowToDonate(String howToDonate) {
-        this.howToDonate = howToDonate;
-    }
-
-    /**
-     * Gets sum amount.
-     *
-     * @return the sum amount
-     */
-    public int getSumAmount() {
-        return sumAmount;
-    }
-
-    /**
-     * Sets sum amount.
-     *
-     * @param sumAmount the sum amount
-     */
-    public void setSumAmount(int sumAmount) {
-        this.sumAmount += amount;
-    }
-
-    /**
-     * Gets date.
-     *
-     * @return the date
-     */
-    public String getDate() {
-        return date;
-    }
-
-    /**
-     * Sets date.
-     *
-     * @param date the date
-     */
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    /**
-     * Gets user.
-     *
-     * @return the user
-     */
-    public User getUser() {
-        return user;
-    }
-
-    /**
-     * Sets user.
-     *
-     * @param user the user
-     */
-    public void setUser(User user) {
-        this.user = user;
-    }
 
 
 

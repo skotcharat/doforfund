@@ -64,8 +64,8 @@
                                 <c:choose>
                                     <c:when test="${(pageContext.request.isUserInRole('admin')) ||
                                     (pageContext.request.isUserInRole('user'))}">
-                                        <a href="logout.jsp"><button class="pl-0 pr-3" class="btn btn-primary py-2 px-4 text-white">Logout</button></a>
-                                        <p>Hi!: <%= request.getRemoteUser()%></p>
+                                        <a href="logout.jsp"><button class="btn btn-primary py-2 px-4 text-white">Logout</button></a>
+                                        <p>Hi! <%= request.getRemoteUser() %></p>
                                     </c:when>
                                     <c:otherwise>
                                         <a href="loginAction"><button class="btn btn-primary py-2 px-4 text-white">Sign in</button></a>

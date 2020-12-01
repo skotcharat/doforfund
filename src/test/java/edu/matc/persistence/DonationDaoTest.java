@@ -1,6 +1,7 @@
 package edu.matc.persistence;
 
 import edu.matc.entity.Donation;
+import edu.matc.entity.Event;
 import edu.matc.entity.User;
 import edu.matc.test.util.DatabaseUtility;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class DonationDaoTest {
     GenericDao genericDao;
@@ -31,12 +33,22 @@ public class DonationDaoTest {
     }
 
     /**
-     * Verify successful retrieval of all User
+     * Verify successful retrieval of all Donation
      */
     @Test
     void getAll() {
         List<Donation> donations = genericDao.getAll();
         assertEquals(3, donations.size());
+    }
+
+    /**
+     * Verify successful retrieval of a Donation
+     */
+    @Test
+    void getById() {
+        Donation retrievedDonation = (Donation)genericDao.getById(2);
+        assertNotNull(retrievedDonation);
+        assertEquals("Couple shot", retrievedDonation.getDonation());
     }
 
 

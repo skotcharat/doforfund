@@ -9,13 +9,22 @@
 <html>
 <head>
     <title>Login</title>
-    <FORM ACTION="j_security_check" METHOD="POST">
-        <TABLE>
-            <TR><TD>User name: <INPUT TYPE="TEXT" NAME="j_username">
-            <TR><TD>Password: <INPUT TYPE="PASSWORD" NAME="j_password">
-            <TR><TH><INPUT TYPE="SUBMIT" VALUE="Log In">
-        </TABLE>
-    </FORM>
+    <br><br>
+    <div class="site-section" data-aos="fade">
+        <div class="container-fluid">
+            <FORM ACTION="j_security_check" METHOD="POST">
+                <TABLE>
+                    <TR><TD>User name: <INPUT TYPE="TEXT" NAME="j_username">
+                    <TR><TD>Password: <INPUT TYPE="PASSWORD" NAME="j_password">
+                    <TR><TH><INPUT TYPE="SUBMIT" VALUE="Log In">
+                </TABLE>
+            </FORM>
+
+        </div>
+     </div>
+
+
+
 </head>
 <body>
 

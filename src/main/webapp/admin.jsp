@@ -44,6 +44,9 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <h3>Events</h3>
+
+                <a href="addEvent.jsp"><button class="btn btn-primary py-2 px-4 text-white">Add Event</button></a>
+
                 <table border=1 width=60% height=40% text-align="center">
                     <tr>
                         <th>ID</th>

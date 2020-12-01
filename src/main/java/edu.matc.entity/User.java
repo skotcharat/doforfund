@@ -2,6 +2,7 @@ package edu.matc.entity;
 
 
 import edu.matc.persistence.SessionFactoryProvider;
+import lombok.ToString;
 import org.hibernate.Session;
 import org.hibernate.SessionBuilder;
 import org.hibernate.SessionFactory;
@@ -19,6 +20,8 @@ import java.util.Set;
  */
 @Entity(name = "User")
 @Table(name = "user") // case sensitive!
+
+@ToString
 public class User {
 
 
@@ -267,17 +270,4 @@ public class User {
         userRole.setUser( null );
     }
 
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", userRoles=" + userRoles +
-                '}';
-    }
 }
