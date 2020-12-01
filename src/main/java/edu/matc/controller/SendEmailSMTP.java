@@ -12,8 +12,7 @@ import java.util.Properties;
 @Log4j
 public class SendEmailSMTP {
 
-
-    public static void main(String[] args) {
+    public void getInfo(String Subject, String message) {
 
         final String fromEmail = "yingritta@gmail.com"; //requires valid gmail id
         final String password = "0866053103"; // correct password for gmail id
@@ -37,8 +36,7 @@ public class SendEmailSMTP {
 
         Session session = Session.getDefaultInstance(props, auth);
         //log.error("Session created");
-        EmailUtil.sendEmail(session, toEmail,"Email Testing Subject", "Hey! Email from Java Mail API");
-
+        EmailUtil.sendEmail(session, toEmail,Subject, message);
 
     }
 

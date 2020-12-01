@@ -4,6 +4,8 @@ import edu.matc.entity.User;
 import edu.matc.entity.UserRole;
 import edu.matc.test.util.Database;
 import edu.matc.test.util.DatabaseUtility;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +16,8 @@ import static org.junit.Assert.*;
 
 
 class UserDaoTest {
+
+    private final Logger logger = LogManager.getLogger(this.getClass());
     //UserDao dao;
     GenericDao genericDao;
     DatabaseUtility databaseUtility;
@@ -123,7 +127,7 @@ class UserDaoTest {
         List<User> users = genericDao.getByPropertyEqual("lastName", "Coyne");
         assertEquals(1, users.size());
         assertEquals(1, users.get(0).getId());
-        System.out.print(users);
+        logger.info(users);
 //        User retrievedUser = (User) genericDao.getById(users.get(0).getId());
 //
 //        assertEquals("admin", retrievedUser.getUserRoles().toString());
@@ -132,7 +136,7 @@ class UserDaoTest {
         // For loop works too!
         for(User userRole : users) {
 
-            System.out.print((userRole.userRoles));
+            logger.info((userRole.userRoles));
         }
 
     }

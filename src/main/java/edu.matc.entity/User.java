@@ -23,6 +23,7 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
+//@ToString cannot use in this class because of the userRole effect
 public class User {
 
 
@@ -128,6 +129,19 @@ public class User {
         userRole.setUser( this );
     }
 
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+
+                '}';
+    }
 
     /**
      * Remove user roles.

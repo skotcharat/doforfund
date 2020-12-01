@@ -4,6 +4,8 @@ import edu.matc.entity.Donation;
 import edu.matc.entity.Event;
 import edu.matc.entity.User;
 import edu.matc.test.util.DatabaseUtility;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,6 +15,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 public class DonationDaoTest {
+
+    private final Logger logger = LogManager.getLogger(this.getClass());
     GenericDao genericDao;
     DatabaseUtility databaseUtility;
 

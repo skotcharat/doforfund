@@ -44,6 +44,8 @@ public class ContactInfo extends HttpServlet {
 
 
         int newId = genericDao.insert(newContact);
+        SendEmailSMTP send = new SendEmailSMTP();
+        send.getInfo(req.getParameter("subject"), req.getParameter("message"));
 
         Contact contacts = genericDao.getById(newId);
         req.setAttribute("allContacts", contacts);
