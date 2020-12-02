@@ -26,8 +26,6 @@ import java.util.List;
 @WebServlet
         (urlPatterns = { "/displayProfiles" } )
 
-
-
 public class DisplayProfile extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
@@ -37,22 +35,20 @@ public class DisplayProfile extends HttpServlet {
         
         GenericDao<User> dao = DaoFactory.createDao(User.class);
 
-//        String currentUser = req.getRemoteUser();
-//        System.out.print("currentUser HERE" + currentUser);
-//
-//        User users = dao.getByPropertyLike("username", currentUser).get(0);
-//
-//        int user_id = users.getId();
-//        System.out.print("user_id HERE" + user_id);
+//        HttpSession session = req.getSession();
+//        String myAttribute = (String) session.getAttribute("currentUserLogin");
+//        logger.debug("Sending back the myAttribute..." + myAttribute);  ==> same as req.getRemoteUser()
 
-        HttpSession session = req.getSession();
-        String myAttribute = (String) session.getAttribute("currentUserLogin");
+        logger.debug("Sending back the req.getRemoteUser() is..." + req.getRemoteUser());
+        List<User> users = dao.getByPropertyEqual("userName", req.getRemoteUser());
 
-        logger.debug("Sending back the req.getRemoteUser()..." + req.getRemoteUser());
-        User user = dao.getById(1);
+        int user_id =  users.get(0).getId();
+        logger.debug("user_id is ..." + user_id);
+
+        User user = dao.getById(user_id);
 
         req.setAttribute("users", user);
-        logger.debug("Sending back the user..." + user);
+        logger.debug("Sending back the user is..." + user);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/displayProfile.jsp");
         dispatcher.forward(req, resp);

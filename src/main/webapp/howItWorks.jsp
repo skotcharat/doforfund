@@ -39,7 +39,7 @@
               <div class="h-100 p-4 p-lg-5 bg-light site-block-feature-7">
                 <h2 class=" display-3 text-primary mb-4 d-block">Step 3</h2>
                 <h3 class="text-black h4">Donation</h3>
-                <p>User can donate cash in the DoForFund box at the event or donate via the website</p>
+                <p>Donate fund via the website</p>
 
               </div>
             </div>

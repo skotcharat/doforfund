@@ -62,11 +62,17 @@
                         <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
                             <li>
                                 <c:choose>
-                                    <c:when test="${(pageContext.request.isUserInRole('admin')) ||
-                                    (pageContext.request.isUserInRole('user'))}">
+                                    <c:when test="${(pageContext.request.isUserInRole('admin'))}">
                                         <a href="logout.jsp"><button class="btn btn-primary py-2 px-4 text-white">Logout</button></a>
-                                        <p>Hi! <%= request.getRemoteUser() %></p>
+                                        <p>Hi! <%= request.getRemoteUser() %></p> <a href = "adminPage">Admin Page</a>
                                     </c:when>
+
+                                    <c:when test="${(pageContext.request.isUserInRole('user'))}">
+                                        <a href="logout.jsp"><button class="btn btn-primary py-2 px-4 text-white">Logout</button></a>
+                                        <p>Hi! <%= request.getRemoteUser() %></p> <a href = "displayProfiles" >Profile</a>
+                                    </c:when>
+
+
                                     <c:otherwise>
                                         <a href="loginAction"><button class="btn btn-primary py-2 px-4 text-white">Sign in</button></a>
                                     </c:otherwise>

@@ -9,7 +9,7 @@ import javax.mail.Session;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 import java.util.Properties;
-@Log4j
+
 public class SendEmailSMTP {
 
     public void getInfo(String Subject, String message) {

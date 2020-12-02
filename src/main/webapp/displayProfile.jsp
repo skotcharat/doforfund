@@ -18,7 +18,11 @@
      <p class="text-center"><span style="font-size:1vw;">Password: </span>${users.password}</p><br>
      <p class="text-center"><span style="font-size:1vw;">Email: </span>${users.email}</p><br><br>
 
-     <a href="editProfileWithId?EditWithId=${users.id}"><button class="text-center"  class="btn btn-primary py-2 px-4 text-white">Edit Profile</button></a>
+        <div class="row justify-content-center">
+            <div class="col-md-1.5">
+                <a href="editProfileWithId?EditWithId=${users.id}"><button class="btn btn-primary py-2 px-4  text-white">Edit Profile</button></a>
+            </div>
+        </div>
     </div>
 </div>
 
