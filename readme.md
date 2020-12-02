@@ -10,7 +10,7 @@ When I was thinking about ideas for Enterprise java class, I looked at my camera
 
 The admin(me) will create an event that every user can sign up for and join on the date. I will send them a picture via email after the event is done.
 
-Then, a user can donate cash in the DoForFund box at the event or donate via the website. The users can donate either anonymously or can sign their name. 
+Then, a user can donate via the website. The users can donate either anonymously or can sign their name. 
 
 After paying for web services at the end of each year, I will give all the fund to an organization. 
 
@@ -28,12 +28,12 @@ Users will be informed of the history of total funds, and the location where the
 * **Security/Authentication**
 1. Tomcat's JDBC Realm Authentication
 2. Admin role: create/read/update/delete (crud) of all data
-3. User role: edit data they have entered previously
-4. All: anyone can view information (no login)
+3. User role: edit profile and delete an event to cancel if they cannot attend
+4. All: anyone can view information and email us (no login)
 * **Database**
 1. MySQL
 2. Store users and roles
-3. Store all data for the Event
+3. Store all data for the event, contact, and donation
 * **ORM Framework**
 1. Hibernate 5
 * **Dependency Management**
@@ -52,7 +52,6 @@ Users will be informed of the history of total funds, and the location where the
 2. Lombok
 3. Hibernate Validation
 
-* **Project Lombok to eliminate boilerplate code like getters/setters/equals**
 * **Unit Testing**
 1. JUnit tests to achieve 80%+ code coverage
 * **IDE: IntelliJ IDEA**

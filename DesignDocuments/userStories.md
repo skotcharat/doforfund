@@ -18,7 +18,7 @@ As a registered user I want to log in so that I can make a donation or sign up t
 
 ### Find the picture 
 
-As any user I want to be able to find the example of pictures by a category in the gallery.
+As any user I want to be able to find the example of portfolio by a category in the gallery.
 
 ### Find the Event
 
@@ -36,5 +36,9 @@ As any user I want to be able to make a donation.
 
 As any user, I want to be able to write the name, message, view the payment and total fund from others.
 
-# User Stories for admin
-As an admin, I want to be able to create an event and add the picture by category
+# Admin Stories
+As an admin, I want to be able to create an event, edit and delete data, and add the picture by a category.
+
+# Guest Stories
+As a guest, will be able to get all the information of the overall website, can contact an admin, 
+but cannot create or edit any profile and don't have any history for the donation. Also, cannot join and event.

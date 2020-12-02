@@ -54,13 +54,13 @@
                 <div class="row form-group">
                   <div class="col-md-12">
                     <label class="text-black" for="message">Message</label> 
-                    <textarea name="message" name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Write your notes or questions here..."></textarea>
+                    <textarea name="message" name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Write your message or questions here..."></textarea>
                   </div>
                 </div>
 
                 <div class="row form-group">
                   <div class="col-md-12">
-                    <input type="submit" name="submit" value="Send Message" class="btn btn-primary py-2 px-4 text-white">
+                    <input type="submit" name="submit" value="Send Email" class="btn btn-primary py-2 px-4 text-white">
                   </div>
                 </div>
 
@@ -86,16 +86,11 @@
     </div>
   </div>
 
+<div class="footer py-4">
   <div class="footer py-4">
-    <div class="container-fluid text-center">
-      <p>
-      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-      Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-      </p>
-    </div>
+    <jsp:include page="footer.jsp" />
   </div>
-
+</div>
     
 
     

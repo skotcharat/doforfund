@@ -8,7 +8,7 @@
 <jsp:include page="header.jsp" />
 
 <div>
-    <p class="text-black h2 mb-0 text-center">We received your contact</p><br><br>
+    <p class="text-black h2 mb-0 text-center">We were received your contact</p><br><br>
     <p class="text-center">Your message is</p><br>
     <p class="text-center">${allContacts.message}</p><br><br>
 
@@ -16,9 +16,11 @@
 
 </div>
 
-
-
+<div class="footer py-4">
+    <jsp:include page="footer.jsp" />
 </div>
+
+
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/jquery-migrate-3.0.1.min.js"></script>

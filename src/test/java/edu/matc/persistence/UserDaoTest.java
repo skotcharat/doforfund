@@ -136,7 +136,7 @@ class UserDaoTest {
         // For loop works too!
         for(User userRole : users) {
 
-            logger.info((userRole.userRoles));
+            logger.info(userRole.userRoles);
         }
 
     }

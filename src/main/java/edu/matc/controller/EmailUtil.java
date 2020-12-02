@@ -22,6 +22,7 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 @Log4j
 public class EmailUtil {
+    private final Logger logger = LogManager.getLogger(this.getClass());
     /**
      * Utility method to send simple HTML email
      * @param session
@@ -50,10 +51,10 @@ public class EmailUtil {
             msg.setSentDate(new Date());
 
             msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));
-            //log.debug("Message is ready");
+            //Logger.debug("Message is ready");
             Transport.send(msg);
 
-            //log.debug("Email Sent Successfully!!");
+            //Logger.debug("Email Sent Successfully!!");
         }
         catch (Exception e) {
             e.printStackTrace();

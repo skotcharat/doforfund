@@ -10,7 +10,13 @@
 | 10/5/20 | Week 4,5 Exercise, create one to many and many to one and doa test in DB|7  | Week6  |
 | 10/7/20 | Week 6 Exercise, create generic Dao and EC2 AWS account|5  | Week7  |
 | 10/8/20 | Week 8 Exercise, create RESTful Web Service in Java|2  | Week8  |
-| 10/8/20 | Peer feedback|0.5 | Week9  |
+| 10/16/20 | Week 9 Exercise, Create and Test Your First RESTful Web Service in IntelliJ Exercise|0.5 | Week10  |
+| 10/24/20 | Team project|5 | Week11  |
+| 10/31/20 | Team project|5 | Week12 |
+| 11/1/20 | Presentation for team project|0.5 | Week13  |
+| 11/6/20 | Working on individual project with Authentication, CRUD, and Gmail API  |20 | Week14  |
+| 11/12/20 | Deployed project to AWS, Prepare presentation for the individual project|3 | Week15  |
+| 11/15/20 | presentation|0.25 | Week16  |
 
              
 

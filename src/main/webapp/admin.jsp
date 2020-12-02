@@ -21,8 +21,10 @@
                         <th>UserName</th>
                         <th>Password</th>
                         <th>Email</th>
+                        <th>Role</th>
                         <th>Edit</th>
                         <th>Delete</th>
+
                     </tr>
                     <c:forEach items="${users}" var="allUser">
                         <tr>
@@ -32,6 +34,14 @@
                             <td>${allUser.userName}</td>
                             <td>${allUser.password}</td>
                             <td>${allUser.email}</td>
+
+                            <td>
+                            <c:forEach items="${allUser.userRoles}" var="roleUser">
+                                ${roleUser.roleName}
+                            </c:forEach>
+                            </td>
+
+
                             <td><a href="editUserWithId?EditWithId=${allUser.id}"><button type="button">Edit</button></a></td>
                             <td><a href="deleteUserWithId?DeleteWithId=${allUser.id}"><button type="button">Delete</button></a></td>
 
@@ -77,6 +87,11 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <h3>Donations</h3>
+                <c:set var="total" value="${0}"/>
+                <c:forEach var="totalAmounts" items="${donations}">
+                    <c:set var="total" value="${total + totalAmounts.amount}" />
+                </c:forEach>
+                <H4 >Total funds are $${total}.00</H4><br>
                 <table border=1 width=60% height=40% text-align="center">
                     <tr>
                         <th>ID</th>
@@ -105,7 +120,7 @@
                     <tr>
                         <th>ID</th>
                         <th>First Name</th>
-                        <th>Last Place</th>
+                        <th>Last Name</th>
                         <th>Email</th>
                         <th>Subject</th>
                         <th>message</th>
@@ -124,20 +139,18 @@
                             <td><a href="deleteContactWithId?DeleteWithId=${allContact.id}"><button type="button">Delete</button></a></td>
                         </tr>
                     </c:forEach>
+
+
                 </table>
             </div>
         </div>
     </div>
 </div>
 
+
+
 <div class="footer py-4">
-    <div class="container-fluid text-center">
-        <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        </p>
-    </div>
+    <jsp:include page="footer.jsp" />
 </div>
 
 

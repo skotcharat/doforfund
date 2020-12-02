@@ -12,7 +12,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     session.invalidate();
-    response.sendRedirect("http://localhost:8080/doForFund_att/");
+    response.sendRedirect("http://localhost:8080/DOFORFUND_war/");
 %>
 <%@include file="footer.jsp"%>
 </body>

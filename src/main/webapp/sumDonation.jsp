@@ -11,7 +11,7 @@
     <p class="text-black h2 mb-0 text-center">Thank you. We were received your Fund</p><br><br>
     <H2 class="text-center">Your Fund is</H2><br>
     <H3 class="text-center">$${donateAmount.amount}.00</H3><br><br>
-    <H2 class="text-center">Total Fund</H2><br>
+    <H2 class="text-center">Your fund helps increase the total fund to</H2><br>
 
     <c:set var="total" value="${0}"/>
     <c:forEach var="totalAmounts" items="${totalAmount}">
@@ -23,13 +23,7 @@
 
 </div>
 <div class="footer py-4">
-    <div class="container-fluid text-center">
-        <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        </p>
-    </div>
+    <jsp:include page="footer.jsp" />
 </div>
 
 

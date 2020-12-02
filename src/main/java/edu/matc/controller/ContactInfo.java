@@ -34,23 +34,21 @@ public class ContactInfo extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
-
-
         GenericDao<Contact> genericDao = DaoFactory.createDao(Contact.class);
 
         Contact newContact = new Contact(req.getParameter("fname"), req.getParameter("lname"),
                 req.getParameter("email"), req.getParameter("subject"), req.getParameter("message"));
 
-
-        int newId = genericDao.insert(newContact);
+        // send email to admin
         SendEmailSMTP send = new SendEmailSMTP();
         send.getInfo(req.getParameter("subject"), req.getParameter("message"));
+        logger.info("Email was sent");
 
+        // Add te contact to DB
+        int newId = genericDao.insert(newContact);
         Contact contacts = genericDao.getById(newId);
         req.setAttribute("allContacts", contacts);
-        logger.debug("Sending back the contact/s..." + contacts);
-
+        logger.info("Sending back the contact/s..." + contacts);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/sumContact.jsp");
         dispatcher.forward(req, resp);
