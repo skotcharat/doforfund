@@ -156,6 +156,10 @@ public class GenericDao<T> {
         return entities;
     }
 
+    public void givenData_whenInsert_thenCreatesMtoMrelationship() {
+
+    }
+
 
 
 

@@ -72,6 +72,14 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     public Set<Donation> donations = new HashSet<>();
 
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "events_user",
+            joinColumns = { @JoinColumn(name = "user_id") },
+            inverseJoinColumns = { @JoinColumn(name = "events_id") }
+    )
+    Set<Event> eventsJoin = new HashSet<>();
+
 
     /**
      * Instantiates a new User.

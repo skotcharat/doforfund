@@ -14,8 +14,8 @@ public class SendEmailSMTP {
 
     public void getInfo(String Subject, String message) {
 
-        final String fromEmail = "yingritta@gmail.com"; //requires valid gmail id
-        final String password = "0866053103"; // correct password for gmail id
+        final String fromEmail = "sukamatc661@gmail.com"; //requires valid gmail id
+        final String password = "%Ying006"; // correct password for gmail id
         final String toEmail = "yingritta@gmail.com"; // can be any email id
 
         //log.error("SSLEmail Start");

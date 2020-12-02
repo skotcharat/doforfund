@@ -8,6 +8,8 @@ import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotEmpty;
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * The type Order.
@@ -17,7 +19,6 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 public class Event { // @OneToMany
 
@@ -69,6 +70,9 @@ public class Event { // @OneToMany
     @ManyToOne
     private User user;
 
+    @ManyToMany(mappedBy = "eventsJoin")
+    private Set<User> userEvent = new HashSet<>();
+
     /**
      * Instantiates a new Event.
      *
@@ -88,4 +92,6 @@ public class Event { // @OneToMany
     }
 
 
+    public Event(String eve) {
+    }
 }
