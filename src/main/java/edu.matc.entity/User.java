@@ -46,8 +46,6 @@ public class User {
     @Column(name = "password")
     private String password;
 
-
-
     @Column(name = "email")
     private String email;
 
@@ -70,6 +68,9 @@ public class User {
      //private User user;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     public Set<UserRole> userRoles = new HashSet<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    public Set<Donation> donations = new HashSet<>();
 
 
     /**
@@ -118,15 +119,24 @@ public class User {
     }
 
 
-
     /**
      * Add a UserRoles.
      *
      * @param userRole the UserRole to add
      */
     public void addUserRoles(UserRole userRole) {
-        userRoles.add( userRole );
-        userRole.setUser( this );
+        userRoles.add(userRole);
+        userRole.setUser(this);
+    }
+
+    /**
+     * Add a Donation
+     *
+     * @param donation the Donation to add
+     */
+    public void addDonation(Donation donation) {
+        donations.add(donation);
+        donation.setUser(this);
     }
 
 

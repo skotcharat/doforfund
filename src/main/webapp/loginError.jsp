@@ -7,15 +7,13 @@
 
 <jsp:include page="header.jsp" />
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login Fail</title>
-</head>
-<body>
-<p>Log-in Failed please try again</p>
+
+<div>
+    <p class="text-black h2 mb-0 text-center">Log-in Failed please try again</p><br><br>
+</div>
 
 </body>
+<br><br><br><br><br><br><br><br><br><br>
 <div class="footer py-4">
     <jsp:include page="footer.jsp" />
 </div>
