@@ -4,15 +4,22 @@ import edu.matc.entity.Event;
 import edu.matc.entity.User;
 import edu.matc.entity.UserRole;
 import edu.matc.test.util.DatabaseUtility;
+import lombok.SneakyThrows;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.*;
 
 
 class EventDaoTest {
+    private final Logger logger = LogManager.getLogger(this.getClass());
 
     GenericDao genericDao;
     DatabaseUtility databaseUtility;
@@ -55,9 +62,12 @@ class EventDaoTest {
     /**
      * Verify successful insert of a Event
      */
+    @SneakyThrows
     @Test
     void insert() {
-        Event newEvent = new Event("blackandwhite", "matc", "2020-11-19", "11:30:00", "Let join us");
+        LocalDate chosenDate = LocalDate.parse("2020-11-11");
+        logger.info("chosenDate  " + chosenDate);
+        Event newEvent = new Event("blackandwhite", "matc", chosenDate, "11:30:00", "Let join us");
         int id = genericDao.insert(newEvent);
         assertNotEquals(0,id);
         Event insertedEvent = (Event)genericDao.getById(id);
@@ -81,13 +91,13 @@ class EventDaoTest {
      */
     @Test
     void saveOrUpdate() {
-        String updateNewEvent = "2020-11-30";
+        String updateNewEvent = "Capital";
         Event eventBeforeUpdate = (Event)genericDao.getById(3);
-        eventBeforeUpdate.setEventDate(updateNewEvent);
+        eventBeforeUpdate.setEventPlace(updateNewEvent);
         genericDao.saveOrUpdate(eventBeforeUpdate);
         Event eventAfterUpdate = (Event)genericDao.getById(3);
-        String expectedEvent = "2020-11-30";
-        String actualEvent = eventAfterUpdate.getEventDate();
+        String expectedEvent = "Capital";
+        String actualEvent = eventAfterUpdate.getEventPlace();
         assertTrue(expectedEvent.equals(actualEvent));
     }
 

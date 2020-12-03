@@ -6,6 +6,7 @@ import edu.matc.entity.User;
 import edu.matc.entity.UserRole;
 import edu.matc.persistence.GenericDao;
 import edu.matc.util.DaoFactory;
+import lombok.SneakyThrows;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,6 +17,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
+
 /**
  * A simple servlet to welcome the user.
  * @author pwaite
@@ -26,13 +31,16 @@ import java.io.IOException;
 public class AddEventAction extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    @SneakyThrows
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         GenericDao<Event> genericDao = DaoFactory.createDao(Event.class);
 
+        LocalDate chosenDate = LocalDate.parse(req.getParameter("eventDate"));
+
         Event newEvent = new Event(req.getParameter("eventName"), req.getParameter("eventPlace"),
-                req.getParameter("eventDate"), req.getParameter("eventTime"), req.getParameter("eventDescription"));
+                chosenDate, req.getParameter("eventTime"), req.getParameter("eventDescription"));
 
 
         int newId = genericDao.insert(newEvent);

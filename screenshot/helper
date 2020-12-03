@@ -5,6 +5,10 @@ mysql -u root -p
 Skotcharat@madisoncollege.edu
 Saa#29102
 
+ LocalDate currentDate = LocalDate.now();
+        LocalDate birthday = ((java.sql.Date) dateOfBirth). toLocalDate();
+        int age = Period.between(birthday, currentDate).getYears();
+
 
 git stash
 

@@ -39,7 +39,7 @@
 
                                 <div class="col-md-12">
                                     <label class="text-black" for="eventDate">Event Date</label>
-                                    <input type="text" id="eventDate" name="eventDate" class="form-control" value="YY-MM-DD">
+                                    <input type="datetime" id="eventDate" name="eventDate" class="form-control" >
                                 </div>
                             </div>
 

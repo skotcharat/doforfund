@@ -10,6 +10,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -37,7 +39,7 @@ public class Event { // @OneToMany
     private String eventPlace;
 
     @Column(name = "eventDate")
-    private String eventDate;
+    private LocalDate eventDate;
 
     @Column(name = "eventTime")
     private String eventTime;
@@ -84,7 +86,7 @@ public class Event { // @OneToMany
      * @param eventTime  the event time
      * @param eventDescription  the event Description
      */
-    public Event(String eventName, String eventPlace, String eventDate, String eventTime, String eventDescription) {
+    public Event(String eventName, String eventPlace, LocalDate eventDate, String eventTime, String eventDescription) {
         this.eventName = eventName;
         this.eventPlace = eventPlace;
         this.eventDate = eventDate;
@@ -92,6 +94,7 @@ public class Event { // @OneToMany
         this.eventDescription = eventDescription;
 
     }
+
 
 
 }
