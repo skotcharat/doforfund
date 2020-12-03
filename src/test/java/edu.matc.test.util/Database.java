@@ -35,7 +35,7 @@ public class Database {
 
     }
 
-    // TODO use properties loader (interface from adv java)
+    // load properties
     private void loadProperties() {
         properties = new Properties();
         try {

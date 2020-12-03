@@ -1,9 +1,8 @@
-package edu.matc.controller;
+package com.api;
 
 
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.api.EmailUtil;
 
 import javax.mail.Session;
 import javax.mail.Authenticator;

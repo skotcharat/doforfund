@@ -101,7 +101,6 @@ class UserDaoTest {
      */
     @Test
     void insertWithRoleSuccess() {
-
         String userRoleName = "user";
         User newUser = new User("Fred", "Flintstone", "fflintstone", "Flin@mail.com");
         UserRole userRoles = new UserRole(userRoleName, "fflintstone", newUser);
@@ -112,10 +111,6 @@ class UserDaoTest {
         assertNotNull(insertedUser);
         assertEquals("Fred", insertedUser.getFirstName());
         assertEquals(1, insertedUser.getUserRoles().size());
-
-        // Could continue comparing all values, but
-        // it may make sense to use .equals()
-        // TODO review .equals recommendations http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#mapping-model-pojo-equalshashcode
     }
 
     /**
@@ -129,16 +124,13 @@ class UserDaoTest {
         assertEquals(1, users.get(0).getId());
         logger.info(users);
 //        User retrievedUser = (User) genericDao.getById(users.get(0).getId());
-//
 //        assertEquals("admin", retrievedUser.getUserRoles().toString());
 //        System.out.print(retrievedUser.getUserRoles());
 
         // For loop works too!
         for(User userRole : users) {
-
             logger.info(userRole.userRoles);
         }
-
     }
 
     /**
@@ -149,12 +141,4 @@ class UserDaoTest {
         List<User> users = genericDao.getByPropertyLike("lastName", "c");
         assertEquals(1, users.size());
     }
-
-
-
-
-
-
-
-
 }

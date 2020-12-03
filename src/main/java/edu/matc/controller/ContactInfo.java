@@ -1,8 +1,8 @@
 package edu.matc.controller;
 
 
+import com.api.SendEmailSMTP;
 import edu.matc.entity.Contact;
-import edu.matc.entity.User;
 import edu.matc.persistence.GenericDao;
 import edu.matc.util.DaoFactory;
 import org.apache.logging.log4j.LogManager;
@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * A simple servlet to welcome the user.
