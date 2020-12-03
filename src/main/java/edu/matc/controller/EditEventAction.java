@@ -14,8 +14,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 
 @WebServlet(
@@ -36,10 +38,11 @@ public class EditEventAction extends HttpServlet {
         eventBeforeUpdate.setEventPlace(req.getParameter("eventPlace"));
 
         LocalDate chosenDate = LocalDate.parse(req.getParameter("eventDate"));
-
-
         eventBeforeUpdate.setEventDate(chosenDate);
-        eventBeforeUpdate.setEventTime(req.getParameter("eventTime"));
+
+        LocalTime time = LocalTime.parse(req.getParameter("eventTime"));
+        eventBeforeUpdate.setEventTime(time);
+
         eventBeforeUpdate.setEventDescription(req.getParameter("eventDescription"));
         genericDao.saveOrUpdate(eventBeforeUpdate);
 

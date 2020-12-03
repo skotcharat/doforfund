@@ -17,9 +17,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
+import java.util.List;
 
 /**
  * A simple servlet to welcome the user.
@@ -39,13 +42,17 @@ public class AddEventAction extends HttpServlet {
 
         GenericDao<Event> genericDao = DaoFactory.createDao(Event.class);
         LocalDate chosenDate = LocalDate.parse(req.getParameter("eventDate"));
+        LocalTime chosenTime = LocalTime.parse(req.getParameter("eventTime"));
 
         Event newEvent = new Event(req.getParameter("eventName"), req.getParameter("eventPlace"),
-                chosenDate, req.getParameter("eventTime"), req.getParameter("eventDescription"));
+                chosenDate, chosenTime, req.getParameter("eventDescription"));
 
         int newId = genericDao.insert(newEvent);
+        Event insertedEvent = (Event)genericDao.getById(newId);
+        logger.info("insertedEvent" + insertedEvent);
 
         resp.sendRedirect("http://localhost:8080/DOFORFUND_war/displayEvent");
+
     }
 
 }

@@ -47,7 +47,7 @@
 
                                 <div class="col-md-12">
                                     <label class="text-black" for="eventTime">Event Time</label>
-                                    <input type="text" id="eventTime" name="eventTime" class="form-control" value="HH:MM (pm/am)">
+                                    <input type="time" id="eventTime" name="eventTime" class="form-control">
                                 </div>
                             </div>
 

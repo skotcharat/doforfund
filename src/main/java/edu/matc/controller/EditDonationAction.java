@@ -28,8 +28,6 @@ public class EditDonationAction extends HttpServlet {
         GenericDao<Donation> genericDao = DaoFactory.createDao(Donation.class);
         Donation contactBeforeUpdate = genericDao.getById(Integer.parseInt(req.getParameter("ParameterId")));
         contactBeforeUpdate.setAmount(Integer.parseInt(req.getParameter("amount")));
-//        contactBeforeUpdate.setSub(req.getParameter("subject"));
-//        contactBeforeUpdate.set(req.getParameter("message"));
 
         genericDao.saveOrUpdate(contactBeforeUpdate);
 

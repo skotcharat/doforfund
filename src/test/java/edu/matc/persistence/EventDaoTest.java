@@ -10,8 +10,10 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
 
@@ -37,7 +39,6 @@ class EventDaoTest {
         databaseUtility = new DatabaseUtility();
         databaseUtility.runSQL("cleandb.sql");
         databaseUtility.runSQL("createTestData.sql");
-
     }
 
     /**
@@ -66,15 +67,16 @@ class EventDaoTest {
     @Test
     void insert() {
         LocalDate chosenDate = LocalDate.parse("2020-11-11");
+        LocalTime time = LocalTime.parse("11:30:00");
+
         logger.info("chosenDate  " + chosenDate);
-        Event newEvent = new Event("blackandwhite", "matc", chosenDate, "11:30:00", "Let join us");
+        Event newEvent = new Event("blackandwhite", "matc", chosenDate, time, "Let join us");
         int id = genericDao.insert(newEvent);
         assertNotEquals(0,id);
         Event insertedEvent = (Event)genericDao.getById(id);
         String expectedEvent = "blackandwhite";
         String actualEvent = insertedEvent.getEventName();
         assertTrue(expectedEvent.equals(actualEvent));
-
     }
 
     /**
