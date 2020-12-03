@@ -31,26 +31,21 @@ import java.util.Date;
 public class AddEventAction extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+
     @SneakyThrows
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        GenericDao<Event> genericDao = DaoFactory.createDao(Event.class);
 
+        GenericDao<Event> genericDao = DaoFactory.createDao(Event.class);
         LocalDate chosenDate = LocalDate.parse(req.getParameter("eventDate"));
 
         Event newEvent = new Event(req.getParameter("eventName"), req.getParameter("eventPlace"),
                 chosenDate, req.getParameter("eventTime"), req.getParameter("eventDescription"));
 
-
         int newId = genericDao.insert(newEvent);
 
-        Event events  = genericDao.getById(newId);
-        req.setAttribute("eventInfo", events);
-        logger.debug("Sending back the events..." + events);
-
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/event.jsp");
-        dispatcher.forward(req, resp);
+        resp.sendRedirect("http://localhost:8080/DOFORFUND_war/displayEvent");
     }
+
 }
