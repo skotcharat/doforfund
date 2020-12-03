@@ -34,7 +34,12 @@ public class EditProfileAction extends HttpServlet {
         userBeforeUpdate.setEmail(req.getParameter("email"));
         genericDao.saveOrUpdate(userBeforeUpdate);
 
-        resp.sendRedirect("http://localhost:8080/DOFORFUND_war/displayProfiles");
+        if(req.isUserInRole("admin")) {
+            resp.sendRedirect("http://localhost:8080/DOFORFUND_war/adminPage");
+        } else {
+            resp.sendRedirect("http://localhost:8080/DOFORFUND_war/displayProfiles");
+        }
+
     }
 }
 

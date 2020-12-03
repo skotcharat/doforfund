@@ -3,7 +3,7 @@ SET GLOBAL time_zone = '-6:00';
 mysql -u root -p
 
 Skotcharat@madisoncollege.edu
-Saa#2910277
+Saa#29102
 
 
 git stash

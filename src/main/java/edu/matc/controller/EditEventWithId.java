@@ -27,8 +27,8 @@ public class EditEventWithId extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         GenericDao<Event> genericDao = DaoFactory.createDao(Event.class);
-        User userBeforeUpdate = genericDao.getById(Integer.parseInt(req.getParameter("EditWithId")));
-        req.setAttribute("eventEdit", userBeforeUpdate);
+        Event eventBeforeUpdate = genericDao.getById(Integer.parseInt(req.getParameter("EditWithId")));
+        req.setAttribute("eventEdit", eventBeforeUpdate);
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/editEvent.jsp");
         dispatcher.forward(req, resp);
