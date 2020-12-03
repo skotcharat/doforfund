@@ -19,8 +19,6 @@ import java.util.List;
         urlPatterns = {"/loginAction"}
 )
 
-
-
 public class LoginAction extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());

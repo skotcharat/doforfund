@@ -21,7 +21,7 @@
 
           <div class="row">
             <div class="col-lg-8 mb-5">
-              <form action="contactInfo" method="GET">
+              <form action="contactInfo" method="Post">
                
 
                 <div class="row form-group">

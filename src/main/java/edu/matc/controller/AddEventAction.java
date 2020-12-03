@@ -42,7 +42,7 @@ public class AddEventAction extends HttpServlet {
         logger.debug("Sending back the events..." + events);
 
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/addEventSuccess.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/event.jsp");
         dispatcher.forward(req, resp);
     }
 }

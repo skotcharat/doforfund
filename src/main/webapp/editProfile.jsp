@@ -21,7 +21,7 @@
 
                 <div class="row">
                     <div class="col-lg-8 mb-5">
-                        <form action="editProfileAction" method="get">
+                        <form action="editProfileAction" method="post">
 
                             <input type="hidden" name="ParameterId" class="form-control" value="${userEdit.id}" />
                             <div class="row form-group">

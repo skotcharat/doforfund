@@ -32,7 +32,7 @@ public class SumDonate extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         GenericDao<Donation> genericDao = DaoFactory.createDao(Donation.class);
         int amount = Integer.parseInt(req.getParameter("amount"));

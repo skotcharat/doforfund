@@ -24,7 +24,7 @@ public class EditContactAction extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         GenericDao<Contact> genericDao = DaoFactory.createDao(Contact.class);
         Contact contactBeforeUpdate = genericDao.getById(Integer.parseInt(req.getParameter("ParameterId")));
@@ -35,8 +35,7 @@ public class EditContactAction extends HttpServlet {
         contactBeforeUpdate.setMessage(req.getParameter("message"));
         genericDao.saveOrUpdate(contactBeforeUpdate);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/adminPage");
-        dispatcher.forward(req, resp);
+        resp.sendRedirect("http://localhost:8080/DOFORFUND_war/adminPage");
     }
 }
 

@@ -21,7 +21,7 @@
 
                 <div class="row">
                     <div class="col-lg-8 mb-5">
-                        <form action="sumDonate" method="GET">
+                        <form action="sumDonate" method="Post">
 
 
                             <div class="row form-group">

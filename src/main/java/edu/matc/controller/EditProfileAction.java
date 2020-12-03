@@ -23,7 +23,7 @@ public class EditProfileAction extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         GenericDao<User> genericDao = DaoFactory.createDao(User.class);
         User userBeforeUpdate = genericDao.getById(Integer.parseInt(req.getParameter("ParameterId")));
@@ -34,8 +34,7 @@ public class EditProfileAction extends HttpServlet {
         userBeforeUpdate.setEmail(req.getParameter("email"));
         genericDao.saveOrUpdate(userBeforeUpdate);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/displayProfiles");
-        dispatcher.forward(req, resp);
+        resp.sendRedirect("http://localhost:8080/DOFORFUND_war/displayProfiles");
     }
 }
 
