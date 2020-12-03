@@ -65,7 +65,9 @@ class UserRoleDaoTest {
     void insert() {
         User user = (User)genericDaoUser.getById(1);
         String roleName = "sign_in";
-        UserRole newUserRoles = new UserRole(roleName, user);
+        String UserName = "mayay";
+
+        UserRole newUserRoles = new UserRole(roleName, "mayay", user);
         user.addUserRoles(newUserRoles);
         int id = genericDao.insert(newUserRoles);
         assertNotEquals(0, id);

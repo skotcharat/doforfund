@@ -69,16 +69,16 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     public Set<UserRole> userRoles = new HashSet<>();
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    public Set<Donation> donations = new HashSet<>();
-
-    @ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-            name = "events_user",
-            joinColumns = { @JoinColumn(name = "user_id") },
-            inverseJoinColumns = { @JoinColumn(name = "events_id") }
-    )
-    Set<Event> eventsJoin = new HashSet<>();
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+//    public Set<Donation> donations = new HashSet<>();
+//
+//    @ManyToMany(cascade = { CascadeType.ALL })
+//    @JoinTable(
+//            name = "events_user",
+//            joinColumns = { @JoinColumn(name = "user_id") },
+//            inverseJoinColumns = { @JoinColumn(name = "events_id") }
+//    )
+//    Set<Event> eventsJoin = new HashSet<>();
 
 
     /**
@@ -137,15 +137,15 @@ public class User {
         userRole.setUser(this);
     }
 
-    /**
-     * Add a Donation
-     *
-     * @param donation the Donation to add
-     */
-    public void addDonation(Donation donation) {
-        donations.add(donation);
-        donation.setUser(this);
-    }
+//    /**
+//     * Add a Donation
+//     *
+//     * @param the Donation to add
+//     */
+//    public void addDonation(Donation donation) {
+//        donations.add(donation);
+//        donation.setUser(this);
+//    }
 
 
     @Override

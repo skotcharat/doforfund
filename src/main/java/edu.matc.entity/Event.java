@@ -7,7 +7,9 @@ import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -28,7 +30,7 @@ public class Event { // @OneToMany
     private int id;
 
     @Column(name = "eventName")
-    @NotEmpty(message = "Please provide a eventName")
+    //@NotNull(message = "Please provide a eventName")
     private String eventName;
 
     @Column(name = "eventPlace")
@@ -70,8 +72,8 @@ public class Event { // @OneToMany
     @ManyToOne
     private User user;
 
-    @ManyToMany(mappedBy = "eventsJoin")
-    private Set<User> userEvent = new HashSet<>();
+//    @ManyToMany(mappedBy = "eventsJoin")
+//    private Set<User> userEvent = new HashSet<>();
 
     /**
      * Instantiates a new Event.
@@ -92,6 +94,4 @@ public class Event { // @OneToMany
     }
 
 
-    public Event(String eve) {
-    }
 }

@@ -21,7 +21,7 @@
 
                 <div class="row">
                     <div class="col-lg-8 mb-5">
-                        <form action="addEventAction" method="GET">
+                        <form action="addEventAction" method="POST">
 
 
                             <div class="row form-group">

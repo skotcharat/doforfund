@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 
@@ -28,6 +29,7 @@ public class Donation { // @OneToMany
     private int id;
 
     @Column(name = "amount")
+
     private int amount;
 
     @Column(name = "howToDonate")

@@ -29,6 +29,9 @@ public class UserRole { // @OneToMany
     @Column(name = "role_name")
     private String roleName;
 
+    @Column(name = "user_name")
+    private String userName;
+
     /**
      * Bidirectional @OneToMany
 
@@ -56,11 +59,13 @@ public class UserRole { // @OneToMany
     /**
      * Instantiates a new User role.
      *
-     * @param roleName the role name
+     * @param roleName the rolename
+     * @param userName the role userName
      * @param user     the user
      */
-    public UserRole(String roleName, User user) {
+    public UserRole(String roleName, String userName, User user) {
         this.roleName = roleName;
+        this.userName = userName;
         this.user = user;
     }
 

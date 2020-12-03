@@ -104,7 +104,7 @@ class UserDaoTest {
 
         String userRoleName = "user";
         User newUser = new User("Fred", "Flintstone", "fflintstone", "Flin@mail.com");
-        UserRole userRoles = new UserRole(userRoleName, newUser);
+        UserRole userRoles = new UserRole(userRoleName, "fflintstone", newUser);
         newUser.addUserRoles(userRoles);
         int id = genericDao.insert(newUser);
         assertNotEquals(0, id);

@@ -42,14 +42,15 @@ public class SignupInfo extends HttpServlet {
         User newUser = new User(req.getParameter("fname"), req.getParameter("lname"),
                 req.getParameter("username"), req.getParameter("password"), req.getParameter("email"));
 
+        String userRoleName = "user";
+        String userName = req.getParameter("username");
+        UserRole userRoles = new UserRole(userRoleName, userName, newUser);
 
-        int newId = genericDao.insert(newUser);
-        UserRole role = new UserRole();
-        role.setUser(newUser);
-        role.setRoleName("user");
-        newUser.addUserRoles(role);
+        newUser.addUserRoles(userRoles);
+        int id = genericDao.insert(newUser);
+        User insertedUser = (User)genericDao.getById(id);
 
-        User user = genericDao.getById(newId);
+        User user = genericDao.getById(id);
         req.setAttribute("newUser", user);
         logger.debug("Sending back the User..." + user);
 
