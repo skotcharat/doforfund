@@ -9,6 +9,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 /**
  * The type Order.
@@ -29,17 +30,13 @@ public class Donation { // @OneToMany
     private int id;
 
     @Column(name = "amount")
-
     private int amount;
 
-    @Column(name = "howToDonate")
-    private String howToDonate;
-
-    @Column(name = "sumAmount")
-    private int sumAmount;
-
     @Column(name = "date")
-    private String date;
+    private LocalDate date;
+
+    @Column(name = "subject")
+    private String subject;
 
     /**
      * Bidirectional @OneToMany
@@ -69,31 +66,43 @@ public class Donation { // @OneToMany
     /**
      * Instantiates a new Donation.
      *
-     * @param id          the id
-     * @param amount      the amount
-     * @param howToDonate the how to donate
-     * @param sumAmount   the sum amount
-     * @param date        the date
-     * @param user        the user
+     * @param id      the id
+     * @param amount  the amount
+     * @param date    the date
+     * @param subject the subject
+     * @param user    the user
      */
-    public Donation(int id, int amount, String howToDonate, int sumAmount, String date, User user) {
+    public Donation(int id, int amount, LocalDate date, String subject, User user) {
         this.id = id;
         this.amount = amount;
-        this.howToDonate = howToDonate;
-        this.sumAmount += amount;
+        this.subject = subject;
         this.date = date;
         this.user = user;
     }
 
     /**
      * Instantiates a new Donation.
+     *
+     * @param id      the id
+     * @param amount  the amount
+     * @param date    the date
+     * @param subject the subject
+     */
+    public Donation(int id, int amount, LocalDate date, String subject) {
+        this.id = id;
+        this.amount = amount;
+        this.subject = subject;
+        this.date = date;
+    }
+
+    /**
+     * Instantiates a new Donation.
+     *
      * @param amount the amount
      */
     public Donation(int amount) {
         this.amount = amount;
     }
-
-
 
 
 

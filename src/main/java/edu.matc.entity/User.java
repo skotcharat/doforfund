@@ -49,7 +49,6 @@ public class User {
     @Column(name = "email")
     private String email;
 
-
     /**
      * Bidirectional @OneToMany
 
@@ -137,6 +136,16 @@ public class User {
         userRole.setUser(this);
     }
 
+    /**
+     * Remove user roles.
+     *
+     * @param userRole the user role
+     */
+    public void removeUserRoles(UserRole userRole) {
+        userRoles.remove( userRole );
+        userRole.setUser( null );
+    }
+
 //    /**
 //     * Add a Donation
 //     *
@@ -161,14 +170,6 @@ public class User {
                 '}';
     }
 
-    /**
-     * Remove user roles.
-     *
-     * @param userRole the user role
-     */
-    public void removeUserRoles(UserRole userRole) {
-        userRoles.remove( userRole );
-        userRole.setUser( null );
-    }
+
 
 }

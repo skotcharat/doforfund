@@ -32,8 +32,6 @@
 
                             </div>
 
-
-
                             <div class="row form-group">
 
                                 <div class="col-md-12">
@@ -42,12 +40,6 @@
                                 </div>
                             </div>
 
-                            <div class="row form-group">
-                                <div class="col-md-12">
-                                    <label class="text-black" for="message">Message</label>
-                                    <textarea name="message" name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Write your notes or questions here..."></textarea>
-                                </div>
-                            </div>
 
                             <div class="row form-group">
                                 <div class="col-md-12">

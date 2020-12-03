@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -107,15 +108,15 @@ class UserRoleDaoTest {
         assertTrue(expectedUserRole.equals(actualUserRole));
     }
 
-
-
-
     /**
      * Verifies Gets by property equal successfully.
      * "roleName" from instance UserRole class
      */
     @Test
     void getByPropertyEqual() {
+        List<UserRole> role = genericDao.getByPropertyEqual("roleName", "user");
+        assertEquals(1, role.size());
+        assertEquals(2, role.get(0).getId());
     }
 
     /**
