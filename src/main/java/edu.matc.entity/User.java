@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -51,34 +50,80 @@ public class User {
 
     /**
      * Bidirectional @OneToMany
-
-     The bidirectional @OneToMany association also requires a @ManyToOne association on the child side.
-     Although the Domain Model exposes two sides to navigate this association, behind the scenes,
-     the relational database has only one foreign key for this relationship.
-
-     Every bidirectional association must have one owning side only (the child side),
-     the other one being referred to as the inverse (or the mappedBy) side.
-
-     Foreign key is on the child table (Order in this example)
-
-     Source: http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#associations-one-to-many
+     * The bidirectional @OneToMany association also requires a @ManyToOne association on the child side.
+     * Although the Domain Model exposes two sides to navigate this association, behind the scenes,
+     * the relational database has only one foreign key for this relationship.
+     * Every bidirectional association must have one owning side only (the child side),
+     * the other one being referred to as the inverse (or the mappedBy) side.
+     * Foreign key is on the child table (Order in this example)
+     * Source: http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#associations-one-to-many
      */
-     //mappedBy = "user" came from instance variable at UserRole class
+//mappedBy = "user" came from instance variable at UserRole class
      //private User user;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     public Set<UserRole> userRoles = new HashSet<>();
 
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-//    public Set<Donation> donations = new HashSet<>();
-//
+//    /**
+//     * The Events.
+//     */
 //    @ManyToMany(cascade = { CascadeType.ALL })
 //    @JoinTable(
 //            name = "events_user",
 //            joinColumns = { @JoinColumn(name = "user_id") },
 //            inverseJoinColumns = { @JoinColumn(name = "events_id") }
 //    )
-//    Set<Event> eventsJoin = new HashSet<>();
+//    Set<Event> events;
+//
+//
+//    /**
+//     * Add event.
+//     *
+//     * @param event the event
+//     */
+//    public void addEvent(Event event) {
+//        this.events.add(event);
+//        event.getUsers().add(this);
+//    }
+//
+//    /**
+//     * Remove event.
+//     *
+//     * @param event the event
+//     */
+//    public void removeEvent(Event event) {
+//        this.getEvents().remove(event);
+//        event.getUsers().remove(this);
+//    }
+//
+//    /**
+//     * Remove event.
+//     */
+//    public void removeEvent() {
+//        for (Event event : new HashSet<>(events)) {
+//            removeEvent(event);
+//        }
+//    }
 
+    /**
+     * Add a UserRoles.
+     *
+     * @param userRole the UserRole to add
+     */
+    public void addUserRoles(UserRole userRole) {
+        userRoles.add(userRole);
+        userRole.setUser(this);
+    }
+
+    /**
+     * Remove user roles.
+     *
+     * @param userRole the user role
+     */
+    public void removeUserRoles(UserRole userRole) {
+        userRoles.remove( userRole );
+        userRole.setUser( null );
+
+    }
 
     /**
      * Instantiates a new User.
@@ -126,35 +171,8 @@ public class User {
     }
 
 
-    /**
-     * Add a UserRoles.
-     *
-     * @param userRole the UserRole to add
-     */
-    public void addUserRoles(UserRole userRole) {
-        userRoles.add(userRole);
-        userRole.setUser(this);
-    }
 
-    /**
-     * Remove user roles.
-     *
-     * @param userRole the user role
-     */
-    public void removeUserRoles(UserRole userRole) {
-        userRoles.remove( userRole );
-        userRole.setUser( null );
-    }
 
-//    /**
-//     * Add a Donation
-//     *
-//     * @param the Donation to add
-//     */
-//    public void addDonation(Donation donation) {
-//        donations.add(donation);
-//        donation.setUser(this);
-//    }
 
 
     @Override

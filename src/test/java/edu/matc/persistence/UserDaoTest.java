@@ -44,7 +44,7 @@ class UserDaoTest {
     @Test
     void getAll() {
         List<User> users = genericDao.getAll();
-        assertEquals(2, users.size());
+        assertEquals(4, users.size());
     }
 
     /**
@@ -113,6 +113,17 @@ class UserDaoTest {
         assertEquals(1, insertedUser.getUserRoles().size());
     }
 
+//    /**
+//     * Verify successful delete of a user and an userRole
+//     */
+//    @Test
+//    void deleteUserRoleSuccess() {
+//        UserRole userRoles = new UserRole(2);
+//        removeUserRoles(userRole);
+//
+//        genericDao.delete(genericDao.getById(1));
+//    }
+
     /**
      * Verify successful get by property (equal match)
      * propertyName is name match in the User table
@@ -141,4 +152,6 @@ class UserDaoTest {
         List<User> users = genericDao.getByPropertyLike("lastName", "c");
         assertEquals(1, users.size());
     }
+
+
 }

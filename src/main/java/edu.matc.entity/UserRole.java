@@ -70,6 +70,7 @@ public class UserRole { // @OneToMany
     }
 
 
-
-
+    public UserRole(int id) {
+        this.id = id;
+    }
 }

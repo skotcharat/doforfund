@@ -47,7 +47,7 @@ class EventDaoTest {
     @Test
     void getAll() {
         List<Event> events = genericDao.getAll();
-        assertEquals(3, events.size());
+        assertEquals(4, events.size());
     }
 
     /**
@@ -84,8 +84,8 @@ class EventDaoTest {
      */
     @Test
     void delete() {
-        genericDao.delete(genericDao.getById(1));
-        assertNull(genericDao.getById(1));
+        genericDao.delete(genericDao.getById(4));
+        assertNull(genericDao.getById(4));
     }
 
     /**
@@ -131,9 +131,9 @@ class EventDaoTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<Event> users = genericDao.getByPropertyEqual("eventPlace", "matc");
-        assertEquals(1, users.size());
-        assertEquals(1, users.get(0).getId());
+        List<Event> events = genericDao.getByPropertyEqual("eventPlace", "matc");
+        assertEquals(1, events.size());
+        assertEquals(1, events.get(0).getId());
     }
 
     /**
@@ -141,15 +141,8 @@ class EventDaoTest {
      */
     @Test
     void getByPropertyLikeSuccess() {
-        List<User> users = genericDao.getByPropertyLike("eventName", "fun");
-        assertEquals(1, users.size());
+        List<Event> events = genericDao.getByPropertyLike("eventName", "fun");
+        assertEquals(2, events.size());
     }
-
-
-
-
-
-
-
 
 }

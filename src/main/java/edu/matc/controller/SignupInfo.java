@@ -50,9 +50,9 @@ public class SignupInfo extends HttpServlet {
         int id = genericDao.insert(newUser);
         User insertedUser = (User)genericDao.getById(id);
 
-        User user = genericDao.getById(id);
-        req.setAttribute("newUser", user);
-        logger.debug("Sending back the User..." + user);
+//        User user = genericDao.getById(id);
+//        req.setAttribute("newUser", user);
+//        logger.debug("Sending back the User..." + user);
 
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/login.jsp");

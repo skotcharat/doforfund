@@ -131,6 +131,7 @@ public class GenericDao<T> {
         return entities;
     }
 
+
     /**
      * Get entity by property (like)
      * sample usage: getByPropertyLike("lastname", "C")

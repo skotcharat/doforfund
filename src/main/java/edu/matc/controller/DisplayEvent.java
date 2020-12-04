@@ -2,7 +2,6 @@ package edu.matc.controller;
 
 
 import edu.matc.entity.Event;
-import edu.matc.entity.User;
 import edu.matc.persistence.GenericDao;
 import edu.matc.util.DaoFactory;
 import org.apache.logging.log4j.LogManager;
