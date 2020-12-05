@@ -47,20 +47,17 @@ public class ContactInfo extends HttpServlet {
             logger.info("ContactInfo class ID  " + id);
 
             User retrievedUser = (User)genericDaoUser.getById(id);
-            //User newUser = new User(retrievedUser);
-            logger.info("ContactInfo class newUser  " + retrievedUser);
-
+            logger.info("ContactInfo class retrievedUser  " + retrievedUser);
 
             Contact newContact = new Contact(req.getParameter("fname"),
                     req.getParameter("lname"),
                     req.getParameter("email"),
                     req.getParameter("subject"),
-                    req.getParameter("message"), retrievedUser);
+                    req.getParameter("message"), username, retrievedUser);
             // Add te contact to DB
             retrievedUser.addContact(newContact);
 
             int newId = genericDao.insert(newContact);
-
 
             Contact contacts = genericDao.getById(newId);
             req.setAttribute("allContacts", contacts);
@@ -73,20 +70,17 @@ public class ContactInfo extends HttpServlet {
                     req.getParameter("subject"),
                     req.getParameter("message"));
             // Add te contact to DB
-//            int newId = genericDao.insert(newContact);
-//            Contact contacts = genericDao.getById(newId);
-//            req.setAttribute("allContacts", contacts);
-//            logger.info("Sending back the contact/s..." + contacts);
-        }
+            int newId = genericDao.insert(newContact);
 
+            Contact contacts = genericDao.getById(newId);
+            req.setAttribute("allContacts", contacts);
+            logger.info("Sending back the contact/s..." + contacts);
+        }
 
         // send email to admin
         SendEmailSMTP send = new SendEmailSMTP();
         send.getInfo(req.getParameter("subject"), req.getParameter("message"));
         logger.info("Email was sent");
-
-
-
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/sumContact.jsp");
         dispatcher.forward(req, resp);

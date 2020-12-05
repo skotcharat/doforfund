@@ -124,6 +124,7 @@
                         <th>Email</th>
                         <th>Subject</th>
                         <th>message</th>
+                        <th>UserName</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -135,6 +136,8 @@
                             <td>${allContact.email}</td>
                             <td>${allContact.subject}</td>
                             <td>${allContact.message}</td>
+                            <td>${allContact.userName}</td>
+
                             <td><a href="editContactWithId?EditWithId=${allContact.id}"><button type="button">Edit</button></a></td>
                             <td><a href="deleteContactWithId?DeleteWithId=${allContact.id}"><button type="button">Delete</button></a></td>
                         </tr>
