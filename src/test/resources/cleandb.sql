@@ -3,6 +3,7 @@ delete from user;
 delete from user_roles;
 delete from donation;
 delete from events;
+delete from contact;
 SET foreign_key_checks = 1;
 
 

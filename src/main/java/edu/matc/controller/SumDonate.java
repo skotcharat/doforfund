@@ -41,6 +41,9 @@ public class SumDonate extends HttpServlet {
         int newId = genericDao.insert(donation);
         // get the donation current amount
         Donation donation2 = genericDao.getById(newId);
+
+
+
         req.setAttribute("donateAmount", donation2);
         logger.debug("Sending back the donateAmount/s..." + donation2);
 

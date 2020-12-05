@@ -1,12 +1,16 @@
 package edu.matc.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,6 +26,7 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
+
 //@ToString cannot use in this class because of the userRole effect
 public class User {
 
@@ -63,38 +68,80 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     public Set<UserRole> userRoles = new HashSet<>();
 
-//    /**
-//     * The Events.
-//     */
-//    @ManyToMany(cascade = { CascadeType.ALL })
-//    @JoinTable(
-//            name = "events_user",
-//            joinColumns = { @JoinColumn(name = "user_id") },
-//            inverseJoinColumns = { @JoinColumn(name = "events_id") }
-//    )
-//    Set<Event> events;
-//
-//
-//    /**
-//     * Add event.
-//     *
-//     * @param event the event
-//     */
-//    public void addEvent(Event event) {
-//        this.events.add(event);
-//        event.getUsers().add(this);
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+//    public Set<Donation> donations = new HashSet<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    public Set<Contact> contacts = new HashSet<>();
+
+    public User(User retrievedUser) {
+    }
+    /**
+     * Add a donations.
+     *
+     * @param donations the UserRole to add
+     */
+//    public void addDonation(Donation donation) {
+//        donations.add(donation);
+//        donation.setUser(this);
 //    }
-//
-//    /**
-//     * Remove event.
-//     *
-//     * @param event the event
-//     */
-//    public void removeEvent(Event event) {
-//        this.getEvents().remove(event);
-//        event.getUsers().remove(this);
-//    }
-//
+
+    /**
+     * Add a donations.
+     *
+     * @param donations the UserRole to add
+     */
+    public void addContact(Contact contact) {
+        contacts.add(contact);
+        contact.setUser(this);
+    }
+
+    /**
+     * The Events.
+     */
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(
+
+            name = "events_user",
+            joinColumns = { @JoinColumn(name = "user_id") },
+            inverseJoinColumns = { @JoinColumn(name = "events_id") }
+    )
+
+    public Set<Event> eventMany = new HashSet<>();
+
+    public User(int user) {
+    }
+
+
+
+    /**
+     * Add event.
+     *
+     * @param event the event
+     */
+    public void addEvent(Event event) {
+        eventMany.add(event);
+        event.getUserMany().add(this);
+    }
+
+    /**
+     * Remove event.
+     *
+     * @param event the event
+     */
+    public void removeEvent(Event event) {
+        eventMany.remove(event);
+        event.getUserMany().remove(this);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
+
 //    /**
 //     * Remove event.
 //     */

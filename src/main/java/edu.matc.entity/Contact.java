@@ -42,14 +42,33 @@ public class Contact { // @OneToMany
     @Column(name = "message")
     private String message;
 
+    @ManyToOne
+    private User user;
+
     /**
      * Instantiates a new Contact.
-     *
-     * @param firstname the firstname
+     *  @param firstname the firstname
      * @param lastname  the lastname
      * @param email     the email
      * @param subject   the subject
-     * @param message   the message
+     * @param user   the user
+     */
+    public Contact(String firstname, String lastname, String email, String subject, String message, User user) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.subject = subject;
+        this.message = message;
+        this.user = user;
+
+    }
+
+    /**
+     * Instantiates a new Contact.
+     *  @param firstname the firstname
+     * @param lastname  the lastname
+     * @param email     the email
+     * @param subject   the subject
      */
     public Contact(String firstname, String lastname, String email, String subject, String message) {
         this.firstname = firstname;
@@ -57,6 +76,7 @@ public class Contact { // @OneToMany
         this.email = email;
         this.subject = subject;
         this.message = message;
+
     }
 }
 

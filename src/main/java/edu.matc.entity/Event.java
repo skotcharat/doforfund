@@ -1,6 +1,5 @@
 package edu.matc.entity;
 
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -26,7 +25,7 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
+//@ToString
 public class Event { // @OneToMany
 
     @Id
@@ -38,9 +37,11 @@ public class Event { // @OneToMany
     @NotEmpty(message = "Please provide a eventName")
     private String eventName;
 
+    @NotEmpty(message = "Please provide a eventPlace")
     @Column(name = "eventPlace")
     private String eventPlace;
 
+    @NotEmpty(message = "Please provide a eventDate")
     @Column(name = "eventDate")
     private LocalDate eventDate;
 
@@ -50,9 +51,9 @@ public class Event { // @OneToMany
     @Column(name = "eventDescription")
     private String eventDescription;
 
-//
-//    @ManyToMany(mappedBy = "events")
-//    private Set<User> users = new HashSet<>();
+
+    @ManyToMany(mappedBy = "eventMany")
+    private Set<User> userMany = new HashSet<>();
 
     /**
      * Instantiates a new Event.
@@ -72,4 +73,8 @@ public class Event { // @OneToMany
 
     }
 
+
+
+    public Event(int event) {
+    }
 }
