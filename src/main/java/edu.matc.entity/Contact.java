@@ -69,7 +69,7 @@ public class Contact { // @OneToMany
 
     /**
      * Instantiates a new Contact.
-     *  @param firstname the firstname
+     * @param firstname the firstname
      * @param lastname  the lastname
      * @param email     the email
      * @param subject   the subject

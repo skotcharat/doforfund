@@ -38,6 +38,9 @@ public class Donation { // @OneToMany
     @Column(name = "subject")
     private String subject;
 
+    @Column(name = "user_name")
+    private String userName;
+
     /**
      * Bidirectional @OneToMany
 
@@ -66,30 +69,28 @@ public class Donation { // @OneToMany
     /**
      * Instantiates a new Donation.
      *
-     * @param id      the id
      * @param amount  the amount
      * @param date    the date
      * @param subject the subject
+     * @param userName the userName
      * @param user    the user
      */
-    public Donation(int id, int amount, LocalDate date, String subject, User user) {
-        this.id = id;
+    public Donation(int amount, LocalDate date, String subject, String userName, User user) {
         this.amount = amount;
         this.subject = subject;
         this.date = date;
+        this.userName = userName;
         this.user = user;
     }
 
     /**
      * Instantiates a new Donation.
      *
-     * @param id      the id
      * @param amount  the amount
      * @param date    the date
      * @param subject the subject
      */
-    public Donation(int id, int amount, LocalDate date, String subject) {
-        this.id = id;
+    public Donation(int amount, LocalDate date, String subject) {
         this.amount = amount;
         this.subject = subject;
         this.date = date;

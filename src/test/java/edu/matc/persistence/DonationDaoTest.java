@@ -61,11 +61,11 @@ public class DonationDaoTest {
      */
     @Test
     void insert() {
-        Donation newDonation = new Donation(40, 1, LocalDate.now(), "fun");
+        Donation newDonation = new Donation(40, LocalDate.now(), "hi");
         int id = genericDao.insert(newDonation);
         assertNotEquals(0,id);
         Donation insertedDonation = (Donation)genericDao.getById(id);
-        String expectedDonation = "fun";
+        String expectedDonation = "hi";
         String actualDonation = insertedDonation.getSubject();
         assertTrue(expectedDonation.equals(actualDonation));
 

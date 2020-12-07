@@ -68,8 +68,8 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     public Set<UserRole> userRoles = new HashSet<>();
 
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-//    public Set<Donation> donations = new HashSet<>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    public Set<Donation> donations = new HashSet<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     public Set<Contact> contacts = new HashSet<>();
@@ -79,12 +79,12 @@ public class User {
     /**
      * Add a donations.
      *
-     * @param donations the UserRole to add
+     * @param donations the Donation to add
      */
-//    public void addDonation(Donation donation) {
-//        donations.add(donation);
-//        donation.setUser(this);
-//    }
+    public void addDonation(Donation donation) {
+        donations.add(donation);
+        donation.setUser(this);
+    }
 
     /**
      * Add a donations.
