@@ -18,4 +18,4 @@ insert into events values (3,'funPhoto','capital','2020-11-28','01:32','Join us 
 insert into events values (4,'funto','house','2020-11-28','01:32','Join us');
 insert into events_user values  (2, 3);
 insert into events_user values (2, 2);
-insert into events_user values (2, 3);
+insert into events_user values (3, 3);

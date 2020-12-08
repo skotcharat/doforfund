@@ -99,10 +99,8 @@ public class User {
     /**
      * The Events.
      */
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    })
+    @ManyToMany(cascade ={CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
+
     @JoinTable(
 
             name = "events_user",
@@ -117,11 +115,11 @@ public class User {
 
 
 
-    /**
-     * Add event.
-     *
-     * @param event the event
-     */
+//    /**
+//     * Add event.
+//     *
+//     * @param event the event
+//     */
     public void addEvent(Event event) {
         eventMany.add(event);
         event.getUserMany().add(this);

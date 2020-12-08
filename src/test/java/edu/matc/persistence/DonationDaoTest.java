@@ -95,23 +95,6 @@ public class DonationDaoTest {
         assertTrue(expectedDonation.equals(actualDonation));
     }
 
-//    /**
-//     * Verify successful insert of a user and an userRole
-//     */
-//    @Test
-//    void insertWithRoleSuccess() {
-//        String userRoleName = "user";
-//        User newUser = new User("Fred", "Flintstone", "fflintstone", "Flin@mail.com");
-//        UserRole userRoles = new UserRole(userRoleName, "fflintstone", newUser);
-//        newUser.addUserRoles(userRoles);
-//        int id = genericDao.insert(newUser);
-//        assertNotEquals(0, id);
-//        User insertedUser = (User)genericDao.getById(id);
-//        assertNotNull(insertedUser);
-//        assertEquals("Fred", insertedUser.getFirstName());
-//        assertEquals(1, insertedUser.getUserRoles().size());
-//    }
-
     /**
      * Verify successful get by property (equal match)
      * propertyName is name in Entity set match in the table
@@ -121,15 +104,6 @@ public class DonationDaoTest {
         List<Donation> donation = genericDao.getByPropertyEqual("amount", "20");
         assertEquals(1, donation.size());
         assertEquals(2, donation.get(0).getId());
-        logger.info(donation);
-//        User retrievedUser = (User) genericDao.getById(users.get(0).getId());
-//        assertEquals("admin", retrievedUser.getUserRoles().toString());
-//        System.out.print(retrievedUser.getUserRoles());
-
-//        // For loop works too!
-//        for(User userRole : donation) {
-//            logger.info(userRole.userRoles);
-//        }
     }
 
     /**

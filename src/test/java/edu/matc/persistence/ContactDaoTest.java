@@ -58,29 +58,7 @@ class ContactDaoTest {
         assertEquals("message2", retrievedContact.getMessage());
     }
 
-//    /**
-//     * Verifies Insert successfully.
-//     */
-//    @Test
-//    void insert() {
-//        User user = (User)genericDaoUser.getById(1);
-//        String roleName = "sign_in";
-//        String UserName = "mayay";
-//
-//        UserRole newUserRoles = new UserRole(roleName, "mayay", user);
-//        user.addUserRoles(newUserRoles);
-//        int id = genericDao.insert(newUserRoles);
-//        assertNotEquals(0, id);
-//        UserRole insertedUser = (UserRole)genericDao.getById(id);
-//        assertNotNull(insertedUser);
-//        assertEquals(roleName, insertedUser.getRoleName());
-//        assertNotNull(insertedUser.getUser());
-//        assertEquals("Joe", insertedUser.getUser().getFirstName());
-//        String expectedUser = "Joe";
-//        String actualUser = insertedUser.getUser().getFirstName();
-//        assertTrue(expectedUser.equals(actualUser));
-//
-//    }
+
 
     /**
      * Verifies Delete successfully.

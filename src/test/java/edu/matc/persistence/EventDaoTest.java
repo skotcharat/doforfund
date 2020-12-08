@@ -103,27 +103,6 @@ class EventDaoTest {
 //        assertTrue(expectedEvent.equals(actualEvent));
 //    }
 
-//    /**
-//     * Verify successful insert of a user and an userRole
-//     */
-//    @Test
-//    void insertWithRoleSuccess() {
-//
-//        String userRoleName = "sign_out";
-//        User newUser = new User("Fred", "Flintstone", "fflintstone", "Flin@mail.com");
-//        UserRole userRoles = new UserRole(userRoleName, newUser);
-//        newUser.addUserRoles(userRoles);
-//        int id = genericDao.insert(newUser);
-//        assertNotEquals(0, id);
-//        User insertedUser = (User)genericDao.getById(id);
-//        assertNotNull(insertedUser);
-//        assertEquals("Fred", insertedUser.getFirstName());
-//        assertEquals(1, insertedUser.getUserRoles().size());
-//
-//        // Could continue comparing all values, but
-//        // it may make sense to use .equals()
-//        // TODO review .equals recommendations http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#mapping-model-pojo-equalshashcode
-//    }
 
     /**
      * Verify successful get by property (equal match)

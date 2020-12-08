@@ -1,11 +1,14 @@
 package edu.matc.persistence;
 
+
+import edu.matc.entity.Event;
 import edu.matc.entity.User;
 import edu.matc.entity.UserRole;
 import edu.matc.test.util.Database;
 import edu.matc.test.util.DatabaseUtility;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hibernate.Session;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -18,8 +21,11 @@ import static org.junit.Assert.*;
 class UserDaoTest {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
+    private Session session;
+
     //UserDao dao;
     GenericDao genericDao;
+    GenericDao genericDaoEvent;
     DatabaseUtility databaseUtility;
 
     /**
@@ -31,6 +37,7 @@ class UserDaoTest {
     void setUp() {
         //dao = new UserDao();
         genericDao = new GenericDao(User.class);
+        genericDaoEvent = new GenericDao(Event.class);
 
         databaseUtility = new DatabaseUtility();
         databaseUtility.runSQL("cleandb.sql");
@@ -152,6 +159,25 @@ class UserDaoTest {
         List<User> users = genericDao.getByPropertyLike("lastName", "c");
         assertEquals(1, users.size());
     }
+
+    /**
+     * Verify successful ManyToMany
+     */
+    //@Test
+//    void getManyToManySuccess() {
+//        User retrievedUser = (User)genericDao.getById(4);
+//        Event retrievedEvent = (Event)genericDaoEvent.getById(3);
+//        System.out.println("retrievedUser   " + retrievedUser);
+//        System.out.println("retrievedEvent   " + retrievedEvent);
+//
+//        retrievedUser.addEvent(retrievedEvent);
+//        //int size = retrievedEvent.getUserMany().size();
+////        System.out.println("size    " + size);
+//        session.persist(retrievedUser);
+////        assertNotNull(retrievedUser);
+//    }
+
+
 
 
 }

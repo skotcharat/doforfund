@@ -8,6 +8,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import javax.validation.constraints.NotNull;
 import java.sql.Time;
 import java.time.LocalDate;
@@ -53,6 +54,7 @@ public class Event { // @OneToMany
 
 
     @ManyToMany(mappedBy = "eventMany")
+
     private Set<User> userMany = new HashSet<>();
 
     /**

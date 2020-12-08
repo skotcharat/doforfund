@@ -31,7 +31,7 @@
                 <p>At <strong class="font-weight-bold text-primary">${allEvents.eventPlace}</strong></p>
                 <p><strong class="font-weight-bold text-primary">${allEvents.eventDate}</strong></p>
                 <p><strong class="font-weight-bold text-primary">${allEvents.eventTime}</strong></p>
-                <a href="logout.jsp"><button class="btn btn-primary py-2 px-5 text-white">Join this event!</button></a>
+                <a href="joinEventWithId?EditWithId=${allEvents.id}"><button class="btn btn-primary py-2 px-5 text-white">Join this event!</button></a>
               </div>
             </div>
 
