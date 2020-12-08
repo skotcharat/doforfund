@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
 
@@ -19,7 +20,7 @@ import javax.persistence.*;
 @Setter
 @ToString
 @NoArgsConstructor
-
+@Proxy(lazy=false)
 public class Contact { // @OneToMany
 
     @Id

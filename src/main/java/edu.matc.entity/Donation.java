@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Proxy;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
@@ -21,7 +22,7 @@ import java.time.LocalDate;
 @Setter
 @ToString
 @NoArgsConstructor
-
+@Proxy(lazy=false)
 public class Donation { // @OneToMany
 
     @Id

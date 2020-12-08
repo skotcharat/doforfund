@@ -55,9 +55,9 @@ class EventDaoTest {
      */
     @Test
     void getById() {
-        Event retrievedUser = (Event)genericDao.getById(2);
-        assertNotNull(retrievedUser);
-        assertEquals("Couple shot", retrievedUser.getEventName());
+        Event retrievedEvent = (Event)genericDao.getById(2);
+        assertNotNull(retrievedEvent);
+        assertEquals("Couple shot", retrievedEvent.getEventName());
     }
 
 //    /**
@@ -93,13 +93,13 @@ class EventDaoTest {
 //     */
 //    @Test
 //    void saveOrUpdate() {
-//        String updateNewEvent = "Capital";
+//        LocalDate updateNewEvent = LocalDate.parse("2020-12-20");
 //        Event eventBeforeUpdate = (Event)genericDao.getById(3);
-//        eventBeforeUpdate.setEventPlace(updateNewEvent);
+//        eventBeforeUpdate.setEventDate(updateNewEvent);
 //        genericDao.saveOrUpdate(eventBeforeUpdate);
 //        Event eventAfterUpdate = (Event)genericDao.getById(3);
-//        String expectedEvent = "Capital";
-//        String actualEvent = eventAfterUpdate.getEventPlace();
+//        LocalDate expectedEvent = LocalDate.parse("2020-12-20");
+//        LocalDate actualEvent = eventAfterUpdate.getEventDate();
 //        assertTrue(expectedEvent.equals(actualEvent));
 //    }
 

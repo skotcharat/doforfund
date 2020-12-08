@@ -9,19 +9,24 @@ import edu.matc.test.util.DatabaseUtility;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import javax.transaction.Transactional;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.Assert.*;
-
+@Transactional
 
 class UserDaoTest {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
     private Session session;
+    Transaction transaction = null;
 
     //UserDao dao;
     GenericDao genericDao;
@@ -141,11 +146,8 @@ class UserDaoTest {
         assertEquals(1, users.size());
         assertEquals(1, users.get(0).getId());
         logger.info(users);
-//        User retrievedUser = (User) genericDao.getById(users.get(0).getId());
-//        assertEquals("admin", retrievedUser.getUserRoles().toString());
-//        System.out.print(retrievedUser.getUserRoles());
 
-        // For loop works too!
+        // For loop
         for(User userRole : users) {
             logger.info(userRole.userRoles);
         }
@@ -163,19 +165,40 @@ class UserDaoTest {
     /**
      * Verify successful ManyToMany
      */
-    //@Test
-//    void getManyToManySuccess() {
-//        User retrievedUser = (User)genericDao.getById(4);
-//        Event retrievedEvent = (Event)genericDaoEvent.getById(3);
-//        System.out.println("retrievedUser   " + retrievedUser);
-//        System.out.println("retrievedEvent   " + retrievedEvent);
-//
+    @Test
+
+    void getManyToManySuccess() {
+        User retrievedUser = (User)genericDao.getById(4);
+        Event retrievedEvent = (Event)genericDaoEvent.getById(3);
+
+        //retrievedUser.getEventMany().add(retrievedEvent);
+
+        retrievedUser.getEventMany().add(retrievedEvent);
+        //retrievedEvent.getUserMany().add(retrievedUser);
+
+
+
 //        retrievedUser.addEvent(retrievedEvent);
 //        //int size = retrievedEvent.getUserMany().size();
 ////        System.out.println("size    " + size);
 //        session.persist(retrievedUser);
 ////        assertNotNull(retrievedUser);
-//    }
+//        Set<Event> eventMany = new HashSet<>();
+//        //assertEquals(0, retrievedUser.getEventMany().size());
+//        eventMany.add(retrievedEvent);
+//        retrievedUser.setEventMany(eventMany);
+//        //session.persist(retrievedUser);
+//
+//        assertNotNull(retrievedUser);
+
+
+
+
+
+
+
+
+    }
 
 
 

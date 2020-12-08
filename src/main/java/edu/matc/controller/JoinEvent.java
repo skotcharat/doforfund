@@ -37,17 +37,18 @@ public class JoinEvent extends HttpServlet {
         logger.info("User class ID  " + id);
         User retrievedUser = (User)genericDaoUser.getById(id);
 
-       GenericDao<Event> genericDao = DaoFactory.createDao(Event.class);
+        GenericDao<Event> genericDao = DaoFactory.createDao(Event.class);
         Event retrievedEvent = genericDao.getById(Integer.parseInt(req.getParameter("EditWithId")));
 
         logger.info("Integer.parseInt(req.getParameter(\"EditWithId\")  " + Integer.parseInt(req.getParameter("EditWithId")));
 
+        retrievedUser.getEventMany().add(retrievedEvent);
+
+        GenericDao<Event_User> genericDaoMany = DaoFactory.createDao(Event_User.class);
+
         Event_User eventUser = new Event_User(Integer.parseInt(req.getParameter("EditWithId")), id);
-        retrievedUser.addEvent(retrievedEvent);
+        int newId = genericDaoMany.insert(eventUser);
 
-
-//        GenericDao<Event_User> genericDaoMany = DaoFactory.createDao(Event_User.class);
-//        int id2 = genericDaoMany.insert(retrievedUser);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/joinAnEvent.jsp");
         dispatcher.forward(req, resp);

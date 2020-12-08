@@ -33,6 +33,7 @@
     <mapping class="edu.matc.entity.Contact"/>
     <mapping class="edu.matc.entity.Donation"/>
     <mapping class="edu.matc.entity.Event"/>
+    <mapping class="edu.matc.entity.Event_User"/>
 
 </session-factory>
 

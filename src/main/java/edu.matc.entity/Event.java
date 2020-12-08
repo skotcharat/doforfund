@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Proxy;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
@@ -26,6 +27,7 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
+@Proxy(lazy=false)
 //@ToString
 public class Event { // @OneToMany
 
@@ -53,9 +55,9 @@ public class Event { // @OneToMany
     private String eventDescription;
 
 
-    @ManyToMany(mappedBy = "eventMany")
+    @ManyToMany(mappedBy = "eventMany", cascade = { CascadeType.ALL })
 
-    private Set<User> userMany = new HashSet<>();
+    public Set<User> userMany = new HashSet<>();
 
     /**
      * Instantiates a new Event.

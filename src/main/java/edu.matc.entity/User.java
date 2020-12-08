@@ -9,6 +9,8 @@ import lombok.ToString;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.*;
 import javax.transaction.Transactional;
 import java.util.HashSet;
@@ -26,9 +28,10 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-
+@Proxy(lazy=false)
 //@ToString cannot use in this class because of the userRole effect
 public class User {
+
 
 
     // Every Entity must have a unique identifier which is annotated @Id
@@ -99,7 +102,7 @@ public class User {
     /**
      * The Events.
      */
-    @ManyToMany(cascade ={CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.ALL})
 
     @JoinTable(
 
@@ -108,7 +111,7 @@ public class User {
             inverseJoinColumns = { @JoinColumn(name = "events_id") }
     )
 
-    public Set<Event> eventMany = new HashSet<>();
+    Set<Event> eventMany = new HashSet<>();
 
     public User(int user) {
     }
@@ -120,20 +123,20 @@ public class User {
 //     *
 //     * @param event the event
 //     */
-    public void addEvent(Event event) {
-        eventMany.add(event);
-        event.getUserMany().add(this);
-    }
-
-    /**
-     * Remove event.
-     *
-     * @param event the event
-     */
-    public void removeEvent(Event event) {
-        eventMany.remove(event);
-        event.getUserMany().remove(this);
-    }
+//    public void addEvent(Event event) {
+//        eventMany.add(event);
+//        event.getUserMany().add(this);
+//    }
+//
+//    /**
+//     * Remove event.
+//     *
+//     * @param event the event
+//     */
+//    public void removeEvent(Event event) {
+//        eventMany.remove(event);
+//        event.getUserMany().remove(this);
+//    }
 
     @Override
     public int hashCode() {
