@@ -55,7 +55,7 @@ public class Event { // @OneToMany
     private String eventDescription;
 
 
-    @ManyToMany(mappedBy = "eventMany", cascade = { CascadeType.ALL })
+    @ManyToMany(mappedBy = "eventMany")
 
     public Set<User> userMany = new HashSet<>();
 

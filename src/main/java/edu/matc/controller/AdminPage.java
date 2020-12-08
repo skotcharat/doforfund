@@ -1,10 +1,7 @@
 package edu.matc.controller;
 
 
-import edu.matc.entity.Contact;
-import edu.matc.entity.Donation;
-import edu.matc.entity.Event;
-import edu.matc.entity.User;
+import edu.matc.entity.*;
 import edu.matc.persistence.GenericDao;
 import edu.matc.util.DaoFactory;
 import org.apache.logging.log4j.LogManager;
@@ -45,6 +42,7 @@ public class AdminPage extends HttpServlet {
         List<Event> allEvents = daoEvent.getAll();
         req.setAttribute("events", allEvents);
         logger.debug("Sending back the event/s..." + allEvents);
+
 
         // get all donations
         GenericDao<Donation> daoDonation = DaoFactory.createDao(Donation.class);

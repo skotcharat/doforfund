@@ -1,5 +1,6 @@
 package edu.matc.controller;
 
+import com.api.SendEmailSMTP;
 import edu.matc.entity.Event;
 import edu.matc.entity.Event_User;
 import edu.matc.entity.User;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 @WebServlet(
         urlPatterns = {"/joinEventWithId"}
@@ -27,27 +29,40 @@ public class JoinEvent extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        GenericDao<User> genericDaoUser = DaoFactory.createDao(User.class);
+        if(req.isUserInRole("user")) {
+            GenericDao<User> genericDaoUser = DaoFactory.createDao(User.class);
+            String currentUser = req.getRemoteUser();
+            List<User> users = genericDaoUser.getByPropertyEqual("userName", currentUser);
+            int id = users.get(0).getId();
+            logger.info("User class ID  " + id);
+            User retrievedUser = (User)genericDaoUser.getById(id);
 
-        logger.info("The logged in user: " + req.getRemoteUser() + "has a role of admin: " + req.isUserInRole("admin"));
+            GenericDao<Event> genericDao = DaoFactory.createDao(Event.class);
+            Event retrievedEvent = genericDao.getById(Integer.parseInt(req.getParameter("EditWithId")));
+            String date = String.valueOf(retrievedEvent.getEventDate());
+            String time = String.valueOf(retrievedEvent.getEventTime());
+            String place = retrievedEvent.getEventPlace();
+            String EventInfo = "Your event is on " + date + " @" + time+ " at " + place + "." ;
+            logger.info("Integer.parseInt(req.getParameter(\"EditWithId\")  " + Integer.parseInt(req.getParameter("EditWithId")));
 
-        String currentUser = req.getRemoteUser();
-        List<User> users = genericDaoUser.getByPropertyEqual("userName", currentUser);
-        int id = users.get(0).getId();
-        logger.info("User class ID  " + id);
-        User retrievedUser = (User)genericDaoUser.getById(id);
+            retrievedUser.getEventMany().add(retrievedEvent);
 
-        GenericDao<Event> genericDao = DaoFactory.createDao(Event.class);
-        Event retrievedEvent = genericDao.getById(Integer.parseInt(req.getParameter("EditWithId")));
+            GenericDao<Event_User> genericDaoMany = DaoFactory.createDao(Event_User.class);
+            Event_User eventUser = new Event_User(Integer.parseInt(req.getParameter("EditWithId")), id);
+            int newId = genericDaoMany.insert(eventUser);
 
-        logger.info("Integer.parseInt(req.getParameter(\"EditWithId\")  " + Integer.parseInt(req.getParameter("EditWithId")));
+            // send email to the user
+            SendEmailSMTP send = new SendEmailSMTP();
+            send.getInfo("Thank for joining an event with us", EventInfo);
+            logger.info("Email was sent");
+            String message = "Thank for joining an event with us, you will receive an email to confirm your event";
+            req.setAttribute("message", message);
 
-        retrievedUser.getEventMany().add(retrievedEvent);
+        } else {
+            String message = "Please sign in to join an event";
+            req.setAttribute("message", message);
+        }
 
-        GenericDao<Event_User> genericDaoMany = DaoFactory.createDao(Event_User.class);
-
-        Event_User eventUser = new Event_User(Integer.parseInt(req.getParameter("EditWithId")), id);
-        int newId = genericDaoMany.insert(eventUser);
 
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/joinAnEvent.jsp");

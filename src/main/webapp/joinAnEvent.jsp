@@ -15,7 +15,7 @@
             <div class="col-md-7">
                 <div class="row mb-5 site-section">
                     <div class="col-12 ">
-                        <h2 class="site-section-heading text-center">You join event with us</h2>
+                        <h4 class="site-section-heading text-center">${message}</h4>
                     </div>
                 </div>
 
