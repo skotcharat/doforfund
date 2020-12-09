@@ -43,7 +43,6 @@ public class AdminPage extends HttpServlet {
         req.setAttribute("events", allEvents);
         logger.debug("Sending back the event/s..." + allEvents);
 
-
         // get all donations
         GenericDao<Donation> daoDonation = DaoFactory.createDao(Donation.class);
         List<Donation> allDonations = daoDonation.getAll();

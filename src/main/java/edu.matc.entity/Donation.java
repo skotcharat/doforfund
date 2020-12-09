@@ -30,7 +30,6 @@ public class Donation { // @OneToMany
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
-    @NotEmpty(message = "Please provide amount")
     @Column(name = "amount")
     private int amount;
 

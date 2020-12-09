@@ -48,11 +48,11 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
-    @NotEmpty(message = "Please provide userName")
+
     @Column(name = "user_name")
     private String userName;
 
-    @NotEmpty(message = "Please provide password")
+
     @Column(name = "password")
     private String password;
 
@@ -107,7 +107,6 @@ public class User {
      * The Events.
      */
     @ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.ALL})
-
     @JoinTable(
 
             name = "events_user",

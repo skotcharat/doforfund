@@ -64,7 +64,8 @@
                         <th>Event Place</th>
                         <th>Event Date</th>
                         <th>Event Time</th>
-                        <th>event Description</th>
+                        <th>Description</th>
+                        <th>Attending</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -76,6 +77,7 @@
                             <td>${allEvent.eventDate}</td>
                             <td>${allEvent.eventTime}</td>
                             <td>${allEvent.eventDescription}</td>
+                            <td><a href="attendEventWithId?AttendWithId=${allEvent.id}"><button type="button">Attending</button></a></td>
                             <td><a href="editEventWithId?EditWithId=${allEvent.id}"><button type="button">Edit</button></a></td>
                             <td><a href="deleteEventWithId?DeleteWithId=${allEvent.id}"><button type="button">Delete</button></a></td>
                         </tr>

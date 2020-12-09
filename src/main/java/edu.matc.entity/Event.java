@@ -54,7 +54,6 @@ public class Event { // @OneToMany
     @Column(name = "eventDescription")
     private String eventDescription;
 
-
     @ManyToMany(mappedBy = "eventMany")
 
     public Set<User> userMany = new HashSet<>();
