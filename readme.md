@@ -28,7 +28,7 @@ Users will be informed of the history of total funds, and the location where the
 * **Security/Authentication**
 1. Tomcat's JDBC Realm Authentication
 2. Admin role: create/read/update/delete (crud) of all data
-3. User role: edit profile and delete an event to cancel if they cannot attend
+3. User role: edit profile and delete an event to cancel if they cannot attend and donation
 4. All: anyone can view information and email us (no login)
 * **Database**
 1. MySQL

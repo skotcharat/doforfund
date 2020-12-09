@@ -44,13 +44,13 @@ public class Event { // @OneToMany
     @Column(name = "eventPlace")
     private String eventPlace;
 
-
     @Column(name = "eventDate")
     private LocalDate eventDate;
 
     @Column(name = "eventTime")
     private LocalTime eventTime;
 
+    @NotEmpty(message = "Please provide description")
     @Column(name = "eventDescription")
     private String eventDescription;
 

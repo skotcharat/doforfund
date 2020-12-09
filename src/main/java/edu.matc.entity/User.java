@@ -10,6 +10,7 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Proxy;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;
@@ -47,12 +48,15 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
+    @NotEmpty(message = "Please provide userName")
     @Column(name = "user_name")
     private String userName;
 
+    @NotEmpty(message = "Please provide password")
     @Column(name = "password")
     private String password;
 
+    @NotEmpty(message = "Please provide an email")
     @Column(name = "email")
     private String email;
 

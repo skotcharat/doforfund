@@ -16,6 +16,6 @@ insert into events values (1,'professional','matc','2020-11-19','01:32','Enjoy t
 insert into events values (2,'Couple shot','MononaLake','2020-11-28','01:32','Bring your couple and joy us');
 insert into events values (3,'funPhoto','capital','2020-11-28','01:32','Join us with the fun photo');
 insert into events values (4,'funto','house','2020-11-28','01:32','Join us');
-insert into events_user values  (2, 3);
-insert into events_user values (2, 2);
-insert into events_user values (3, 3);
+insert into events_user values  (1, 2, 3);
+insert into events_user values (2, 2, 2);
+insert into events_user values (3, 3, 3);

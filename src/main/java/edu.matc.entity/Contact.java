@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Proxy;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 
@@ -34,12 +35,15 @@ public class Contact { // @OneToMany
     @Column(name = "lastname")
     private String lastname;
 
+    @NotEmpty(message = "Please provide your email")
     @Column(name = "email")
     private String email;
 
+    @NotEmpty(message = "Please provide subject")
     @Column(name = "subject")
     private String subject;
 
+    @NotEmpty(message = "Please provide message")
     @Column(name = "message")
     private String message;
 
