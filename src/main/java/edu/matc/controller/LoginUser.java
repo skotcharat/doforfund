@@ -33,23 +33,16 @@ public class LoginUser extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
-
-
         GenericDao<User> genericDao = DaoFactory.createDao(User.class);
 
         User newUser = new User(req.getParameter("fname"), req.getParameter("lname"),
                 req.getParameter("username"), req.getParameter("password"), req.getParameter("email"));
-
-
-
 
         int newId = genericDao.insert(newUser);
 
         User user = genericDao.getById(newId);
         req.setAttribute("newUser", user);
         logger.debug("Sending back the User..." + user);
-
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/login.jsp");
         dispatcher.forward(req, resp);

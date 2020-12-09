@@ -42,7 +42,6 @@ class UserDaoTest {
     void setUp() {
         //dao = new UserDao();
         genericDao = new GenericDao(User.class);
-        genericDaoEvent = new GenericDao(Event.class);
 
         databaseUtility = new DatabaseUtility();
         databaseUtility.runSQL("cleandb.sql");
@@ -125,16 +124,6 @@ class UserDaoTest {
         assertEquals(1, insertedUser.getUserRoles().size());
     }
 
-//    /**
-//     * Verify successful delete of a user and an userRole
-//     */
-//    @Test
-//    void deleteUserRoleSuccess() {
-//        UserRole userRoles = new UserRole(2);
-//        removeUserRoles(userRole);
-//
-//        genericDao.delete(genericDao.getById(1));
-//    }
 
     /**
      * Verify successful get by property (equal match)
@@ -145,7 +134,6 @@ class UserDaoTest {
         List<User> users = genericDao.getByPropertyEqual("lastName", "Coyne");
         assertEquals(1, users.size());
         assertEquals(1, users.get(0).getId());
-        logger.info(users);
 
         // For loop
         for(User userRole : users) {
@@ -160,44 +148,6 @@ class UserDaoTest {
     void getByPropertyLikeSuccess() {
         List<User> users = genericDao.getByPropertyLike("lastName", "c");
         assertEquals(1, users.size());
-    }
-
-    /**
-     * Verify successful ManyToMany
-     */
-    @Test
-
-    void getManyToManySuccess() {
-        User retrievedUser = (User)genericDao.getById(4);
-        Event retrievedEvent = (Event)genericDaoEvent.getById(3);
-
-        //retrievedUser.getEventMany().add(retrievedEvent);
-
-        retrievedUser.getEventMany().add(retrievedEvent);
-        //retrievedEvent.getUserMany().add(retrievedUser);
-
-
-
-//        retrievedUser.addEvent(retrievedEvent);
-//        //int size = retrievedEvent.getUserMany().size();
-////        System.out.println("size    " + size);
-//        session.persist(retrievedUser);
-////        assertNotNull(retrievedUser);
-//        Set<Event> eventMany = new HashSet<>();
-//        //assertEquals(0, retrievedUser.getEventMany().size());
-//        eventMany.add(retrievedEvent);
-//        retrievedUser.setEventMany(eventMany);
-//        //session.persist(retrievedUser);
-//
-//        assertNotNull(retrievedUser);
-
-
-
-
-
-
-
-
     }
 
 

@@ -50,7 +50,6 @@ public class AdminPage extends HttpServlet {
         req.setAttribute("donations", allDonations);
         logger.debug("Sending back the donation/s..." + allDonations);
 
-
         // get all contacts
         GenericDao<Contact> daoContact = DaoFactory.createDao(Contact.class);
         List<Contact> allContacts = daoContact.getAll();

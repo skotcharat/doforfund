@@ -18,7 +18,6 @@ public class SendEmailSMTP {
     // private constructor prevents instantiating this class anywhere else
     public SendEmailSMTP() {
         loadProperties();
-
     }
 
     // load properties
@@ -28,10 +27,8 @@ public class SendEmailSMTP {
             properties.load (this.getClass().getResourceAsStream("/email.properties"));
         } catch (IOException ioe) {
             logger.error("Database.loadProperties()...Cannot load the properties file");
-            ioe.printStackTrace();
         } catch (Exception e) {
             logger.error("Database.loadProperties()..." + e);
-            e.printStackTrace();
         }
 
     }

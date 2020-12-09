@@ -44,7 +44,7 @@ public class Event { // @OneToMany
     @Column(name = "eventPlace")
     private String eventPlace;
 
-    @NotEmpty(message = "Please provide a eventDate")
+
     @Column(name = "eventDate")
     private LocalDate eventDate;
 

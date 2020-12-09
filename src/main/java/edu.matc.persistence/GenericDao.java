@@ -157,12 +157,6 @@ public class GenericDao<T> {
         session.close();
         return entities;
     }
-
-    public void givenData_whenInsert_thenCreatesMtoMrelationship() {
-
-    }
-
-
-
+    
 
 }

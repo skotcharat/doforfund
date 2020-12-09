@@ -60,24 +60,24 @@ class EventDaoTest {
         assertEquals("Couple shot", retrievedEvent.getEventName());
     }
 
-//    /**
-//     * Verify successful insert of a Event
-//     */
-//    @SneakyThrows
-//    @Test
-//    void insert() {
-//        LocalDate chosenDate = LocalDate.parse("2020-11-11");
-//        LocalTime time = LocalTime.parse("11:30:00");
-//
-//        logger.info("chosenDate  " + chosenDate);
-//        Event newEvent = new Event("blackandwhite", "matc", chosenDate, time, "Let join us");
-//        int id = genericDao.insert(newEvent);
-//        assertNotEquals(0,id);
-//        Event insertedEvent = (Event)genericDao.getById(id);
-//        String expectedEvent = "blackandwhite";
-//        String actualEvent = insertedEvent.getEventName();
-//        assertTrue(expectedEvent.equals(actualEvent));
-//    }
+    /**
+     * Verify successful insert of a Event
+     */
+    @SneakyThrows
+    @Test
+    void insert() {
+        LocalDate chosenDate = LocalDate.parse("2020-11-11");
+        LocalTime time = LocalTime.parse("11:30:00");
+
+        logger.info("chosenDate  " + chosenDate);
+        Event newEvent = new Event("blackandwhite", "matc", chosenDate, time, "Let join us");
+        int id = genericDao.insert(newEvent);
+        assertNotEquals(0,id);
+        Event insertedEvent = (Event)genericDao.getById(id);
+        String expectedEvent = "blackandwhite";
+        String actualEvent = insertedEvent.getEventName();
+        assertTrue(expectedEvent.equals(actualEvent));
+    }
 
     /**
      * Verify successful delete of Event
@@ -88,20 +88,20 @@ class EventDaoTest {
         assertNull(genericDao.getById(4));
     }
 
-//    /**
-//     * Verify successful update of a Event
-//     */
-//    @Test
-//    void saveOrUpdate() {
-//        LocalDate updateNewEvent = LocalDate.parse("2020-12-20");
-//        Event eventBeforeUpdate = (Event)genericDao.getById(3);
-//        eventBeforeUpdate.setEventDate(updateNewEvent);
-//        genericDao.saveOrUpdate(eventBeforeUpdate);
-//        Event eventAfterUpdate = (Event)genericDao.getById(3);
-//        LocalDate expectedEvent = LocalDate.parse("2020-12-20");
-//        LocalDate actualEvent = eventAfterUpdate.getEventDate();
-//        assertTrue(expectedEvent.equals(actualEvent));
-//    }
+    /**
+     * Verify successful update of a Event
+     */
+    @Test
+    void saveOrUpdate() {
+        String updateNewEvent = "home";
+        Event eventBeforeUpdate = (Event)genericDao.getById(3);
+        eventBeforeUpdate.setEventPlace(updateNewEvent);
+        genericDao.saveOrUpdate(eventBeforeUpdate);
+        Event eventAfterUpdate = (Event)genericDao.getById(3);
+        String expectedEvent = "home";
+        String actualEvent = eventAfterUpdate.getEventPlace();
+        assertEquals(expectedEvent, actualEvent);
+    }
 
 
     /**

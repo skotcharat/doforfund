@@ -53,11 +53,10 @@ public class EmailUtil {
             msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));
             //Logger.debug("Message is ready");
             Transport.send(msg);
-
             //Logger.debug("Email Sent Successfully!!");
         }
         catch (Exception e) {
-            e.printStackTrace();
+            //logger.error("error send email");
         }
     }
 }

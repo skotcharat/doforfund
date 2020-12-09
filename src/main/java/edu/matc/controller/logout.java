@@ -24,8 +24,6 @@ public class logout extends HttpServlet{
 
         HttpSession session = request.getSession();
         request.getSession().invalidate();
-
-
         response.sendRedirect(request.getContextPath() + "/doForFund_att/index.jsp");
     }
 }

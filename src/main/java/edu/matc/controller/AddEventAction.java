@@ -39,7 +39,6 @@ public class AddEventAction extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
         GenericDao<Event> genericDao = DaoFactory.createDao(Event.class);
         LocalDate chosenDate = LocalDate.parse(req.getParameter("eventDate"));
         LocalTime chosenTime = LocalTime.parse(req.getParameter("eventTime"));
