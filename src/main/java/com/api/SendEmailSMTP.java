@@ -26,7 +26,7 @@ public class SendEmailSMTP {
         try {
             properties.load (this.getClass().getResourceAsStream("/email.properties"));
         } catch (IOException ioe) {
-            logger.error("Database.loadProperties()...Cannot load the properties file");
+            logger.error("Database.loadProperties()...Cannot load the properties file.." + ioe);
         } catch (Exception e) {
             logger.error("Database.loadProperties()..." + e);
         }

@@ -1,13 +1,16 @@
 package edu.matc.persistence;
 
 import edu.matc.entity.Contact;
+import edu.matc.entity.Event_User;
 import edu.matc.entity.User;
 import edu.matc.entity.UserRole;
 import edu.matc.test.util.DatabaseUtility;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -104,4 +107,5 @@ class ContactDaoTest {
         List<Contact> contact = genericDao.getByPropertyLike("subject", "i");
         assertEquals(3, contact.size());
     }
+
 }

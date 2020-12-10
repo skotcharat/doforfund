@@ -18,6 +18,14 @@
      <p class="text-center"><span style="font-size:1vw;">Password: </span>${users.password}</p><br>
      <p class="text-center"><span style="font-size:1vw;">Email: </span>${users.email}</p><br><br>
 
+        <h1 class="text-center">Your event: </h1><br>
+
+            <c:forEach var="event" items="${events}">
+                <p class="text-center">${event.eventName}<a href="cancelEventWithId?CancelWithId=${event.id}"><button type="button">Cancel Event</button></a></p>
+            </c:forEach>
+
+
+
         <div class="row justify-content-center">
             <div class="col-md-1.5">
                 <a href="editProfileWithId?EditWithId=${users.id}"><button class="btn btn-primary py-2 px-4  text-white">Edit Profile</button></a>

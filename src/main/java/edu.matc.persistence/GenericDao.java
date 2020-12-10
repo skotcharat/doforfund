@@ -7,11 +7,11 @@ import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Expression;
-import javax.persistence.criteria.Root;
+
+import javax.persistence.criteria.*;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * The type Generic dao.
@@ -156,6 +156,28 @@ public class GenericDao<T> {
         List<T> entities = session.createQuery( query ).getResultList();
         session.close();
         return entities;
+    }
+
+    /**
+     * Finds entities by multiple properties.
+     * Inspired by https://stackoverflow.com/questions/11138118/really-dynamic-jpa-criteriabuilder
+     * @param propertyMap property and value pairs
+     * @return entities with properties equal to those passed in the map
+     *
+     *
+     */
+    public List<T> findByPropertyEqual(Map<String, Object> propertyMap) {
+        Session session = getSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        List<Predicate> predicates = new ArrayList<Predicate>();
+        for (Map.Entry entry: propertyMap.entrySet()) {
+            predicates.add(builder.equal(root.get((String) entry.getKey()), entry.getValue()));
+        }
+        query.select(root).where(builder.and(predicates.toArray(new Predicate[predicates.size()])));
+
+        return session.createQuery(query).getResultList();
     }
     
 

@@ -116,7 +116,7 @@ class UserRoleDaoTest {
     void getByPropertyEqual() {
         List<UserRole> role = genericDao.getByPropertyEqual("roleName", "user");
         assertEquals(3, role.size());
-        assertEquals(2, role.get(0).getId());
+        assertEquals(3, role.get(1).getId());
     }
 
 

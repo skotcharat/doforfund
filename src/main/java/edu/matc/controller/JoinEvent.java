@@ -38,17 +38,17 @@ public class JoinEvent extends HttpServlet {
             User retrievedUser = (User)genericDaoUser.getById(id);
 
             GenericDao<Event> genericDao = DaoFactory.createDao(Event.class);
-            Event retrievedEvent = genericDao.getById(Integer.parseInt(req.getParameter("EditWithId")));
+            Event retrievedEvent = genericDao.getById(Integer.parseInt(req.getParameter("JoinWithId")));
             String date = String.valueOf(retrievedEvent.getEventDate());
             String time = String.valueOf(retrievedEvent.getEventTime());
             String place = retrievedEvent.getEventPlace();
             String EventInfo = "Your event is on " + date + " @" + time+ " at " + place + "." ;
-            logger.info("Integer.parseInt(req.getParameter(\"EditWithId\")  " + Integer.parseInt(req.getParameter("EditWithId")));
+            logger.info("Integer.parseInt(req.getParameter(\"JoinWithId\")  " + Integer.parseInt(req.getParameter("JoinWithId")));
 
             retrievedUser.getEventMany().add(retrievedEvent);
 
             GenericDao<Event_User> genericDaoMany = DaoFactory.createDao(Event_User.class);
-            Event_User eventUser = new Event_User(Integer.parseInt(req.getParameter("EditWithId")), id);
+            Event_User eventUser = new Event_User(Integer.parseInt(req.getParameter("JoinWithId")), id);
             int newId = genericDaoMany.insert(eventUser);
 
             // send email to the user
@@ -62,8 +62,6 @@ public class JoinEvent extends HttpServlet {
             String message = "Please sign in to join an event";
             req.setAttribute("message", message);
         }
-
-
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/joinAnEvent.jsp");
         dispatcher.forward(req, resp);

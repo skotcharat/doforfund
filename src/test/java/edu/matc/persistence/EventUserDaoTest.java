@@ -13,7 +13,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import javax.transaction.Transactional;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.Assert.*;
 
@@ -89,14 +91,27 @@ class EventUserDaoTest {
         assertNull(genericDao.getById(1));
     }
 
-
     /**
      * Verify successful get by property (equal match)
      * propertyName is name match in the User table
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<Event_User> users = genericDao.getByPropertyEqual("user_id", "2");
-        assertEquals(2, users.size());
+        List<Event_User> eventUsers = genericDao.getByPropertyEqual("user_id", "2");
+        assertEquals(2, eventUsers.size());
+    }
+
+    @Test
+    public void testSelectWithMultiplePropertiesEqualSuccess() throws Exception {
+        Map<String, Object> propsAndValues = new HashMap<>();
+        propsAndValues.put("user_id", 2);
+        propsAndValues.put("events_id", 3);
+        List<Event_User> eventUsers = genericDao.findByPropertyEqual(propsAndValues);
+        assertEquals(1, eventUsers.size());
+        Event_User retrievedEventUsers = (Event_User)genericDao.getById(eventUsers.get(0).getId());
+        int eventId = retrievedEventUsers.getEvents_id();
+        logger.info("eventId " + eventId);
+
+
     }
 }

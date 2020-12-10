@@ -54,7 +54,7 @@ public class Event { // @OneToMany
     @Column(name = "eventDescription")
     private String eventDescription;
 
-    @ManyToMany(mappedBy = "eventMany")
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "eventMany")
 
     public Set<User> userMany = new HashSet<>();
 

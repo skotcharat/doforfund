@@ -47,8 +47,7 @@ public class SignupInfo extends HttpServlet {
         int id = genericDao.insert(newUser);
         User insertedUser = (User)genericDao.getById(id);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/login.jsp");
-        dispatcher.forward(req, resp);
+        resp.sendRedirect("http://localhost:8080/DOFORFUND_war/loginAction");
     }
 
 }
