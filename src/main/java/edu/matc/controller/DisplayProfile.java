@@ -65,16 +65,10 @@ public class DisplayProfile extends HttpServlet {
             logger.info("eventId... " + eventId);
             GenericDao<Event> dao3 = DaoFactory.createDao(Event.class);
             retrievedEvent = (Event)dao3.getById(eventId);
-//            allEvent += i + 1 + ". " + retrievedEvent.getEventName() + "\n";
-//            logger.info("retrievedEvent... " + retrievedEvent.getEventName());
+
             event.add(retrievedEvent);
-
-
         }
         req.setAttribute("events", event);
-
-
-
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/displayProfile.jsp");
         dispatcher.forward(req, resp);

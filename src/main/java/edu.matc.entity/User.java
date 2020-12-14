@@ -2,10 +2,7 @@ package edu.matc.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.GenericGenerator;
@@ -30,7 +27,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @Proxy(lazy=false)
-//@ToString cannot use in this class because of the userRole effect
+@ToString
 public class User {
 
 
@@ -73,13 +70,13 @@ public class User {
 //mappedBy = "user" came from instance variable at UserRole class
      //private User user;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    public Set<UserRole> userRoles = new HashSet<>();
+    @ToString.Exclude @EqualsAndHashCode.Exclude  public Set<UserRole> userRoles = new HashSet<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    public Set<Donation> donations = new HashSet<>();
+    @ToString.Exclude @EqualsAndHashCode.Exclude  public Set<Donation> donations = new HashSet<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    public Set<Contact> contacts = new HashSet<>();
+    @ToString.Exclude @EqualsAndHashCode.Exclude  public Set<Contact> contacts = new HashSet<>();
 
     public User(User retrievedUser) {
     }

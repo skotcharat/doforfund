@@ -42,13 +42,12 @@ public class CancleEventWithId extends HttpServlet {
 
         List<Event_User> eventUsers = genericDao.findByPropertyEqual(propsAndValues);
         Event_User retrievedEventUsers = (Event_User)genericDao.getById(eventUsers.get(0).getId());
-        int eventId = retrievedEventUsers.getEvents_id();
-        logger.info("retrievedEventUsers.getEvents_id()  " + eventId);
+        logger.info("retrievedEventUsers  " + retrievedEventUsers);
+        int eventUserId = retrievedEventUsers.getId();
+        logger.info("retrievedEventUsers.getEvents_id()  " + eventUserId);
 
-        genericDao.delete(genericDao.getById(eventId));
+        genericDao.delete(genericDao.getById(eventUserId));
 
-//        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/displayProfile.jsp");
-//        dispatcher.forward(req, resp);
         resp.sendRedirect("http://localhost:8080/DOFORFUND_war/displayProfiles");
     }
 }

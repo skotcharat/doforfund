@@ -109,8 +109,8 @@ class EventUserDaoTest {
         List<Event_User> eventUsers = genericDao.findByPropertyEqual(propsAndValues);
         assertEquals(1, eventUsers.size());
         Event_User retrievedEventUsers = (Event_User)genericDao.getById(eventUsers.get(0).getId());
-        int eventId = retrievedEventUsers.getEvents_id();
-        logger.info("eventId " + eventId);
+        int eventUserId = retrievedEventUsers.getId();
+        logger.info("eventId " + eventUserId);
 
 
     }

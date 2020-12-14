@@ -52,7 +52,9 @@
                                 </ul>
                             </li>
                             <li><a href="contact.jsp">Contact</a></li>
+
                             <li><a href="donate.jsp"><button class="btn btn-primary py-2 px-4 text-white">DONATION</button></a></li>
+
                         </ul>
                     </nav>
                 </div>
