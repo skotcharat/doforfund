@@ -8,13 +8,29 @@
 <jsp:include page="header.jsp" />
 
 <div>
-    <p class="text-black h2 mb-0 text-center">We were received your contact</p><br><br>
-    <p class="text-center">Your message is</p><br>
-    <p class="text-center">${amountUsers}</p><br><br>
+    <h3 class="text-center">There are ${amountUsers} people join this event</h3><br><br>
+</div>
 
+<div class="site-section"  data-aos="fade">
+    <div class="container-fluid">
 
-    <p class="text-black h4 mb-0 text-center">We will get back to you as soon as we can</p><br><br><br><br><br><br><br>
-
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <table border=1 width=60% height=40% text-align="center">
+                    <tr>
+                        <th>User ID</th>
+                        <th>Username</th>
+                    </tr>
+                    <c:forEach items="${users}" var="user">
+                        <tr>
+                            <td>${user.id}</td>
+                            <td>${user.userName}</td>
+                        </tr>
+                    </c:forEach>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="footer py-4">

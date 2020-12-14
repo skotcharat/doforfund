@@ -48,6 +48,7 @@ public class CancleEventWithId extends HttpServlet {
 
         genericDao.delete(genericDao.getById(eventUserId));
 
+
         resp.sendRedirect("http://localhost:8080/DOFORFUND_war/displayProfiles");
     }
 }

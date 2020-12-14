@@ -57,7 +57,6 @@ public class DisplayProfile extends HttpServlet {
 
         logger.info("size... " + size);
         Event retrievedEvent;
-        String allEvent = "";
         List<Event> event = new ArrayList<>();
         for(int i = 0; i < size;i++) {
             Event_User retrievedEventUsers = (Event_User)dao2.getById(usersInEvent.get(i).getId());
@@ -65,7 +64,6 @@ public class DisplayProfile extends HttpServlet {
             logger.info("eventId... " + eventId);
             GenericDao<Event> dao3 = DaoFactory.createDao(Event.class);
             retrievedEvent = (Event)dao3.getById(eventId);
-
             event.add(retrievedEvent);
         }
         req.setAttribute("events", event);

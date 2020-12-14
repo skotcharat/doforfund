@@ -108,7 +108,7 @@
                             <td>${allDonation.id}</td>
                             <td>${allDonation.amount}</td>
                             <td>${allDonation.date}</td>
-                            <td>${allContact.userName}</td>
+                            <td>${allDonation.userName}</td>
                             <td><a href="editDonationWithId?EditWithId=${allDonation.id}"><button type="button">Edit</button></a></td>
                             <td><a href="deleteDonationWithId?DeleteWithId=${allDonation.id}"><button type="button">Delete</button></a></td>
                         </tr>
