@@ -15,7 +15,7 @@
         <div class="col-md-7">
           <div class="row mb-5 site-section">
             <div class="col-12 ">
-              <h2 class="site-section-heading text-center">authorization failed, Please try again.</h2>
+              <h3 class="site-section-heading text-center">authorization failed, Please try again.</h3>
             </div>
           </div>
         </div>

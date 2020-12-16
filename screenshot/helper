@@ -9,7 +9,7 @@ Saa#29102
         LocalDate birthday = ((java.sql.Date) dateOfBirth). toLocalDate();
         int age = Period.between(birthday, currentDate).getYears();
 
-deploy change 2 spot
+deploy change 2 spots
 1. at META-INF-context.xml connectionURL="jdbc:mysql://localhost:3306/funfund?user=root&amp;password=uBUs4XoxU9UsEw"
 2. at hibernate.cfg.xml  <property name="connection.password">uBUs4XoxU9UsEw</property>
 Tomcat http://13.58.132.122:8080/ login -- username- tomee, pass- yingyingyingX
@@ -20,12 +20,8 @@ Week 8 ready for review
 @pawaitemadisoncollege week 8 is complete
 uBUs4XoxU9UsEw
 
-ssh -i "ent java fall 2020.pem" ubuntu@ec2-13-58-132-122.us-east-2.compute.amazonaws.com
+ssh -i "entjavafall2020.pem" ubuntu@ec2-13-58-132-122.us-east-2.compute.amazonaws.com
 
-
-
-password for tomcat
-context.xml---.connectionURL="jdbc:mysql://localhost:3306/funfund?user=tomcat&amp;password=tomcat113"
 
 Code	Description	Notes
 400	Bad Request	This is the generic error that tells us someone created a bad request. Perhaps required fields are missing or header values are not filled in.
