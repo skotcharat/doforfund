@@ -39,7 +39,7 @@
                   
                   <div class="col-md-12">
                     <label class="text-black" for="email">Email</label> 
-                    <input type="email" id="email" name="email" class="form-control">
+                    <input type="email" id="email" name="email" class="form-control" required>
                   </div>
                 </div>
 
@@ -47,14 +47,14 @@
                   
                   <div class="col-md-12">
                     <label class="text-black" for="subject">Subject</label> 
-                    <input type="subject" id="subject" name="subject" class="form-control">
+                    <input type="subject" id="subject" name="subject" class="form-control" required>
                   </div>
                 </div>
 
                 <div class="row form-group">
                   <div class="col-md-12">
                     <label class="text-black" for="message">Message</label> 
-                    <textarea name="message" name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Write your message or questions here..."></textarea>
+                    <textarea name="message" name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Write your message or questions here..." required></textarea>
                   </div>
                 </div>
 

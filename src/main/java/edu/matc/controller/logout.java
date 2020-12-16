@@ -1,6 +1,7 @@
 
 package edu.matc.controller;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,12 +19,14 @@ import java.io.IOException;
     )
 public class logout extends HttpServlet{
     @Override
-    protected void doGet(HttpServletRequest request,
-                         HttpServletResponse response)
+    protected void doGet(HttpServletRequest req,
+                         HttpServletResponse resp)
             throws ServletException, IOException {
 
-        HttpSession session = request.getSession();
-        request.getSession().invalidate();
-        response.sendRedirect(request.getContextPath() + "/doForFund_att/index.jsp");
+        HttpSession session = req.getSession();
+        req.getSession().invalidate();
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
+        dispatcher.forward(req, resp);
     }
 }

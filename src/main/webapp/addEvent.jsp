@@ -27,11 +27,11 @@
                             <div class="row form-group">
                                 <div class="col-md-6 mb-3 mb-md-0">
                                     <label class="text-black" for="eventName">Event name</label>
-                                    <input type="text" id="eventName" name="eventName" class="form-control">
+                                    <input type="text" id="eventName" name="eventName" class="form-control" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="text-black" for="eventPlace">Event Place</label>
-                                    <input type="text" id="eventPlace" name="eventPlace" class="form-control">
+                                    <input type="text" id="eventPlace" name="eventPlace" class="form-control" required>
                                 </div>
                             </div>
 
@@ -39,7 +39,7 @@
 
                                 <div class="col-md-12">
                                     <label class="text-black" for="eventDate">Event Date</label>
-                                    <input type="date" id="eventDate" name="eventDate" class="form-control" >
+                                    <input type="date" id="eventDate" name="eventDate" class="form-control" required>
                                 </div>
                             </div>
 
@@ -47,7 +47,7 @@
 
                                 <div class="col-md-12">
                                     <label class="text-black" for="eventTime">Event Time</label>
-                                    <input type="time" id="eventTime" name="eventTime" class="form-control">
+                                    <input type="time" id="eventTime" name="eventTime" class="form-control" required>
                                 </div>
                             </div>
 
@@ -55,7 +55,7 @@
 
                                 <div class="col-md-12">
                                     <label class="text-black" for="eventDescription">Event Description</label>
-                                    <input type="text" id="eventDescription" name="eventDescription" class="form-control">
+                                    <input type="text" id="eventDescription" name="eventDescription" class="form-control" required>
                                 </div>
                             </div>
 

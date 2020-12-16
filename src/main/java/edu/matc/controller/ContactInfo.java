@@ -15,8 +15,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Validation;
+import javax.validation.ValidatorFactory;
 import java.io.IOException;
 import java.util.List;
+
+
+import javax.validation.Validator;
 
 /**
  * A simple servlet to welcome the user.
@@ -26,15 +31,15 @@ import java.util.List;
 @WebServlet
         (urlPatterns = { "/contactInfo" } )
 
-
-
 public class ContactInfo extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
+    //private static Validator validator;
 
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         GenericDao<User> genericDaoUser = DaoFactory.createDao(User.class);
         GenericDao<Contact> genericDao = DaoFactory.createDao(Contact.class);
 
@@ -54,6 +59,18 @@ public class ContactInfo extends HttpServlet {
                     req.getParameter("email"),
                     req.getParameter("subject"),
                     req.getParameter("message"), username, retrievedUser);
+            logger.info("ContactInfo class newContact  " + newContact);
+
+            /**
+             *  Trying to implement the validation message, but it is not working
+             */
+//          ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+//          validator = factory.getValidator();
+
+//          String messages =  validator.validateProperty( newContact, "email" ).iterator().next().getMessage();
+//          req.setAttribute("messages", messages);
+
+
             // Add te contact to DB
             retrievedUser.addContact(newContact);
 

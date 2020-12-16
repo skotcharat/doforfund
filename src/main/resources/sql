@@ -34,7 +34,7 @@ CREATE TABLE `contact` (
   PRIMARY KEY (`id`),
   KEY `contact_user_id_fk` (`user_id`),
   CONSTRAINT `contact_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `contact` (
 
 LOCK TABLES `contact` WRITE;
 /*!40000 ALTER TABLE `contact` DISABLE KEYS */;
-INSERT INTO `contact` VALUES (1,'kotcharat','sukkas','joe2@mail.com','hello','yrrr',NULL,NULL),(3,'kotcharat','sukkasem','joe8@mail.com','hello','trying email',NULL,NULL),(4,'kotcharat','sukkase','ddd@mail.com','hello','testing testing',NULL,NULL),(5,'kotcharat','sukkasem','ddd@mail.com','hello','Send email the second time is working!',NULL,NULL),(6,'','','ddd@mail.com','hello','checking',NULL,NULL),(7,'','','ddd@mail.com','hello','gggg',NULL,NULL),(9,'','','','ff','ddd',NULL,NULL),(12,'','','joe2@mail.com','jj','',NULL,NULL),(18,'no user','','','','',NULL,NULL);
+INSERT INTO `contact` VALUES (1,'kotcharat','sukkas','joe2@mail.com','hello','yrrr',NULL,NULL),(3,'kotcharat','sukkasem','joe8@mail.com','hello','trying email',NULL,NULL),(4,'kotcharat','sukkase','ddd@mail.com','hello','testing testing',NULL,NULL),(5,'kotcharat','sukkasem','ddd@mail.com','hello','Send email the second time is working!',NULL,NULL);
 /*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -65,7 +65,7 @@ CREATE TABLE `donation` (
   UNIQUE KEY `donation_id_uindex` (`id`),
   KEY `donation_user_id_fk` (`user_id`),
   CONSTRAINT `donation_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +74,7 @@ CREATE TABLE `donation` (
 
 LOCK TABLES `donation` WRITE;
 /*!40000 ALTER TABLE `donation` DISABLE KEYS */;
-INSERT INTO `donation` VALUES (1,40,1,'2010-11-20',NULL,NULL),(3,50,1,'2010-11-20',NULL,NULL),(4,30,NULL,NULL,NULL,NULL),(5,40,NULL,NULL,NULL,NULL),(11,5,NULL,NULL,NULL,NULL);
+INSERT INTO `donation` VALUES (1,40,1,'2010-11-20',NULL,NULL),(3,50,1,'2010-11-20',NULL,NULL),(16,40,NULL,'2020-12-14','hello',NULL),(17,40,NULL,'2020-12-14','hello',NULL),(18,5,35,'2020-12-14','see u soon','ma'),(19,50,NULL,'2020-12-15','jo',NULL);
 /*!40000 ALTER TABLE `donation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,7 +94,7 @@ CREATE TABLE `events` (
   `eventDescription` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `events_id_uindex` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,7 +103,7 @@ CREATE TABLE `events` (
 
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
-INSERT INTO `events` VALUES (2,'Couple shot','MononaLake','2020-12-02','01:32:00','Bring your couple and joy us'),(9,'funPhoto','capital','2020-12-02','01:32:00','fff'),(14,'','','2020-12-01','01:32:00','');
+INSERT INTO `events` VALUES (14,'TOGETHER FUN','','2020-12-01','01:32:00',''),(23,'night photo','bet bar','2020-12-26','12:59:00','Drink and take a picture'),(24,'funPhoto','capital','2020-12-31','14:03:00','my name is '),(25,'funPhoto','capital','2020-12-17','16:04:00','Join us with the fun photo'),(26,'funPhoto','capital','2020-12-05','16:05:00','dd'),(27,'funPhoto','capital','2020-12-26','12:59:00','Join us with the fun photo'),(28,'funPhoto','capital','2020-12-31','12:59:00','dd');
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,7 +122,7 @@ CREATE TABLE `events_user` (
   UNIQUE KEY `events_user_id_uindex` (`id`),
   KEY `events_user_user_id_fk` (`user_id`),
   CONSTRAINT `events_user_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,7 +131,7 @@ CREATE TABLE `events_user` (
 
 LOCK TABLES `events_user` WRITE;
 /*!40000 ALTER TABLE `events_user` DISABLE KEYS */;
-INSERT INTO `events_user` VALUES (8,29,12),(9,29,14),(12,29,9);
+INSERT INTO `events_user` VALUES (16,34,9),(17,34,14),(21,35,2),(22,35,9),(23,35,14),(26,36,14),(27,36,28);
 /*!40000 ALTER TABLE `events_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -151,7 +151,7 @@ CREATE TABLE `user` (
   `email` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_user_name_uindex` (`user_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -160,7 +160,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Kotcharat','Sukkase','ying','1234','joe66@mail.com'),(29,'','','11','22','');
+INSERT INTO `user` VALUES (1,'Kotcharat','Sukkase','ying','1234','joe66@mail.com'),(31,'11','22','33','44','ddd@mail.com'),(32,'rr','rr','66','77','77'),(33,'aa','bb','aa','bb','bb'),(34,'77','88','88','99','99'),(35,'ma','sha','ma','sha','ma@gmail.com'),(36,'steven','hoang','steven','hoang','hoang@mail.com');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -181,7 +181,7 @@ CREATE TABLE `user_roles` (
   KEY `user_roles_user_user_name_fk` (`user_name`),
   KEY `user_roles_user_id_fk` (`user_id`),
   CONSTRAINT `user_roles_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -190,7 +190,7 @@ CREATE TABLE `user_roles` (
 
 LOCK TABLES `user_roles` WRITE;
 /*!40000 ALTER TABLE `user_roles` DISABLE KEYS */;
-INSERT INTO `user_roles` VALUES (1,'admin','ying',1),(20,'user','11',29);
+INSERT INTO `user_roles` VALUES (1,'admin','ying',1),(22,'user','33',31),(23,'user','66',32),(24,'user','aa',33),(25,'user','88',34),(26,'user','ma',35),(27,'user','steven',36);
 /*!40000 ALTER TABLE `user_roles` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -203,4 +203,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-08 15:17:56
+-- Dump completed on 2020-12-15 23:39:23

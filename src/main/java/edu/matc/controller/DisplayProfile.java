@@ -40,6 +40,7 @@ public class DisplayProfile extends HttpServlet {
 //        String myAttribute = (String) session.getAttribute("currentUserLogin");
 //        logger.debug("Sending back the myAttribute..." + myAttribute);  ==> same as req.getRemoteUser()
 
+        // retrive user by id
         logger.debug("Sending back the req.getRemoteUser() is..." + req.getRemoteUser());
         List<User> users = dao.getByPropertyEqual("userName", req.getRemoteUser());
 
@@ -51,11 +52,14 @@ public class DisplayProfile extends HttpServlet {
         req.setAttribute("users", user);
         logger.debug("Sending back the user is..." + user);
 
+        // compare userid in the events_user table
         GenericDao<Event_User> dao2 = DaoFactory.createDao(Event_User.class);
         List<Event_User> usersInEvent = dao2.getByPropertyEqual("user_id", String.valueOf(user_id));
         int size = usersInEvent.size();
 
         logger.info("size... " + size);
+
+        // retrives event id from events_user table
         Event retrievedEvent;
         List<Event> event = new ArrayList<>();
         for(int i = 0; i < size;i++) {
@@ -64,6 +68,8 @@ public class DisplayProfile extends HttpServlet {
             logger.info("eventId... " + eventId);
             GenericDao<Event> dao3 = DaoFactory.createDao(Event.class);
             retrievedEvent = (Event)dao3.getById(eventId);
+
+            // add the event that has found into the list
             event.add(retrievedEvent);
         }
         req.setAttribute("events", event);

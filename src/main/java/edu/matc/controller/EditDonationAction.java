@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Properties;
 
 
 @WebServlet(
@@ -21,6 +22,26 @@ import java.io.IOException;
 public class EditDonationAction extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
+    private Properties properties;
+
+    // constructor
+    public EditDonationAction() {
+        loadProperties();
+    }
+
+    // load properties
+    private void loadProperties() {
+        properties = new Properties();
+        try {
+            properties.load (this.getClass().getResourceAsStream("/url.properties"));
+        } catch (IOException ioe) {
+            logger.error("Database.loadProperties()...Cannot load the properties file.." + ioe);
+        } catch (Exception e) {
+            logger.error("Database.loadProperties()..." + e);
+        }
+
+    }
+
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,7 +52,7 @@ public class EditDonationAction extends HttpServlet {
 
         genericDao.saveOrUpdate(contactBeforeUpdate);
 
-        resp.sendRedirect("http://localhost:8080/DOFORFUND_war/adminPage");
+        resp.sendRedirect(properties.getProperty("url") + "/adminPage");
     }
 }
 

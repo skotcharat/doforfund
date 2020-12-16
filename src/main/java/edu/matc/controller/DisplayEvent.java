@@ -31,7 +31,6 @@ public class DisplayEvent extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
         GenericDao<Event> dao = DaoFactory.createDao(Event.class);
         List<Event> allEvents = dao.getAll();
 

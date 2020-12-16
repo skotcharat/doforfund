@@ -30,8 +30,6 @@ import java.util.Set;
 @ToString
 public class User {
 
-
-
     // Every Entity must have a unique identifier which is annotated @Id
     // Notice there is no @Column here as the column and instance variable name are the same
     @Id
@@ -44,7 +42,6 @@ public class User {
 
     @Column(name = "last_name")
     private String lastName;
-
 
     @Column(name = "user_name")
     private String userName;

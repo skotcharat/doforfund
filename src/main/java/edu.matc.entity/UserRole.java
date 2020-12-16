@@ -18,7 +18,7 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-//@ToString
+@ToString
 @NoArgsConstructor
 @Proxy(lazy=false)
 public class UserRole { // @OneToMany

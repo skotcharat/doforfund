@@ -28,7 +28,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @Proxy(lazy=false)
-//@ToString
+@ToString
 public class Event { // @OneToMany
 
     @Id
@@ -75,8 +75,6 @@ public class Event { // @OneToMany
         this.eventDescription = eventDescription;
 
     }
-
-
 
     public Event(int event) {
     }

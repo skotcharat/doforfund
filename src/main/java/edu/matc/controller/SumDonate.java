@@ -35,20 +35,26 @@ public class SumDonate extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         GenericDao<User> genericDaoUser = DaoFactory.createDao(User.class);
         GenericDao<Donation> genericDao = DaoFactory.createDao(Donation.class);
+
         if(req.isUserInRole("user")) {
+            // retrive user id from current user
             String username = req.getRemoteUser();
             List<User> users = genericDaoUser.getByPropertyEqual("userName", username);
             int id = users.get(0).getId();
             logger.info("ContactInfo class ID  " + id);
             User retrievedUser = (User)genericDaoUser.getById(id);
 
+            // get parameter from input
             int amount = Integer.parseInt(req.getParameter("amount"));
             String subject = req.getParameter("subject");
 
+            // insert donation information to the table
             Donation donation = new Donation(amount, LocalDate.now(), subject, username, retrievedUser);
             int newId = genericDao.insert(donation);
+
             // get the donation current amount
             Donation donation2 = genericDao.getById(newId);
             req.setAttribute("donateAmount", donation2);
@@ -58,6 +64,7 @@ public class SumDonate extends HttpServlet {
             List<Donation> allDonation = genericDao.getAll();
             req.setAttribute("totalAmount", allDonation);
             logger.debug("Sending back the donateAmount/s..." + allDonation);
+
         } else {
             int amount = Integer.parseInt(req.getParameter("amount"));
             String subject = req.getParameter("subject");

@@ -23,6 +23,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * A simple servlet to welcome the user.
@@ -33,9 +34,26 @@ import java.util.List;
         (urlPatterns = { "/addEventAction" } )
 public class AddEventAction extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
+    private Properties properties;
 
+    // constructor
+    public AddEventAction() {
+        loadProperties();
+    }
 
-    @SneakyThrows
+    // load properties
+    private void loadProperties() {
+        properties = new Properties();
+        try {
+            properties.load (this.getClass().getResourceAsStream("/url.properties"));
+        } catch (IOException ioe) {
+            logger.error("Database.loadProperties()...Cannot load the properties file.." + ioe);
+        } catch (Exception e) {
+            logger.error("Database.loadProperties()..." + e);
+        }
+
+    }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -49,9 +67,9 @@ public class AddEventAction extends HttpServlet {
         int newId = genericDao.insert(newEvent);
         Event insertedEvent = (Event)genericDao.getById(newId);
         logger.info("insertedEvent" + insertedEvent);
+        logger.info("url proper is..." + properties.getProperty("url"));
 
-        resp.sendRedirect("http://localhost:8080/DOFORFUND_war/displayEvent");
-
+        resp.sendRedirect(properties.getProperty("url") + "/displayEvent");
     }
 
 }

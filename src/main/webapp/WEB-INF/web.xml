@@ -4,6 +4,8 @@
          version="3.1">
   <display-name>DOFORFUND</display-name>
 
+
+
   <!-- Tell the server to use form-based authentication. -->
   <login-config>
     <auth-method>FORM</auth-method>
@@ -13,11 +15,14 @@
     </form-login-config>
   </login-config>
 
-  <!-- Protect the user search page. -->
+  <!-- Protect the user to get in page. -->
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>search</web-resource-name>
-      <url-pattern>/searchUser</url-pattern>
+      <web-resource-name>adminPage</web-resource-name>
+      <url-pattern>/adminPage</url-pattern>
+      <url-pattern>/admin.jsp</url-pattern>
+      <url-pattern>/addEvent.jsp</url-pattern>
+      <url-pattern>/addEventAction</url-pattern>
     </web-resource-collection>
 
     <auth-constraint>
@@ -25,7 +30,7 @@
     </auth-constraint>
   </security-constraint>
 
-  <!-- Protect everything in the adminOnly directory -->
+  <!-- Login -->
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>login</web-resource-name>
@@ -44,5 +49,18 @@
   <security-role>
     <role-name>user</role-name>
   </security-role>
+
+  <error-page>
+    <error-code>403</error-code>
+    <location>/403error.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404error.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/500error.jsp</location>
+  </error-page>
 
 </web-app>

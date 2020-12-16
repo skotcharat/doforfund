@@ -8,6 +8,7 @@
 <jsp:include page="header.jsp" />
 
 <div>
+    <p class="text-center">${messages}</p><br><br>
     <p class="text-black h2 mb-0 text-center">We were received your contact</p><br><br>
     <p class="text-center">Your message is</p><br>
     <p class="text-center">${allContacts.message}</p><br><br>

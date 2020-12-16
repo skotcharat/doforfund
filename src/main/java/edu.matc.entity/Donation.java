@@ -105,8 +105,4 @@ public class Donation { // @OneToMany
     public Donation(int amount) {
         this.amount = amount;
     }
-
-
-
-
 }

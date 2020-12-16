@@ -7,10 +7,23 @@
 
 <jsp:include page="header.jsp" />
 
+<div class=""  data-aos="fade">
+    <div class="container-fluid">
 
-<div>
-    <p class="text-black h2 mb-0 text-center">Log-in Failed please try again</p><br><br>
+        <div class="row justify-content-center">
+            <div class="col-md-7">
+                <div class="row mb-5 site-section">
+                    <div class="col-12 ">
+                        <h2 class="site-section-heading text-center">Log-in Failed please try again.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
 </div>
+
 
 </body>
 <br><br><br><br><br><br><br><br><br><br>

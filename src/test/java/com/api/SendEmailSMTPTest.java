@@ -16,8 +16,8 @@ class SendEmailSMTPTest {
      * Gets response success.
      */
     @Test
-    void getResponseSuccess() {
+    void sendEmailSuccess() {
         SendEmailSMTP send = new SendEmailSMTP();
-        send.getInfo("hi", "testing");
+        send.getInfo("testing class", "send email successfully");
     }
 }

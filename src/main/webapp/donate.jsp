@@ -27,7 +27,7 @@
                             <div class="row form-group">
                                 <div class="col-md-6 mb-3 mb-md-0">
                                     <label class="text-black" for="amount">Amount</label>
-                                    <input type="text" id="amount" name="amount" class="form-control">
+                                    <input type="text" id="amount" name="amount" class="form-control" required>
                                 </div>
 
                             </div>

@@ -35,6 +35,7 @@ public class AttendEventWithId extends HttpServlet {
         req.setAttribute("amountUsers", amountUser);
         logger.debug("Sending back the amountUsers..." + amountUser);
 
+        // retrieve user in the event
         User retriveUser;
         List<User> user = new ArrayList<>();
         for(int i = 0; i < amountUser;i++) {
@@ -42,6 +43,8 @@ public class AttendEventWithId extends HttpServlet {
             int userId = retrievedEventUsers.getUser_id();
             GenericDao<User> daoUser = DaoFactory.createDao(User.class);
             retriveUser = daoUser.getById(userId);
+
+            // add the user that fond into the list
             user.add(retriveUser);
         }
         req.setAttribute("users", user);

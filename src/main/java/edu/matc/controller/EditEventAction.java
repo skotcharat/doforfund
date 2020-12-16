@@ -19,6 +19,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
+import java.util.Properties;
 
 @WebServlet(
         urlPatterns = {"/editEventAction"}
@@ -27,8 +28,26 @@ import java.util.Date;
 public class EditEventAction extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
+    private Properties properties;
 
-    @SneakyThrows
+    // constructor
+    public EditEventAction() {
+        loadProperties();
+    }
+
+    // load properties
+    private void loadProperties() {
+        properties = new Properties();
+        try {
+            properties.load (this.getClass().getResourceAsStream("/url.properties"));
+        } catch (IOException ioe) {
+            logger.error("Database.loadProperties()...Cannot load the properties file.." + ioe);
+        } catch (Exception e) {
+            logger.error("Database.loadProperties()..." + e);
+        }
+
+    }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -46,7 +65,7 @@ public class EditEventAction extends HttpServlet {
         eventBeforeUpdate.setEventDescription(req.getParameter("eventDescription"));
         genericDao.saveOrUpdate(eventBeforeUpdate);
 
-        resp.sendRedirect("http://localhost:8080/DOFORFUND_war/adminPage");
+        resp.sendRedirect(properties.getProperty("url") + "/adminPage");
     }
 }
 

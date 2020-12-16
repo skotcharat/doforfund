@@ -120,6 +120,21 @@
       <version>5.2.4.Final</version>
     </dependency>
 
+    <!-- Hibernate Validator - implementation of the Bean Validation API -->
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>6.0.13.Final</version>
+    </dependency>
+    <!-- Hibernate Validator - Unified EL - implementation of the Unified Expression Language -->
+    <dependency>
+      <groupId>org.glassfish</groupId>
+      <artifactId>javax.el</artifactId>
+      <version>3.0.1-b09</version>
+    </dependency>
+
+
+
 
 
     <!-- c3p0 - used to handle connection pooling with hibernate -->

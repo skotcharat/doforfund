@@ -55,7 +55,6 @@ public class AdminPage extends HttpServlet {
         req.setAttribute("contacts", allContacts);
         logger.debug("Sending back the contact/s..." + allContacts);
 
-
         RequestDispatcher dispatcher = req.getRequestDispatcher("/admin.jsp");
         dispatcher.forward(req, resp);
     }

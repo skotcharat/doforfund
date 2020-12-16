@@ -9,9 +9,12 @@ Saa#29102
         LocalDate birthday = ((java.sql.Date) dateOfBirth). toLocalDate();
         int age = Period.between(birthday, currentDate).getYears();
 
+deploy change 2 spot
+1. at META-INF-context.xml connectionURL="jdbc:mysql://localhost:3306/funfund?user=root&amp;password=uBUs4XoxU9UsEw"
+2. at hibernate.cfg.xml  <property name="connection.password">uBUs4XoxU9UsEw</property>
+Tomcat http://13.58.132.122:8080/ login -- username- tomee, pass- yingyingyingX
 
 git stash
-
 
 Week 8 ready for review
 @pawaitemadisoncollege week 8 is complete
@@ -23,3 +26,10 @@ ssh -i "ent java fall 2020.pem" ubuntu@ec2-13-58-132-122.us-east-2.compute.amazo
 
 password for tomcat
 context.xml---.connectionURL="jdbc:mysql://localhost:3306/funfund?user=tomcat&amp;password=tomcat113"
+
+Code	Description	Notes
+400	Bad Request	This is the generic error that tells us someone created a bad request. Perhaps required fields are missing or header values are not filled in.
+401	Unauthorized	Indicates that authentication has failed. This could be because of an expired, missing, or invalid token.
+403	Forbidden	Indicates that authorization failed. Alternatively, you can also use 404 so that the consumer doesn’t know that the resource even exists.
+404	Not Found	The requested resource is not found. Companies like GitHub also use 404 if you try to access a resource that you do not have the authorization to access.
+500	Internal Server Error	When something goes wrong on the server, the consumer can’t do anything about it. Just let them know there’s a problem and that they should try again later or contact support.

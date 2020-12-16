@@ -29,7 +29,9 @@ public class JoinEvent extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         if(req.isUserInRole("user")) {
+            //retrive user id from current user
             GenericDao<User> genericDaoUser = DaoFactory.createDao(User.class);
             String currentUser = req.getRemoteUser();
             List<User> users = genericDaoUser.getByPropertyEqual("userName", currentUser);
@@ -37,6 +39,7 @@ public class JoinEvent extends HttpServlet {
             logger.info("User class ID  " + id);
             User retrievedUser = (User)genericDaoUser.getById(id);
 
+            // get event info
             GenericDao<Event> genericDao = DaoFactory.createDao(Event.class);
             Event retrievedEvent = genericDao.getById(Integer.parseInt(req.getParameter("JoinWithId")));
             String date = String.valueOf(retrievedEvent.getEventDate());
@@ -45,8 +48,8 @@ public class JoinEvent extends HttpServlet {
             String EventInfo = "Your event is on " + date + " @" + time+ " at " + place + "." ;
             logger.info("Integer.parseInt(req.getParameter(\"JoinWithId\")  " + Integer.parseInt(req.getParameter("JoinWithId")));
 
+            // insert event and user information to join table
             retrievedUser.getEventMany().add(retrievedEvent);
-
             GenericDao<Event_User> genericDaoMany = DaoFactory.createDao(Event_User.class);
             Event_User eventUser = new Event_User(Integer.parseInt(req.getParameter("JoinWithId")), id);
             int newId = genericDaoMany.insert(eventUser);

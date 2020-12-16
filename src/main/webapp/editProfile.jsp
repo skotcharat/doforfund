@@ -55,7 +55,7 @@
 
                                 <div class="col-md-12">
                                     <label class="text-black" for="email">Email</label>
-                                    <input type="text" id="email" name="email" class="form-control" value="${userEdit.email}">
+                                    <input type="email" id="email" name="email" class="form-control" value="${userEdit.email}">
                                 </div>
                             </div>
 
