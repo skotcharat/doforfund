@@ -36,7 +36,7 @@
 
                                 <div class="col-md-12">
                                     <label class="text-black" for="subject">Subject</label>
-                                    <input type="subject" id="subject" name="subject" class="form-control">
+                                    <input type="text" id="subject" name="subject" class="form-control">
                                 </div>
                             </div>
 
